@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 — 2026-04-30 | 小瓜 🍈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5cf6 100%);
+    color: white;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    animation: shimmer 8s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; position: relative; }
+  .header .subtitle { font-size: 1rem; opacity: 0.9; margin-top: 0.5rem; position: relative; }
+  .header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+    position: relative;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 1.5rem; }
+  .summary-bar {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .summary-item {
+    flex: 1;
+    min-width: 120px;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .summary-item .num { font-size: 1.8rem; font-weight: 700; color: #7c3aed; }
+  .summary-item .label { font-size: 0.8rem; color: #6b7280; margin-top: 0.2rem; }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid #8b5cf6;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139,92,246,0.15); }
+  .card-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+  .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #667eea, #8b5cf6);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card-title { font-size: 1.15rem; font-weight: 600; color: #1a1a2e; }
+  .card-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+  .card-meta span { font-size: 0.82rem; color: #6b7280; }
+  .card-meta a { color: #7c3aed; text-decoration: none; }
+  .card-meta a:hover { text-decoration: underline; }
+  .dim { margin-bottom: 0.6rem; }
+  .dim-label { font-weight: 600; color: #7c3aed; font-size: 0.85rem; }
+  .dim-content { color: #374151; font-size: 0.92rem; margin-top: 0.2rem; }
+  .tag { display: inline-block; background: #f3f0ff; color: #7c3aed; padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.78rem; margin-right: 0.4rem; margin-top: 0.3rem; }
+  .footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #9ca3af;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 600px) {
+    .header { padding: 2rem 1rem; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 1rem; }
+    .card { padding: 1.2rem; }
+    .summary-item { min-width: 80px; padding: 0.8rem; }
+    .summary-item .num { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🍈 AI 日报</h1>
+  <div class="subtitle">2026 年 4 月 30 日 · 星期四</div>
+  <div class="badge">🕘 北京时间 09:00 生成 · 小瓜出品</div>
+</div>
+
+<div class="container">
+
+  <div class="summary-bar">
+    <div class="summary-item"><div class="num">7</div><div class="label">今日新闻</div></div>
+    <div class="summary-item"><div class="num">2</div><div class="label">研究突破</div></div>
+    <div class="summary-item"><div class="num">2</div><div class="label">安全事件</div></div>
+    <div class="summary-item"><div class="num">2</div><div class="label">行业实践</div></div>
+    <div class="summary-item"><div class="num">1</div><div class="label">领袖观点</div></div>
+  </div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">1</span>
+      <span class="card-title">Apple 发布 LaDiR 研究：AI 并行测试多个想法再作答</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 9to5Mac</span>
+      <a href="https://9to5mac.com/2026/04/29/apple-researchers-built-an-ai-that-tests-several-ideas-in-parallel-before-answering/" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">Apple 研究团队联合 UC San Diego 发表论文《LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning》，将潜在扩散模型与自回归 LLM 结合，在数学推理、代码生成等领域显著提升回答质量。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">方法：扩散模型并行生成多个候选思路 → 自回归模型精化输出；覆盖场景：数学推理、代码生成、复杂逻辑推理。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">代表 Apple 在 LLM 推理能力上的最新研究突破，可能为 Apple Intelligence 后续版本提供技术支撑。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">论文已在 Apple Machine Learning Research 页面发布，业界关注是否会集成到产品中。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">"先发散后收敛"的推理范式与人类认知过程高度一致，是提升 LLM 推理可靠性的有效路径。</div></div>
+    <div><span class="tag">Apple</span><span class="tag">LLM</span><span class="tag">扩散模型</span><span class="tag">推理</span></div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">2</span>
+      <span class="card-title">中国推出 AI 系统加速科学研究</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 China Daily</span>
+      <a href="https://www.chinadaily.com.cn/a/202604/29/WS69f203b4a310d6866eb46506.html" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">中国正式推出 AI 科研加速系统，利用人工智能技术加快科学研究进程，覆盖实验设计、数据分析和假设验证等多学科领域。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">目标：缩短科研周期，提高研究效率；应用：基础科学、材料科学、生物医药等。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">国家级 AI 科研基础设施部署，对标全球 AI for Science 竞争格局。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">预计将在科研机构逐步部署，可能开放部分能力给学术界使用。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">AI for Science 已成全球科技竞争核心赛道。中国在国家层面加速 AI 科研基础设施投入，与 DeepMind、OpenAI 等形成互补与竞争。</div></div>
+    <div><span class="tag">中国</span><span class="tag">AI for Science</span><span class="tag">科研</span></div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">3</span>
+      <span class="card-title">🔒 Ramp Sheets AI 漏洞：AI Agent 可泄露财务数据</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 PromptArmor</span>
+      <a href="https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">安全公司 PromptArmor 发现 Ramp 的 Sheets AI 功能存在间接提示注入漏洞。攻击者可通过外部数据集中的隐藏提示，操控 AI Agent 自动插入恶意公式触发外部请求，窃取机密财务数据。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">攻击链：隐藏提示（白字白底）→ AI 收集敏感数据 → 生成恶意公式 → 自动插入表格，无需用户审批。Ramp 已于 2026-03-16 修复。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">企业财务模型、敏感商业数据存在泄露风险。同类风险也存在于 Anthropic 的 Claude for Excel。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">Ramp 已负责任地披露并修复。企业需加强 AI Agent 的权限管控和外部数据隔离。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">这是 AI Agent 安全的标志性案例。间接提示注入从"理论风险"变为"现实威胁"，企业必须建立数据隔离、操作审批和输出审计三道防线。</div></div>
+    <div><span class="tag">安全</span><span class="tag">提示注入</span><span class="tag">Ramp</span><span class="tag">AI Agent</span></div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">4</span>
+      <span class="card-title">律所 Paul Weiss 与 Dell 如何评估 AI 工具</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 Law.com</span>
+      <a href="https://www.law.com/legaltechnews/2026/04/29/legaltech-connect-how-paul-weiss-dell-evaluate-ai/" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">顶级律所 Paul Weiss 和科技企业 Dell 分享其评估和采用 AI 工具的方法论，聚焦法律科技领域的 AI 应用实践。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">Paul Weiss 关注 AI 在法律文档审查、合同分析中的应用；Dell 关注企业级 AI 部署的效率提升与风险控制。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">法律行业 AI 应用标杆案例，为企业 AI 评估框架提供参考。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">更多律所和企业可能采用类似的 AI 评估流程，法律科技市场持续升温。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">法律行业是 AI 落地的深水区——高合规要求、低容错率。头部企业的 AI 评估经验预示法律科技正从"实验阶段"进入"规模化部署"阶段。</div></div>
+    <div><span class="tag">法律科技</span><span class="tag">AI 评估</span><span class="tag">企业应用</span></div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">5</span>
+      <span class="card-title">Anthropic Claude Code 曝出 HERMES.md 计费漏洞</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 GitHub / Hacker News</span>
+      <a href="https://github.com/anthropics/claude-code/issues/53262" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">用户在 Claude Code 的 git commit message 中发现，包含 HERMES.md 内容会导致请求被错误路由到额外计费通道，而非计划内配额。HN 热度 972 points / 409 comments。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">HN 972 points, 409 comments；影响：用户可能被额外收费；涉及产品：Anthropic Claude Code。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">所有使用 Claude Code 的开发者，引发对 AI 编码工具计费透明度的广泛讨论。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">社区持续关注修复进展，建议用户检查 commit message 中是否包含敏感标记。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">暴露了 AI 工具在计费路由逻辑上的脆弱性。git commit message 中的特定内容能影响计费通道，说明系统对用户输入的解析缺乏充分的边界检查。</div></div>
+    <div><span class="tag">Anthropic</span><span class="tag">Claude Code</span><span class="tag">安全</span><span class="tag">计费</span></div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">6</span>
+      <span class="card-title">Claude Code 压缩插件 Caveman vs "be brief" 基准测试</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 Max Taylor</span>
+      <a href="https://www.maxtaylor.me/articles/i-benchmarked-caveman-against-two-words" target="_blank">🔗 原文</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">开发者对 Claude Code 热门压缩插件 Caveman 进行系统基准测试，对比"be brief"两个字的默认提示词。24 个测试用例、6 个类别中，插件在 token 节省和回答质量上均未超越简单提示。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">24 prompts / 6 categories / 5 arms；测试类别涵盖 Bug 诊断、概念解释、架构权衡、多步骤操作、安全操作、错误解读。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">对 AI 编码工具社区有直接参考价值，HN 上获得讨论。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">视频版 2 分钟总结已发布，开源测试数据集在 GitHub 可获取。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">复杂插件不一定优于简单方法。在 LLM 已对"简洁输出"有内在理解的情况下，额外的压缩逻辑可能只是增加了复杂度而没有实质收益。</div></div>
+    <div><span class="tag">Claude Code</span><span class="tag">基准测试</span><span class="tag">YAGNI</span></div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-num">7</span>
+      <span class="card-title">Demis Hassabis：如何构建未来（视频访谈）</span>
+    </div>
+    <div class="card-meta">
+      <span>📅 2026-04-29</span>
+      <span>📰 YouTube / How to Build the Future</span>
+      <a href="https://www.youtube.com/watch?v=JNyuX1zoOgU" target="_blank">🔗 视频</a>
+    </div>
+    <div class="dim"><span class="dim-label">核心事件</span><div class="dim-content">DeepMind CEO Demis Hassabis 接受"How to Build the Future"播客访谈，讨论 AI 发展、AGI 路线图、DeepMind 最新进展等话题。HN 热度 83 points / 40 comments。</div></div>
+    <div class="dim"><span class="dim-label">关键数据</span><div class="dim-content">访谈形式：视频播客；主题涵盖 AI 发展、AGI、DeepMind 方向；HN 83 points, 40 comments。</div></div>
+    <div class="dim"><span class="dim-label">影响范围</span><div class="dim-content">DeepMind 作为全球顶级 AI 实验室，其 CEO 的观点具有重要前瞻性价值。</div></div>
+    <div class="dim"><span class="dim-label">后续动作</span><div class="dim-content">视频内容值得关注，可能包含关于 AGI 时间线和 AI 安全的重要观点。</div></div>
+    <div class="dim"><span class="dim-label">解读分析</span><div class="dim-content">Hassabis 兼具神经科学背景和 AI 工程经验，其视角兼具科学严谨和产业实操性，在 AI 快速演进的 2026 年具有重要参考价值。</div></div>
+    <div><span class="tag">DeepMind</span><span class="tag">AGI</span><span class="tag">Demis Hassabis</span></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  🍈 小瓜 AI 日报 · 每日 09:00（北京时间）<br>
+  2026-04-30
+</div>
+
+</body>
+</html>
