@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年6月26日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-bright: #f0f6fc;
+  --accent: #58a6ff;
+  --accent2: #3fb950;
+  --accent3: #f0883e;
+  --accent4: #bc8cff;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 0;
+}
+.header {
+  background: linear-gradient(135deg, #1a0f2e 0%, #0d1117 50%, #0a1a2e 100%);
+  padding: 48px 24px 36px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.header h1 {
+  font-size: 2.2em;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+.header .date {
+  font-size: 1.1em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.header .subtitle {
+  font-size: 0.9em;
+  color: #8b949e;
+}
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #161b2288;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85em;
+  color: #8b949e;
+}
+.meta-bar span { display: flex; align-items: center; gap: 4px; }
+.meta-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); }
+.container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+.section-title {
+  font-size: 1.3em;
+  color: var(--text-bright);
+  margin: 32px 0 16px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+.news-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+.news-card:hover { border-color: var(--accent); }
+.news-card .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.tag {
+  font-size: 0.75em;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--tag-border);
+  background: var(--tag-bg);
+  color: var(--accent);
+}
+.tag.domestic { border-color: #3fb95055; background: #3fb95022; color: var(--accent2); }
+.tag.intl { border-color: #f0883e55; background: #f0883e22; color: var(--accent3); }
+.tag.chip { border-color: #bc8cff55; background: #bc8cff22; color: var(--accent4); }
+.tag.policy { border-color: #f8514955; background: #f8514922; color: #f85149; }
+.tag.finance { border-color: #ffd70055; background: #ffd70022; color: #ffd700; }
+.news-card h3 {
+  font-size: 1.15em;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.news-card .source-line {
+  font-size: 0.8em;
+  color: #8b949e;
+  margin-bottom: 12px;
+}
+.news-card .source-line a {
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+.news-card .source-line a:hover { text-decoration: underline; }
+.news-card .summary {
+  font-size: 0.95em;
+  color: var(--text);
+  line-height: 1.8;
+}
+.news-card .analysis {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: #1c2128;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent4);
+  font-size: 0.9em;
+  color: #b1bac4;
+}
+.news-card .analysis strong { color: var(--accent4); }
+.dimension-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.85em;
+}
+.dimension-grid .dim-item {
+  background: #1c2128;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+}
+.dimension-grid .dim-label {
+  color: #8b949e;
+  font-size: 0.85em;
+  margin-bottom: 2px;
+}
+.dimension-grid .dim-value { color: var(--text-bright); }
+.footer {
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  color: #8b949e;
+  font-size: 0.85em;
+}
+.footer a { color: var(--accent); text-decoration: none; }
+.stats-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat-item {
+  flex: 1;
+  min-width: 120px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-item .num { font-size: 1.8em; color: var(--accent); font-weight: bold; }
+.stat-item .label { font-size: 0.8em; color: #8b949e; margin-top: 4px; }
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.6em; }
+  .news-card { padding: 16px; }
+  .dimension-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 6 月 26 日（周四）</div>
+  <div class="subtitle">多源融合 · 腾讯新闻 + 国际搜索 · 3 天严格过滤</div>
+</div>
+
+<div class="meta-bar">
+  <span><span class="dot"></span> 腾讯新闻源 ✅</span>
+  <span><span class="dot"></span> web_search 国际源 ✅</span>
+  <span><span class="dot"></span> 报告日期：Beijing 2026-06-26</span>
+  <span><span class="dot"></span> 生成时间：UTC 2026-06-27 01:00</span>
+</div>
+
+<div class="container">
+
+<div class="stats-box">
+  <div class="stat-item"><div class="num">10</div><div class="label">收录新闻</div></div>
+  <div class="stat-item"><div class="num">5</div><div class="label">维度覆盖</div></div>
+  <div class="stat-item"><div class="num">3</div><div class="label">天范围过滤</div></div>
+  <div class="stat-item"><div class="num">2</div><div class="label">源类型</div></div>
+</div>
+
+<!-- ===== NEWS 1 ===== -->
+<div class="section-title">📡 政策与监管</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag policy">政策监管</span>
+    <span class="tag intl">国际视角</span>
+  </div>
+  <h3>美国商务部解除 Anthropic 旗舰模型出口限制，逾百家机构获准使用</h3>
+  <div class="source-line">
+    📅 2026-06-27 08:37 · 来源：华尔街见闻（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260627A025DH00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    美国商务部长卢特尼克致函 Anthropic，宣布解除对 Claude Mythos 5 模型的出口限制，允许超过 100 家获政府批准的企业和联邦机构访问该模型。此举标志着美国政府与 Anthropic 之间长达两周对峙的重大缓和。然而，另一旗舰模型 Fable 5 仍处于封禁状态。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">Mythos 5 出口限制解除</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">100+ 机构获准访问</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">全球 AI 产业 / 美国政务系统</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">Fable 5 限制尚未解除</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>这是 6 月 12 日美国商务部对 Anthropic 下达出口管制指令以来的首次重大松绑。Mythos 5 在工程、视觉和推理基准测试中表现顶尖，恢复访问将直接影响依赖该模型的 100+ 家企业和联邦机构。Fable 5 仍被封禁，说明政府对 AI 安全的审慎态度未完全转变。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag policy">政策监管</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>中国 AI 政策密集落地，覆盖技术底座到产业融合全链条</h3>
+  <div class="source-line">
+    📅 2026-06-25 19:49 · 来源：央广网（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260625A09R4A00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    6 月以来，人工智能配套政策集中出台，覆盖技术底座、产业融合、消费场景、内容监管、直接融资全链条。一套协同发力的政策组合拳正式成型，中国 AI 产业告别单一技术攻关阶段，迈入规范化、产业化同步推进的发展周期。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">多部委 AI 政策组合拳</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">覆盖 5 大维度全链条</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">中国 AI 全产业</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">产业化推进加速</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>政策从 "技术攻关" 转向 "规范化 + 产业化" 双轮驱动，意味着中国 AI 产业进入落地变现阶段。直接融资通道的打通将加速头部企业 IPO 进程，而内容监管和消费场景政策的同步推出，说明管理层在鼓励创新的同时也在划定红线。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag policy">政策监管</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>中央网信办开设「涉 AI 应用乱象举报专区」，AI 应用迈入强监管时代</h3>
+  <div class="source-line">
+    📅 2026-06-26 09:44 · 来源：央广网（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260626A03B8D00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    在生成式 AI 快速渗透短视频等行业的背景下，批量低质内容、深度伪造信息、算法驱动水军等乱象频发。中央网信办举报中心开设「涉 AI 应用乱象举报专区」，专项受理公众举报，受理范围涵盖生成合成内容标识落实不到位、制作发布虚假不实和暴力低俗内容等。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">网信办设 AI 乱象举报专区</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">覆盖多类违规行为</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">短视频 / 内容平台 / AI 服务商</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">常态化监管机制</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>AI 内容治理从 "事后处罚" 升级为 "全民举报 + 专项受理" 模式。对 AI 内容平台而言，合规成本将显著上升，生成合成内容标识的强制落实将成为硬性要求。这也倒逼 AI 服务商在模型端加强内容安全能力。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag policy">政策监管</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>金融业首份 AI 全流程专项监管文件落地，32 条新规划红线</h3>
+  <div class="source-line">
+    📅 2026-06-26 20:13 · 来源：金融界（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260626A0A58N00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    国家金融监督管理总局正式发布《关于银行业保险业人工智能安全开发应用的指导意见》，共 8 部分 32 条，遵循"谁使用谁负责、自主可控、务实高效、安全发展"四大原则，覆盖治理、开发、数据、算力、风控、能力、监督全链条。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">金融业首份 AI 全流程监管文件</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">8 部分 32 条规定</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">银行 / 保险业 AI 应用</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">行业 AI 投入回归业务价值</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>这是中国金融业首份 AI 全流程专项监管文件，"谁使用谁负责" 原则将倒逼金融机构建立 AI 使用追溯机制。对 AI 大模型供应商而言，进入金融场景的合规门槛显著提高，"自主可控" 要求也意味着国产模型在金融领域有天然优势。
+  </div>
+</div>
+
+<!-- ===== NEWS 5 ===== -->
+<div class="section-title">🔧 芯片与算力</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag chip">芯片算力</span>
+    <span class="tag intl">国际视角</span>
+  </div>
+  <h3>OpenAI 与 Broadcom 联合发布首款自研 AI 推理芯片 Jalapeño</h3>
+  <div class="source-line">
+    📅 2026-06-24/25 · 来源：TechCrunch / CNBC / 每日天使（腾讯新闻）· <a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank">techcrunch.com</a> · <a href="https://view.inews.qq.com/a/20260625A07IIS00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    OpenAI 与半导体巨头 Broadcom 联合发布首款自研 AI 推理芯片 Jalapeño，该芯片被定位为"Intelligence Processor"，专为 LLM 推理优化。从设计到流片仅用 9 个月，OpenAI 模型自身参与了芯片设计加速。Broadcom CEO Hock Tan 与 OpenAI 总裁 Greg Brockman 表示，该芯片可降低 50% 推理成本。这标志着 OpenAI 正式步入自研芯片赛道，减少对英伟达 GPU 的依赖。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">OpenAI 首款自研 AI 芯片发布</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">9 个月流片 / 成本降 50%</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">全球 AI 算力格局 / 英伟达垄断</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">多代芯片平台规划中</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>OpenAI 走上了 Google (TPU) 和 Amazon (Trainium) 的同一条路——自研推理芯片。Jalapeño 专攻推理而非训练，说明 OpenAI 的核心算力瓶颈正在从训练侧向推理侧转移。50% 成本降幅若属实，将对英伟达的推理 GPU 业务构成实质冲击。但真正的看点是：Broadcom 同时为 Google、Meta 和 OpenAI 设计定制芯片，实质上已成为 AI 芯片产业的"收税人"。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag chip">芯片算力</span>
+    <span class="tag finance">资本市场</span>
+    <span class="tag intl">国际视角</span>
+  </div>
+  <h3>Cerebras 上市一月市值腰斩，AI 芯片股遭遇冷遇</h3>
+  <div class="source-line">
+    📅 2026-06-26 11:48 · 来源：财联社（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260626A04U7B00" target="_blank">view.inews.qq.com</a> · <a href="https://www.marketwatch.com/story/cerebrass-stock-sinks-below-ipo-price-in-a-major-blow-to-early-investors-8a55f2ff" target="_blank">marketwatch.com</a>
+  </div>
+  <div class="summary">
+    AI 芯片公司 Cerebras 上市仅一个多月，股价已较历史高点下跌逾 50%，首次跌破 IPO 发行价。Q1 财报虽然营收超预期，但毛利率指引从 47% 下滑至 36%-38%，引发投资者对 AI 芯片公司盈利模型的担忧。与此同时，美光科技同日大涨 15.8%，AI 存储赛道与 AI 算力赛道出现明显分化。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">Cerebras 跌破发行价</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">股价较高点跌超 50%</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">AI 芯片 IPO 市场</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">市场重新评估 AI 芯片估值</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>Cerebras 的暴跌是对 AI 芯片创业公司的一记警钟：营收增长不能掩盖毛利率下滑的问题。当 47% 的毛利指引骤降至 36%，市场开始质疑 AI 推理芯片公司的定价权和成本控制能力。与美光的分化说明，当前市场更青睐有明确盈利路径的 AI 存储赛道，而非仍在烧钱抢份额的 AI 算力赛道。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag chip">芯片算力</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>国产 GPU「四小龙」齐聚资本市场，燧原科技科创板 IPO 提交注册</h3>
+  <div class="source-line">
+    📅 2026-06-25 17:25 · 来源：证券市场周刊（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260625A085T000" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    全球 AI 加速卡市场高速扩容，"国产 GPU 四小龙"之一的燧原科技科创板 IPO 提交注册。AI 芯片作为人工智能底层算力基石，已成为全球科技竞争的战略制高点。随着 GPT、DeepSeek、Gemini 等主流 AI 大模型实现规模化落地，国产 AI 芯片企业正加速资本化进程。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">燧原科技提交科创板 IPO 注册</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">国产 GPU 四小龙齐聚资本市场</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">国产 AI 芯片产业链</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">科创板上市在即</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>燧原科技提交注册标志着国产 GPU 四小龙（燧原、壁仞、摩尔线程、沐曦）资本化布局的最后一块拼图就位。在 Cerebras 海外遇冷的对照下，国产 AI 芯片的资本化路径反而加速，反映出中国市场对 AI 算力国产替代的政策驱动和资金支持力度。但盈利模型仍是核心考验。
+  </div>
+</div>
+
+<!-- ===== NEWS 8 ===== -->
+<div class="section-title">🏭 产业与融资</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag finance">融资</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>3D 生成大模型公司影眸科技完成数亿元新一轮融资，ARR 环比增速超 400%</h3>
+  <div class="source-line">
+    📅 2026-06-23~25 · 来源：每日经济新闻 / 新智元 / 爱范儿（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260623A031O700" target="_blank">view.inews.qq.com</a> · <a href="https://view.inews.qq.com/a/20260625A0341C00" target="_blank">view.inews.qq.com</a>
+  </div>
+  <div class="summary">
+    3D 生成大模型公司影眸科技（Hyper3D.AI）宣布完成新一轮数亿元融资，由凯辉基金、上海国投先导领投。这是一年多内第三轮融资，此前美团龙珠、字节跳动等已入局。公司核心产品 Hyper3D 以 Rodin 为引擎，英伟达也是其用户。新模型上线首月 ARR 环比增速超 400%。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">影眸科技完成数亿元融资</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">一年三轮融资 / ARR 增速 400%+</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">3D 生成 / 世界模型赛道</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">3D 大模型产品化加速</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>影眸科技的融资节奏反映了 3D 生成正在从"有没有用"转向"谁先用好"的竞赛阶段。英伟达作为用户的使用关系，说明 3D 生成大模型已成为 AI 基础设施的一部分。400% 的 ARR 增速在 AI 创业公司中属于顶尖水平，但能否持续取决于 3D 生成的实际落地场景能否从游戏/影视扩展到工业/电商。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag">开源生态</span>
+    <span class="tag domestic">国内视角</span>
+  </div>
+  <h3>中国大模型开源生态全面崛起，改写中西方 AI 竞争规则</h3>
+  <div class="source-line">
+    📅 2026-06-25 19:15 · 来源：CSDN（腾讯新闻）· <a href="https://view.inews.qq.com/a/20260625A09H1L00" target="_blank">view.inews.qq.com</a> · <a href="https://restofworld.org/2026/when-americans-choose-chinese-ai" target="_blank">restofworld.org</a>
+  </div>
+  <div class="summary">
+    DeepSeek、阿里巴巴 Qwen、MiniMax、智谱 GLM 等国产开源模型快速崛起并持续迭代。据 MIT Technology Review 报道，中国开源模型在全球 AI 模型下载量中占比达 17.1%，首次超过美国的 15.86%。越来越多开发者能够下载、修改、部署模型，AI 正以前所未有的速度扩散，开源成为推动这场扩散的核心力量。Airbnb 等美国企业也在使用中国开源模型。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">中国开源模型下载量首超美国</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">中国 17.1% vs 美国 15.86%</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">全球 AI 开发者生态</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">国产模型出海加速</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>这是一个标志性数据点：中国开源模型在全球下载量上首次超越美国，意味着全球开发者的默认起点正在从美国模型转向中国模型。Qwen 系列贡献了最大份额。美国企业（如 Airbnb）使用中国模型的事实，说明开源生态的竞争已超越了地缘政治壁垒。对开发者而言，掌握国产开源模型部署能力正成为核心技能。
+  </div>
+</div>
+
+<div class="news-card">
+  <div class="tag-row">
+    <span class="tag intl">国际视角</span>
+    <span class="tag">产品发布</span>
+  </div>
+  <h3>Apple WWDC 2026 发布 Siri AI，全面重构智能助手</h3>
+  <div class="source-line">
+    📅 2026-06-08~09 · 来源：MacRumors / TechCrunch / CNN / Mashable · <a href="https://www.macrumors.com/2026/06/08/apple-announces-siri-ai" target="_blank">macrumors.com</a> · <a href="https://techcrunch.com/2026/06/08/wwdc-2026-what-to-expect-from-siris-highly-anticipated-revamp-to-apple-intelligence-and-ios-27" target="_blank">techcrunch.com</a>
+  </div>
+  <div class="summary">
+    Apple 在 WWDC 2026 上发布了全面重构的 Siri AI，支持多轮对话、实时世界知识、跨应用个人数据整合、屏幕内容分析等能力。新版 Siri 以独立 App 形式推出，同时深度整合到 iOS 27 / macOS Golden Gate 系统中。Apple 强调"AI 隐私不可妥协"，采用端侧+云端混合处理，用户对话不用于 AI 训练。新一代 Apple Foundation Models 驱动 Apple Intelligence 工具套件。
+  </div>
+  <div class="dimension-grid">
+    <div class="dim-item"><div class="dim-label">核心事件</div><div class="dim-value">Siri AI 全面重构发布</div></div>
+    <div class="dim-item"><div class="dim-label">关键数据</div><div class="dim-value">独立 App + 系统级整合</div></div>
+    <div class="dim-item"><div class="dim-label">影响范围</div><div class="dim-value">全球 10 亿+ Apple 设备用户</div></div>
+    <div class="dim-item"><div class="dim-label">后续动作</div><div class="dim-value">iOS 27 秋季正式推送</div></div>
+  </div>
+  <div class="analysis">
+    <strong>解读：</strong>Siri AI 是 Apple 对 ChatGPT、Gemini 等竞品的正面回应。核心差异化在于"隐私 + 系统级整合"——端侧处理 + 不用用户对话训练模型，这是 Apple 一贯的隐私叙事。但真正的问题是：Siri AI 的智能水平能否追上 GPT/Gemini？从 WWDC 演示来看，多轮对话和跨应用整合是亮点，但推理能力仍需实际体验验证。对 AI 行业而言，Apple 入局意味着 AI 助手从"极客工具"走向"全民普及"。
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>🤖 AI 新闻日报 · 2026-06-26</p>
+  <p>数据来源：腾讯新闻（华尔街见闻 / 央广网 / 金融界 / 财联社 / 每日经济新闻 / 新智元 / CSDN）+ web_search（TechCrunch / CNBC / MacRumors / CNN / MarketWatch / Rest of World / MIT Technology Review）</p>
+  <p>严格 3 天过滤 · 5 维度分析 · 多源融合去重</p>
+  <p style="margin-top:8px;">由 OpenClaw 自动生成 · <a href="https://zxy114.github.io/ai-daily/">zxy114.github.io/ai-daily</a></p>
+</div>
+
+</body>
+</html>
