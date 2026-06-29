@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026-06-28</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d29;
+  --accent: #6c8aff;
+  --accent2: #4fd1c5;
+  --text: #e4e6eb;
+  --muted: #8b8f9a;
+  --border: #2a2d3a;
+  --tag-bg: #252836;
+  --danger: #ff6b6b;
+  --warn: #f0a050;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2.2em;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+.summary-box {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+}
+.summary-box h2 {
+  font-size: 1.3em;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.summary-box li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--accent);
+  font-size: 0.75em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 6px;
+}
+.news-card .tag.international { color: var(--accent2); }
+.news-card .tag.funding { color: var(--warn); }
+.news-card .tag.policy { color: var(--danger); }
+.news-card h3 {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.news-card .meta {
+  font-size: 0.8em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.news-card .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.news-card .meta a:hover {
+  text-decoration: underline;
+}
+.news-card p {
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.news-card .dimensions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.news-card .dim {
+  font-size: 0.85em;
+  color: var(--muted);
+}
+.news-card .dim strong {
+  color: var(--accent2);
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 6 月 28 日（星期六）</div>
+  <div class="subtitle">多源融合 · 腾讯新闻 + 国际媒体 · 3 天严格过滤</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点速览</h2>
+  <ul>
+    <li>美国放行 Anthropic Mythos 5 模型，超 100 家机构获准使用</li>
+    <li>OpenAI 应美国政府要求分阶段发布 GPT-5.6（Sol/Terra/Luna 三版本）</li>
+    <li>广电总局 7 月 1 日起对 AI 微短剧分类管理</li>
+    <li>中央网信办开设"涉 AI 应用乱象举报专区"</li>
+    <li>无界动力获超 2 亿美元天使轮融资，具身智能赛道升温</li>
+    <li>芯片通胀引发全球科技股大跌，苹果上调 Mac/iPad 价格 15%-20%</li>
+    <li>险资加速押注 AI 上市公司，智谱股价较发行价暴涨 913%</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <span class="tag international">国际</span>
+  <span class="tag policy">监管</span>
+  <h3>美国放行 Anthropic Mythos 5 模型，超 100 家机构获准使用</h3>
+  <div class="meta">
+    📅 2026-06-27 · 来源：全天候科技 / NYT / Reuters / CNN<br>
+    <a href="https://view.inews.qq.com/a/20260627A025DS00?scene=news-skill" target="_blank">腾讯新闻链接</a> ·
+    <a href="https://www.nytimes.com/2026/06/26/technology/anthropic-mythos-government-restrictions.html" target="_blank">NYT</a> ·
+    <a href="https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26" target="_blank">Reuters</a>
+  </div>
+  <p>美国商务部长卢特尼克致函 Anthropic，宣布解除对 Claude Mythos 5 模型的出口限制，允许超过 100 家获政府批准的企业和联邦机构访问该模型。此前 6 月 12 日，美国政府以国家安全为由下令 Anthropic 暂停所有外国用户对 Mythos 5 和 Fable 5 的访问。此次解禁标志着双方两周对峙以来最重大的缓和，但 Fable 5 仍未完全恢复。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>美国商务部部分解除 Anthropic 最强模型 Mythos 5 的出口限制</div>
+    <div class="dim"><strong>关键数据：</strong>超 100 家获准机构恢复访问，Fable 5 仍受限</div>
+    <div class="dim"><strong>影响范围：</strong>全球 AI 开发者、企业用户、美国国家安全框架</div>
+    <div class="dim"><strong>后续动作：</strong>Anthropic 将继续与政府合作扩大访问范围，推动 Fable 5 恢复</div>
+    <div class="dim"><strong>解读分析：</strong>这是美国政府与 AI 公司之间监管博弈的标志性转折，表明出口管制从"一刀切"转向"白名单"模式，但审慎的模型审查制度正在成为常态</div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <span class="tag international">国际</span>
+  <span class="tag policy">监管</span>
+  <h3>OpenAI 应美国政府要求分阶段发布 GPT-5.6 系列</h3>
+  <div class="meta">
+    📅 2026-06-26 · 来源：The Guardian / Reuters<br>
+    <a href="https://www.theguardian.com/technology/2026/jun/26/openai-ai-model-release-trump-us-sam-altman-gpt-anthropic-mythos" target="_blank">The Guardian</a> ·
+    <a href="https://www.reuters.com/legal/litigation/openai-defers-public-rollout-gpt56-us-seeks-early-access-frontier-ai-models-2026-06-26/" target="_blank">Reuters</a>
+  </div>
+  <p>OpenAI 宣布 GPT-5.6 系列将分阶段发布，首批仅向美国政府审查通过的"可信合作伙伴"开放。GPT-5.6 包含三个版本：Sol（最强）、Terra（性价比）、Luna（最低成本）。OpenAI 表示 Sol 是其"最强模型"，但未跨过网络安全"关键阈值"。此举与 Anthropic Mythos 事件的监管路径如出一辙，OpenAI CEO Altman 在内部备忘录中称政府"逐客户审批"模式不应成为长期默认。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>GPT-5.6 三版本（Sol/Terra/Luna）应政府要求分阶段发布</div>
+    <div class="dim"><strong>关键数据：</strong>首批仅限美国实体，预计数周后扩展至国际合作伙伴</div>
+    <div class="dim"><strong>影响范围：</strong>全球 ChatGPT 用户、企业 API 客户、AI 开发者生态</div>
+    <div class="dim"><strong>后续动作：</strong>若审查流程顺利，数周后向更广泛用户开放</div>
+    <div class="dim"><strong>解读分析：</strong>继 Anthropic 之后，OpenAI 也接受政府审查的前置部署模式，标志着美国前沿 AI 模型发布已从"先发后管"转向"先审后发"的新范式</div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <span class="tag policy">政策</span>
+  <h3>广电总局 7 月 1 日起对 AI 微短剧分类管理</h3>
+  <div class="meta">
+    📅 2026-06-26 · 来源：南方都市报<br>
+    <a href="https://view.inews.qq.com/a/20260626A0B50R00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>广电总局网络视听司发布《管理提示（AI 微短剧分类分层标准）》，以投资额为划分标准对 AI 微短剧进行分类分层管理，7 月 1 日正式实施。投资额度达到 80 万元及以上的 AI 微短剧纳入重点监管范围。此举标志着 AI 微短剧在经历快速野蛮生长后迎来首个专项政策框架。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>广电总局发布 AI 微短剧分类分层管理标准</div>
+    <div class="dim"><strong>关键数据：</strong>投资额 80 万元为分级管理界限，7 月 1 日实施</div>
+    <div class="dim"><strong>影响范围：</strong>AI 微短剧制作方、平台方、内容创作者</div>
+    <div class="dim"><strong>后续动作：</strong>7 月 1 日起执行，行业将进入规范化运营阶段</div>
+    <div class="dim"><strong>解读分析：</strong>这是国内首个针对 AI 生成内容的分级管理制度，体现了"包容审慎、分类分级"的监管思路，为后续 AI 视频内容监管提供了先行范本</div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <span class="tag policy">监管</span>
+  <h3>中央网信办开设"涉 AI 应用乱象举报专区"</h3>
+  <div class="meta">
+    📅 2026-06-26 · 来源：央广网<br>
+    <a href="https://view.inews.qq.com/a/20260626A03B8D00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>中央网信办举报中心开设"涉 AI 应用乱象举报专区"，专项受理公众举报。受理范围涵盖生成合成内容标识落实不到位、制作发布虚假不实和暴力低俗信息、深度伪造、算法驱动水军等乱象。在生成式 AI 快速渗透短视频等行业的背景下，批量低质内容和深度伪造信息频发，已扰乱市场秩序并消解公众信任。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>中央网信办设专项举报通道，整治 AI 应用乱象</div>
+    <div class="dim"><strong>关键数据：</strong>覆盖内容标识违规、虚假信息、深伪、算法水军等类别</div>
+    <div class="dim"><strong>影响范围：</strong>所有 AI 内容生成平台、短视频平台、社交媒体</div>
+    <div class="dim"><strong>后续动作：</strong>举报受理后将持续推动平台整改和内容治理</div>
+    <div class="dim"><strong>解读分析：</strong>AI 内容治理从"事后处罚"向"全民监督+事前预防"延伸，平台方需建立更完善的内容审核机制，合规成本将上升</div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <span class="tag policy">政策</span>
+  <h3>AI 政策密集落地，全链条协同布局提速</h3>
+  <div class="meta">
+    📅 2026-06-25 · 来源：央广网<br>
+    <a href="https://view.inews.qq.com/a/20260625A09R4A00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>6 月以来，人工智能配套政策集中出台，覆盖技术底座、产业融合、消费场景、内容监管、直接融资全链条。一套协同发力的政策组合拳正式成型，中国 AI 产业告别单一技术攻关阶段，迈入规范化、产业化同步推进的发展周期。深圳市金融稳定发展研究院副院长董耀徽指出，本轮多部委打出政策组合拳，意味着 AI 产业进入系统性推进阶段。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>多部委密集出台 AI 配套政策，覆盖技术-产业-监管全链条</div>
+    <div class="dim"><strong>关键数据：</strong>政策覆盖 5 大维度，6 月集中出台</div>
+    <div class="dim"><strong>影响范围：</strong>中国 AI 全产业链上下游企业</div>
+    <div class="dim"><strong>后续动作：</strong>各地方将跟进制定实施细则和落地方案</div>
+    <div class="dim"><strong>解读分析：</strong>政策从"单项突破"转向"系统集成"，标志着中国 AI 治理体系趋于成熟，产业进入规范发展与创新驱动并重的新阶段</div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <span class="tag funding">融资</span>
+  <h3>无界动力获超 2 亿美元天使轮融资，具身智能赛道升温</h3>
+  <div class="meta">
+    📅 2026-06-29 · 来源：瑞财经<br>
+    <a href="https://view.inews.qq.com/a/20260629A0287A00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>通用具身智能机器人公司无界动力宣布完成超 2 亿美元天使轮融资。本轮由京东关联基金、C 资本、弘毅投资、盛宇投资等联合投资，老股东线性资本、红杉中国等跟投。中科院自动化所博士夏中谱已加盟任联席 CTO。资金将持续用于具身通用大脑研发和技术迭代。这是近期具身智能领域最大规模的天使轮融资之一。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>无界动力完成超 2 亿美元天使轮融资</div>
+    <div class="dim"><strong>关键数据：</strong>融资超 2 亿美元，投资方含京东关联基金、红杉中国、弘毅投资等</div>
+    <div class="dim"><strong>影响范围：</strong>具身智能、人形机器人赛道</div>
+    <div class="dim"><strong>后续动作：</strong>资金用于通用大脑研发，加速技术迭代</div>
+    <div class="dim"><strong>解读分析：</strong>天使轮即获 2 亿美元规模，显示资本对具身智能赛道的极高预期。京东关联基金入局暗示产业协同潜力，机器人"大脑"层正成为新的资本焦点</div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <span class="tag">产业</span>
+  <h3>AWS 在中国推 AI 出海战略，自研芯片+智能体工具链全栈布局</h3>
+  <div class="meta">
+    📅 2026-06-28 · 来源：虎嗅APP<br>
+    <a href="https://view.inews.qq.com/a/20260628A07WH600?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>亚马逊云科技（AWS）在中国市场全面推 AI 出海战略。全球层面，自研芯片 Trainium 负责算力成本，Amazon Bedrock 承接模型生态，Agentic AI 工具链将模型接入企业工作流。AWS 将生成式 AI 重新包装为云计算的下一轮增长曲线，试图通过全栈方案帮助中国企业利用 AI 出海。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>AWS 在中国推出 AI 出海全栈方案</div>
+    <div class="dim"><strong>关键数据：</strong>覆盖芯片-模型-智能体三层架构</div>
+    <div class="dim"><strong>影响范围：</strong>云计算市场、出海企业、AI 基础设施</div>
+    <div class="dim"><strong>后续动作：</strong>AWS 将持续扩大中国企业客户覆盖</div>
+    <div class="dim"><strong>解读分析：</strong>云计算巨头从卖算力转向卖"AI 工作流解决方案"，出海成为中国云厂商和 AI 企业的新增长极</div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <span class="tag">市场</span>
+  <h3>芯片通胀引发全球科技股大跌，苹果上调 Mac/iPad 价格 15%-20%</h3>
+  <div class="meta">
+    📅 2026-06-29 · 来源：香帅的金融江湖 / 每日经济新闻<br>
+    <a href="https://view.inews.qq.com/a/20260629A027FA00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>上周全球科技股大跌，直接触发点是市场重新定价 AI 大规模消耗硬件的溢出效应。苹果宣布将 Mac 和 iPad 价格上调 15%-20%，反映出内存、存储、电力设备等"硅基瓶颈"涨价正向消费端传导。市场开始关注 AI 算力通胀对碳基经济的全面影响，华泰证券指出 A 股科技波动率明显放大。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>AI 硬件消耗引发芯片通胀，全球科技股回调</div>
+    <div class="dim"><strong>关键数据：</strong>苹果产品涨价 15%-20%，全球科技股集体下跌</div>
+    <div class="dim"><strong>影响范围：</strong>全球科技股、消费电子、AI 算力产业链</div>
+    <div class="dim"><strong>后续动作：</strong>市场关注 AI 算力可持续性与硬件成本传导链</div>
+    <div class="dim"><strong>解读分析：</strong>AI 算力需求正从"投资故事"变成"成本现实"，芯片通胀开始挤压消费端利润空间，投资者重新评估 AI 产业链的利润分配格局</div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <span class="tag funding">资本</span>
+  <h3>险资加速押注 AI 上市公司，智谱股价较发行价暴涨 913%</h3>
+  <div class="meta">
+    📅 2026-06-27 · 来源：环球老虎财经<br>
+    <a href="https://view.inews.qq.com/a/20260627A03V6S00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>截至 2026 年一季度末，保险资金投向股票与证券投资基金的余额达 5.9 万亿元，较 2025 年末新增约 2010 亿元。科技成长型资产占比显著提升，AI 成为核心布局主线。截至 6 月 11 日，智谱股价较发行价暴涨 913.08%。险资通过三大路径布局 AI：直接持股、基金投资、产业协同。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>保险资金大规模加仓 AI 板块，头部 AI 企业股价飙升</div>
+    <div class="dim"><strong>关键数据：</strong>险资余额 5.9 万亿元，新增约 2010 亿元；智谱暴涨 913%</div>
+    <div class="dim"><strong>影响范围：</strong>AI 上市公司、保险资金、资本市场</div>
+    <div class="dim"><strong>后续动作：</strong>险资将持续增加 AI 配置比例</div>
+    <div class="dim"><strong>解读分析：</strong>长线资金入场为 AI 行业提供估值支撑，但也引发对 AI 估值泡沫的讨论。智谱 9 倍涨幅反映市场对国产 AI 龙头的高度期待</div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <span class="tag">产业</span>
+  <h3>电子化学品受益 AI 与国产替代，券商建议均衡布局</h3>
+  <div class="meta">
+    📅 2026-06-29 · 来源：每日经济新闻<br>
+    <a href="https://view.inews.qq.com/a/20260629A0267W00?scene=news-skill" target="_blank">腾讯新闻链接</a>
+  </div>
+  <p>华泰证券发布 A 股策略研报指出，上周 A 股科技波动率明显放大，三条线索交叉验证目前或位于阶段性整固：韩股进入"加仓弹药收敛"阶段，苹果涨价引发利润分配担忧，产业趋势面临消化期。但电子化学品板块受益于 AI 算力需求和国产替代双重逻辑，被多家券商看好。国产 AI 芯片产业链持续高景气。</p>
+  <div class="dimensions">
+    <div class="dim"><strong>核心事件：</strong>电子化学品板块受 AI 算力与国产替代双轮驱动</div>
+    <div class="dim"><strong>关键数据：</strong>A 股科技波动率放大，电子化学品成结构性亮点</div>
+    <div class="dim"><strong>影响范围：</strong>A 股科技板块、半导体材料、国产替代产业链</div>
+    <div class="dim"><strong>后续动作：</strong>券商建议均衡布局，关注电子化学品和国产算力</div>
+    <div class="dim"><strong>解读分析：</strong>AI 产业投资逻辑从"模型层"向"上游材料层"延伸，电子化学品作为半导体制造的"隐形冠军"正获得增量关注</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 数据来源：腾讯新闻（全天候科技/南方都市报/央广网/瑞财经/虎嗅/环球老虎财经/每日经济新闻/香帅的金融江湖）+ web_search（The Guardian / NYT / Reuters / CNN）</p>
+  <p>⏱️ 生成时间：2026-06-29 00:53 UTC · 3 天严格过滤（≥ 2026-06-25）</p>
+  <p>Powered by OpenClaw AI 新闻日报</p>
+</div>
+
+</body>
+</html>
