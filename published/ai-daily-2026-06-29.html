@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年6月29日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+.summary-box li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-card .news-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-card h3 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 6 月 29 日</div>
+  <div class="subtitle">多源融合 · 腾讯新闻 + Web Search · 10 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>欧盟批准简化 AI 监管规则，同步禁止 AI 生成色情内容</li>
+    <li>美国对 Anthropic Mythos 5 实施出口管制，引发 AI 安全新博弈</li>
+    <li>DeepSeek 联合北大发布 DSpark 推理加速框架，生成速度提升超 60%</li>
+    <li>中国 AI 大模型调用量连续九周领跑全球，美国份额跌至 33%</li>
+    <li>AI 芯片需求挤兑先进产能，苹果被迫提前转向 1.4nm 工艺</li>
+    <li>国产 AI 芯片 3D 堆叠路线获关注，Wi-Fi 8 集成 AI 推理引擎</li>
+    <li>xAI Grok 4.5 进入 SpaceX 与特斯拉内部测试</li>
+    <li>AWS AI 云服务涨价 20%，检验 AI 需求真实强度</li>
+    <li>Anthropic 指控阿里 Qwen 团队"工业级蒸馏"引发争议</li>
+    <li>国产 AI 芯片盈利弹性释放，6G 建设打开成长空间</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>欧盟批准简化 AI 监管框架方案，新增禁止 AI 生成色情内容条款</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策监管</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 IT之家（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260629A0B5RY00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>欧盟理事会批准"第七次综合立法方案"中的两项法规提案，旨在精简数字立法框架并统一 AI 规则，新增禁止 AI 生成色情内容的条款</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>方案属于欧盟简化议程的一部分，涉及两项独立法规提案</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>所有在欧盟运营的 AI 服务提供商，含非欧盟企业</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>各成员国需在国内法层面落地执行细则</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>欧盟在收紧与放松之间寻求平衡——简化程序降低合规成本，同时新增禁止性条款扩大管控覆盖面，反映"精准监管"思路</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>美国以国家安全为由对 Anthropic Mythos 5 大模型实施出口管制</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策监管</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-06-30 · 🔗 中国青年报（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260630A01SVG00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>美国政府于 6 月 12 日向 Anthropic 发出紧急出口管制指令，要求禁止外国主体访问 Mythos 5 和 Fable 5 两款最新大模型，限制范围覆盖美国境内所有外籍人员</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Anthropic 因此关停了所有客户对这两款模型的访问权限</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球 AI 开发者、企业用户、Anthropic 自身商业运营</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>日本政府正在为获取访问权限展开谈判，G7 财长会议预计将就 AI 模型安全风险达成共识</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是首次以国家安全为由对前沿 AI 模型实施出口管制，标志着 AI 模型本身被纳入战略物资管控范畴，可能引发全球 AI 供应链重构</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>DeepSeek 联合北京大学发布 DSpark 推理加速框架，高并发场景生成速度提升超 60%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">技术突破</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 PConline太平洋科技（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260629A06DT500">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>DeepSeek 团队联合北京大学发布论文《DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation》，创始人梁文锋署名，推出推理加速框架 DSpark</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>在高并发生产场景下生成速度提升超 60%</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>大模型推理基础设施层，直接影响 AI 应用的单位成本与响应延迟</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>该技术有望被集成至 DeepSeek 开源生态中供开发者使用</div>
+      <div class="dim-label">解读分析：</div>
+      <div class="dimension-item">AI 行业叙事正从"拼参数"向"拼效率、拼落地"深刻转折，推理优化是打破 AI 应用落地成本瓶颈的关键路径</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>中国 AI 大模型调用量连续九周领跑全球，美国份额从 72% 跌至 33%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 证券时报 · <a href="https://www.stcn.com/article/detail/3984792.html">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>OpenRouter 最新数据显示，6 月 22-28 日当周全球 AI 大模型总调用量 46.7 万亿 Token，中国模型周调用 20.39 万亿（环比+8.4%），美国模型 4.25 万亿（环比-26.22%），中国连续九周位居全球首位</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>美国模型 Token 请求占比从一年前 72% 降至 33%；全球调用量前三均为中国模型：DeepSeek-V4-Flash（4.66万亿）、小米 MiMo-V2.5（4.48万亿）、MiniMax M3（3.74万亿）；智谱 GLM-5.2 环比增长 66%</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球 AI 模型竞争格局、开发者选型偏好、开源生态发展</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Claude Sonnet 4.6 近四个月来首次跌出榜单，国际模型面临份额压力</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>开发者在处理高频标准化任务时更关注单位成本和响应速度，开源模型和中国模型凭借性价比优势正在重塑全球 AI 模型使用格局</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>AI 芯片需求挤兑先进产能，苹果被迫提前转向台积电 1.4nm 工艺</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片产业</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 PConline太平洋科技（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260629A03V6I00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>全球 AI 芯片需求爆发引发先进制程产能挤兑，苹果被迫调整芯片工艺规划，将 2028 年 A22 Pro 处理器定为首发台积电 1.4nm 制程产品</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>台积电 3nm 工艺产能接近饱和，月产能提升至 17.5 万片仍难以匹配市场需求</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>半导体产业链、消费电子、AI 芯片竞争格局</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>台积电需加速 2nm 和 1.4nm 产线建设以满足多客户需求</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AI 算力需求正在改变半导体行业产能分配优先级，传统大客户如苹果也需让路或调整路线，反映 AI 对实体经济结构性影响加深</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>国产 AI 芯片探索 3D 堆叠"弯道超车"路线</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片产业</span>
+    <span class="tag tag-tech">技术突破</span>
+    <span class="source-badge">📅 2026-06-30 · 🔗 电子工程世界（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260630A025YK00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>"3D+混合键合"技术路线获行业关注，博通预计 2027 年基于 3D 堆叠芯片技术的出货量将大幅增长，"韬定律"概念引发对半导体性能提升新路径的讨论</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>3D 堆叠技术通过垂直互联降低延迟、提升能效，绕过传统晶体管微缩瓶颈</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产 AI 芯片设计商、先进封装产业链</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>3D 堆叠和混合键合将成为后摩尔时代主要性能提升路径</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>在先进制程受限背景下，3D 堆叠为国产 AI 芯片提供差异化竞争路径，有望缩小与国际领先水平的性能差距</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>Wi-Fi 8 集成 AI 推理引擎，端侧 AI 基础设施新赛道开启</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">技术突破</span>
+    <span class="tag tag-chip">芯片产业</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 芯东西（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260629A0ACRH00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>博通与联发科相继发布集成 AI 推理引擎的新一代 Wi-Fi 8 原型芯片，高通在 MWC 2026 上亮出 AI 原生 Wi-Fi 8 平台产品组合，无线通信从"连接协议"升级为端侧 AI 基础设施</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>多家头部芯片厂商同步进入 AI+Wi-Fi 8 赛道，国产高端芯片厂商寻求入场机会</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>无线通信、物联网、边缘 AI 部署、智能家居</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Wi-Fi 8 标准化进程加速，AI 原生通信芯片将成下一代基础设施</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AI 能力下沉至通信芯片层意味着边缘 AI 将无处不在，驱动新一轮智能设备升级周期</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>xAI Grok 4.5 在 SpaceX 和特斯拉内部进入私有测试阶段</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业动态</span>
+    <span class="tag tag-tech">技术突破</span>
+    <span class="source-badge">📅 2026-06-28 · 🔗 新浪看点 · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001907irys.html">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>xAI 宣布 Grok 4.5 已在 SpaceX 和特斯拉内部进入私有测试阶段，从研发转入业务部署，承诺今年剩余时间保持每月发布一个模型版本的节奏</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Grok 4.5 已接入马斯克旗下两家旗舰企业</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>自动驾驶训练、机器人技术研发、企业内部生产力工具</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>后续月度版本将公布 Grok 4.5 公开发布安排与性能基准测试结果</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>马斯克整合旗下企业 AI 资源的协同效应开始显现，垂直整合模式可能成为 AI 落地的新范式</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>AWS AI 云服务涨价 20%，成为检验 AI 需求真实强度的试金石</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 新浪看点 · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001907irys.html">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>AWS 自 7 月起上调核心 AI 云服务（ML GPU 实例 EC2 容量块预留）约 20% 价格，仅针对稀缺 AI 算力做窄范围定价测试，其余云产品价格不变</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>AWS 同比增速反弹至 28%；最新季度营收 376 亿美元，营业利润 142 亿美元；亚马逊计划投入至多 5000 亿美元打造 AI 与 HPC 基础设施，2026 年资本支出约 2000 亿美元</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>云计算市场、AI 基础设施定价、企业 AI 部署成本</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>若涨价后需求不减，将验证 AI 算力需求的刚性特征</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>精准定价测试反映 AWS 对 AI 算力供需失衡的判断——需求弹性极低，涨价是稀缺资源的合理溢价而非盲目提价</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>Anthropic 指控阿里 Qwen 团队"工业级蒸馏"引发行业争议</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业动态</span>
+    <span class="tag tag-policy">政策监管</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 新浪看点 · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001907irys.html">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 向美参议院银行委员会递交信件，指控阿里 Qwen 团队在 45 天内动用 2.5 万个账号、2880 万次交互试图蒸馏其最新旗舰模型 Mythos Preview</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>2.5 万个账号、2880 万次交互、45 天时间窗口</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国际 AI 模型知识产权保护、中美 AI 竞争关系、开源与闭源模型生态</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>技术圈已对指控提出质疑，开发者用数据反驳"工业级攻击"的说法</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当技术壁垒被低成本创新逼近，零和博弈让商业体面荡然无存——这场争议折射出 AI 行业在模型知识产权保护与开放生态之间的深层张力</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 11 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">11</div>
+    <h3>国产 AI 芯片盈利弹性释放，6G 建设打开成长空间</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片产业</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 每日经济新闻（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260629A06H0W00">链接1</a> · <a href="https://view.inews.qq.com/a/20260629A05JC200">链接2</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>上证科创板芯片指数上涨 4.1%，华泰证券认为国产 AI 芯片具备较强成本转嫁能力，盈利弹性有望持续释放；诺基亚与英伟达合作开发基于 AI 的无线接入网络技术用于 6G</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>成分股华海清科上涨 19.3%，西安奕材-U 上涨 13.3%；AI 芯片成本结构中存储占比约 50%，HBM、先进封装、晶圆代工、基板全线上涨构成涨价基础；科创芯片 ETF 易方达规模 46.1 亿元</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产 AI 芯片产业链、6G 通信基础设施、半导体投资</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>6G 网络相比 5G 在带宽和延迟上的飞跃将催生新的 AI 芯片需求</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>国产 AI 芯片正从"可用"迈向"盈利"，涨价逻辑由全产业链成本驱动，6G+AI 融合将打开增量市场空间</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 12 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">12</div>
+    <h3>GPT-5.6 限量发布，国产开源模型海外认可度持续提升</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">技术突破</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-06-29 · 🔗 中信建投研究（新浪看点） · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001907irys.html">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>中信建投研报指出 GPT-5.6 限量发布，同时国产开源模型在海外认可度持续提升，AI 需求增长未暂停</div>
+      <div class="dim-label">关键数据：</div>
+      <div class="dimension-item">2026 年 6 月 AI 模型格局：Claude Opus 4.8 智能指数第一（61.4），GPT-5.6 编码指数榜首（60.2），Claude Fable 5 SWE-Bench Pro 达 80.3%；DeepSeek-V4-Flash 单价 ¥0.27/M，GLM-4.7-Flash 完全免费</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球 AI 模型竞争格局、开发者选型、企业 AI 策略</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>多模型协作成趋势，Claude Opus 4.8 + GPT-5.5 + Gemini 3.1 Pro 组合被推荐为深度研究最优配置</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>国产模型在编码、长文档、网页设计等细分领域已达国际顶尖水平，性价比优势推动全球开发者生态迁移</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 本报告由 AI 新闻日报系统自动生成 | 数据来源：腾讯新闻 · Web Search</p>
+  <p>📅 报告日期：2026-06-29 | 生成时间：2026-06-30 00:23 UTC</p>
+  <p>⚙️ 采集方式：多源融合 · 3 天过滤 · 去重精选</p>
+</div>
+
+</body>
+</html>
