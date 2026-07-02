@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月1日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 1 日（星期二）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>寒武纪成科创板首只万亿市值 AI 芯片股，国产芯片进入新一轮竞争周期</li>
+            <li>美团万亿参数大模型全程国产算力训练，AI 芯片国产升级迎强验证</li>
+            <li>美国解除 Anthropic Mythos/Fable 5 出口管制，全球访问恢复</li>
+            <li>Etched 完成 8 亿美元融资，AI 推理芯片赛道持续升温</li>
+            <li>DeepSeek 联合北大发布 DSpark 论文，创始人梁文锋署名</li>
+            <li>Claude Sonnet 5 发布，Anthropic 模型矩阵再添新成员</li>
+            <li>国产 AI 芯片 3D 堆叠路线受关注，博通预计 2027 年大规模出货</li>
+            <li>Token 调用量连续八周增长，中国调用量七周超美国</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-chip">芯片</span>
+        <span class="tag tag-infra">里程碑</span>
+        <h3><a href="https://view.inews.qq.com/a/20260701A092K100?scene=news-skill" target="_blank">寒武纪成科创板首只万亿元市值个股，国产 AI 芯片进入新一轮竞争周期</a></h3>
+        <div class="meta">
+            <span class="source">每日经济新闻</span> · 2026-07-01 · <a href="https://view.inews.qq.com/a/20260701A092K100?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            6月30日，寒武纪股价一路飙升，A 股总市值盘中突破 1 万亿元，成为国内首家突破万亿市值的 AI 芯片公司，也是科创板首支仅靠 A 股市值达到万亿的上市公司。中芯国际以 1.36 万亿元居榜首，海光信息以 8607 亿元紧随其后。自 2025 年 12 月底以来，寒武纪股价半年多上涨超 80%。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">寒武纪 A 股市值突破 1 万亿元，成科创板首只万亿市值 AI 芯片股</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">市值超 1 万亿元；半年股价涨幅超 80%；海光信息 8607 亿元紧随</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片板块估值体系重塑，中芯国际/海光信息等同步受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">市场关注寒武纪后续产品交付与业绩兑现能力</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">标志着国产 AI 芯片从概念验证进入资本市场定价阶段，竞争周期切换</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-model">大模型</span>
+        <span class="tag tag-chip">国产算力</span>
+        <h3><a href="https://view.inews.qq.com/a/20260701A06Q7N00?scene=news-skill" target="_blank">美团万亿参数大模型全程国产算力训练，AI 芯片国产升级迎来强验证</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻</span> · 2026-07-01 · <a href="https://view.inews.qq.com/a/20260701A06Q7N00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            美团宣布其万亿参数大模型全程使用国产算力完成训练，被视为 AI 芯片国产升级的重要验证节点。科创芯片 ETF 华安(588290) 近 7 天获得连续资金净流入，合计"吸金"5.42 亿元。同期上证科创板芯片指数成分股涨跌互现，格科微领涨 20.01%。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">美团万亿参数大模型全程国产算力训练完成</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">万亿参数规模；科创芯片 ETF 7 日净流入 5.42 亿元</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产算力供应链信心增强，芯片 ETF 及成分股资金流入加速</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">更多大厂可能跟进国产算力训练路线</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国产芯片从"可用"到"好用"的标志性事件，万亿参数训练验证工程化能力</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-chip">国际</span>
+        <h3><a href="https://www.euronews.com/2026/07/01/us-lifts-export-controls-on-powerful-ai-models-anthropic-says" target="_blank">美国解除 Anthropic Mythos/Fable 5 出口管制，全球访问恢复</a></h3>
+        <div class="meta">
+            <span class="source">euronews.com</span> · 2026-07-01 · <a href="https://www.euronews.com/2026/07/01/us-lifts-export-controls-on-powerful-ai-models-anthropic-says" target="_blank">euronews.com</a>
+        </div>
+        <div class="content">
+            美国商务部正式解除对 Anthropic 两款前沿模型 Mythos 5 和 Fable 5 的出口管制。此前 6 月 12 日，美国商务部以国家安全为由发出紧急出口管制指令，要求 Anthropic 禁止所有外国主体访问这两款模型。管制解除后，Anthropic 将恢复全球访问。与此同时，OpenAI 也配合美国政府要求，将 GPT-5.6 限制在有限合作伙伴范围内。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">美国商务部解除 Anthropic Mythos 5 / Fable 5 出口管制</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">管制持续约 19 天（6/12-7/1）；Mythos 5 已向 100+ 美国机构开放</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">全球 AI 开发者可用模型范围扩大；AI 出口管制先例已确立</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Fable 5 仍在审查中；OpenAI GPT-5.6 仍受限发布</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">首次对前沿大模型实施出口管制后又解除，确立了"AI 模型即受控出口品"的监管先例</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-chip">芯片</span>
+        <h3><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-01/doc-iniffqcq3273200.shtml?finpagefr=p_108" target="_blank">Etched 完成 8 亿美元融资，AI 推理芯片赛道再升温</a></h3>
+        <div class="meta">
+            <span class="source">新浪财经</span> · 2026-07-01 · <a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-01/doc-iniffqcq3273200.shtml" target="_blank">finance.sina.com.cn</a>
+        </div>
+        <div class="content">
+            AI 推理芯片初创公司 Etched 累计完成 8 亿美元融资，其中最新一轮为去年 12 月完成的 5 亿美元融资，投后估值 50 亿美元。领投方 Stripes，参投方包括彼得·蒂尔、Jane Street 等。Etched 开发的 Sohu 芯片专为 Transformer 模型设计，将模型架构直接嵌入芯片而非依赖通用 GPU。公司已实现台积电 N4P 工艺 A0 芯片一次性流片成功，团队超 400 人。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Etched 累计融资 8 亿美元，投后估值 50 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">最新一轮 5 亿美元；估值 50 亿；团队 400+ 人；Sohu 芯片 N4P 工艺流片成功</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 推理芯片赛道竞争加剧，ASIC 路线对英伟达 GPU 形成替代预期</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">正与客户验证首款机架级产品，目标 2027 年实现吉瓦级产能</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">专用推理芯片在 Transformer 时代挑战通用 GPU，资本押注 ASIC 路线</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-model">大模型</span>
+        <span class="tag tag-chip">学术</span>
+        <h3><a href="https://view.inews.qq.com/a/20260629A06DT500?scene=news-skill" target="_blank">DeepSeek 联合北京大学发布 DSpark 论文，创始人梁文锋署名</a></h3>
+        <div class="meta">
+            <span class="source">PConline太平洋科技</span> · 2026-06-29 · <a href="https://view.inews.qq.com/a/20260629A06DT500?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            DeepSeek 完成首轮外部融资 510 亿元（投后估值近 4000 亿元）仅十余日后，其团队联合北京大学发布论文《DSpark：Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation》，创始人梁文锋署名。该研究聚焦推测解码与半自回归生成的置信度调度方案，旨在提升大模型推理效率。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">DeepSeek 联合北大发布 DSpark 推测解码论文，梁文锋署名</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">首轮融资 510 亿元；投后估值近 4000 亿元</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">大模型推理效率优化方向获新进展，产学研协同模式受关注</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">预计 DSpark 技术将集成至 DeepSeek 后续模型版本</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">融资后迅速产出学术成果，显示 DeepSeek "资本+研究"双轮驱动的执行力</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-model">模型发布</span>
+        <span class="tag tag-chip">国际</span>
+        <h3><a href="https://llm-stats.com/models/claude-sonnet-5" target="_blank">Anthropic 发布 Claude Sonnet 5，模型矩阵再添新成员</a></h3>
+        <div class="meta">
+            <span class="source">llm-stats.com</span> · 约 2026-06-30 · <a href="https://llm-stats.com/llm-updates" target="_blank">llm-stats.com</a>
+        </div>
+        <div class="content">
+            Anthropic 发布 Claude Sonnet 5 模型，这是其模型矩阵的最新成员。同期，智谱 AI 发布 GLM-5.2（开源），Moonshot AI 发布 Kimi K2.7 Code（编程开源），Cohere 发布 North Mini Code 1.0（轻量开源）。各大模型厂商在 6 月下旬密集迭代，发布周期已压缩至约 50 天。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Claude Sonnet 5 发布；同期 GLM-5.2、Kimi K2.7 Code 等密集发布</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">头部厂商发布周期压缩至约 50 天；多家开源模型同步发布</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">开发者可用模型选择更丰富，开源与闭源路线并行竞争</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">预计各厂商将在 API 定价与能力差异化上展开新一轮竞争</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">模型迭代进入"高频发布"阶段，竞争焦点从参数规模转向综合能力与成本</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-chip">芯片</span>
+        <span class="tag tag-infra">技术趋势</span>
+        <h3><a href="https://view.inews.qq.com/a/20260630A025YK00?scene=news-skill" target="_blank">国产 AI 芯片探索 3D 堆叠"弯道超车"路线</a></h3>
+        <div class="meta">
+            <span class="source">电子工程世界</span> · 2026-06-30 · <a href="https://view.inews.qq.com/a/20260630A025YK00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            在半导体行业，"3D+混合键合"成为确定性发展方向。博通表示预计到 2027 年，基于 3D 堆叠芯片技术的出货量将显著增长。该路线核心观点在于，未来半导体性能提升不仅依赖晶体管几何尺寸微缩，还需通过时间尺度优化来降低延迟、提升能效，为国产 AI 芯片提供了绕过先进制程限制的新路径。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">3D 堆叠+混合键合成为 AI 芯片性能提升的关键路线</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">博通预计 2027 年 3D 堆叠芯片出货量将大幅增长</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产芯片可在非最先进制程下通过 3D 堆叠实现性能追赶</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">国内外厂商加速 3D 堆叠技术验证与量产准备</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">3D 堆叠为受制程限制的国产芯片提供了"弯道超车"的技术路径</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-infra">产业趋势</span>
+        <span class="tag tag-chip">国产替代</span>
+        <h3><a href="https://view.inews.qq.com/a/20260630A05N1Q00?scene=news-skill" target="_blank">Token 调用量连续八周增长，中国调用量七周超美国</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻</span> · 2026-06-30 · <a href="https://view.inews.qq.com/a/20260630A05N1Q00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            在美国加强 GPT-5.6 与 Mythos 5 出口管制背景下，国产模型全球化机遇凸显。Wind 数据显示，AI 产业正从能力竞赛转向真实调用与工程化落地阶段。中银证券指出，Token 调用量连续八周增长、中国调用量七周超美国，反映大模型正深度嵌入编程、办公与行业流程。半导体、中芯概念等板块表现活跃。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Token 调用量连续八周增长，中国调用量连续七周超越美国</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">连续 8 周增长；中国 7 周超越美国</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产模型全球化机遇凸显，半导体板块受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">大模型从能力竞赛转向工程化落地与真实调用</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">出口管制反而加速国产模型替代，Token 调用量成产业落地核心指标</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-chip">国际</span>
+        <h3><a href="https://view.inews.qq.com/a/20260630A01SVG00?scene=news-skill" target="_blank">Mythos 5 禁令折射 AI 时代网络安全新挑战</a></h3>
+        <div class="meta">
+            <span class="source">中国青年报</span> · 2026-06-30 · <a href="https://view.inews.qq.com/a/20260630A01SVG00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            4 月 Anthropic 发布 Mythos 5 和加了安全防护的 Fable 5。6 月 12 日，美国政府以国家安全为由发出紧急出口管制指令。该事件折射出前沿 AI 模型在网络安全领域带来的全新挑战：模型能力越强，被恶意利用的风险越高，传统网络安全框架面临重构。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Mythos 5 出口管制事件引发 AI 网络安全风险讨论</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">管制覆盖美国境外所有机构/个人及境内所有外国主体</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 模型安全评估框架需重构，网络安全行业面临新挑战</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">7月1日管制已解除，但 AI 模型安全审查机制预期将常态化</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">AI 模型出口管制开创先例，网络安全从"防御代码"扩展到"防御模型能力"</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（南方都市报/界面新闻/每日经济新闻/中国青年报/PConline太平洋科技/电子工程世界）+ Web Search（euronews.com/llm-stats.com/新浪财经）</p>
+        <p>🕐 报告时间：2026-07-02 01:00 UTC · 北京时间 09:00</p>
+        <p>⚙️ 生成引擎：OpenClaw AI 新闻日报 · 多源融合 + 3 天时效过滤</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/" target="_blank">AI 新闻日报归档</a></p>
+    </div>
+</body>
+</html>
