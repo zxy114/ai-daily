@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月2日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-product { background: #1f6feb33; color: #79c0ff; border: 1px solid #1f6feb44; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 2 日（星期四）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>快手可灵 AI 落地近 30 亿美元融资，估值 180 亿美元创视频大模型融资纪录</li>
+            <li>Anthropic 自研 AI 芯片进入早期开发，洽谈三星 2nm 制造</li>
+            <li>国产 AI 芯片四小龙"会师"资本市场，燧原科技科创板 IPO 通过</li>
+            <li>美国政府与 Anthropic 监管对峙缓和，解除 Claude Mythos 5 出口管制</li>
+            <li>东方算芯获 123 亿元融资，上海再添神秘 AI 芯片独角兽</li>
+            <li>白宫加速制定 AI 模型发布标准，OpenAI/Anthropic 参与磋商</li>
+            <li>企业 AI 成本失控，花旗、Adobe 等限制员工使用大模型</li>
+            <li>Etched AI 推理芯片预订合同达 10 亿美元</li>
+            <li>VAST 三启万物完成超 10 亿元融资，3D 大模型赛道升温</li>
+            <li>Anthropic Claude Sonnet 5 发布，主打高性价比智能体场景</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-model">视频大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A021XH00?scene=news-skill" target="_blank">快手可灵 AI 落地近 30 亿美元融资，估值 180 亿美元创视频大模型融资纪录</a></h3>
+        <div class="meta">
+            <span class="source">澎湃新闻</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A021XH00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7月2日，快手旗下视频生成大模型可灵 AI 完成近 30 亿美元融资，投后估值约 180 亿美元，创下全球视频大模型公司最大额融资纪录。本轮由 CPE 源峰、国方创投、BlueFive、腾讯、中关村科创等参与，腾讯为联合领投方。3 月 ARR 已达 5 亿美元，标志着可灵 AI 独立商业化进程正式开启。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">快手可灵 AI 独立融资近 30 亿美元，投后估值 180 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">融资金额近 30 亿美元；估值 180 亿美元；ARR 5 亿美元（3 月数据）；创视频大模型融资纪录</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">视频生成赛道估值锚定；字节即梦、生数科技等竞品压力上升</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">快手拟分拆可灵独立上市，融资或进一步扩大至 30-50 亿美元</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">视频生成成为继文本、图像之后大模型商业化新高地，独立运营 + 战略融资成新模板</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-chip">芯片</span>
+        <span class="tag tag-infra">自研</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A0ADH100?scene=news-skill" target="_blank">Anthropic 启动自研 AI 芯片早期工作，洽谈三星 2nm 制造</a></h3>
+        <div class="meta">
+            <span class="source">驱动之家（转 The Information）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A0ADH100?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据 The Information 报道，Anthropic 已启动自研 AI 芯片的早期工作，并与三星电子就潜在制造合作进行洽谈。芯片仍处于规划阶段，Anthropic 正在评估功能定位、算力水平及在服务器/集群中的部署方式，并与多家芯片设计公司接洽，尚未进入详细设计阶段。Anthropic 计划采用三星 2nm 工艺。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Anthropic 启动自研 AI 芯片项目，洽谈三星 2nm 工艺制造</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">制程：三星 2nm；阶段：早期规划/接洽设计公司</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">英伟达 GPU 替代阵营再添大客户；三星代工业务受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">需与多家芯片设计公司对接后进入设计；量产时间预计 2027 年之后</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">Anthropic 加入自研芯片阵营（继 Google、Apple、SpaceX、OpenAI 之后），头部 AI 公司"去英伟达化"已成趋势</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-chip">芯片</span>
+        <span class="tag tag-funding">IPO</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A02BD500?scene=news-skill" target="_blank">国产 AI 芯片四小龙"会师"资本市场，燧原科技科创板 IPO 通过</a></h3>
+        <div class="meta">
+            <span class="source">中国工业报</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A02BD500?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            燧原科技科创板 IPO 申请获通过，拟募资 60 亿元用于第五代和第六代 AI 芯片研发及产业化。至此，摩尔线程、沐曦股份等"国产 AI 芯片四小龙"均完成资本市场对接，国产云端 AI 芯片进入新一轮竞争周期。寒武纪已率先突破万亿市值，海光信息以 8607 亿元 A 股市值紧随其后。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">燧原科技科创板 IPO 通过，国产 AI 芯片四小龙全部登陆资本市场</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">燧原拟募资 60 亿元；寒武纪 A 股市值 1 万亿+；海光信息 8607 亿元</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产云端 AI 芯片竞争格局成型，英伟达中国市场份额面临结构性挤压</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">燧原资金将投入 5/6 代芯片研发；其他三家后续产品迭代提速</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国产替代从"政策驱动"转向"资本+市场双轮驱动"，竞争维度从单点性能转向生态与软件栈</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-policy">政策</span>
+        <span class="tag tag-infra">国际</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A079MU00?scene=news-skill" target="_blank">白宫加速制定 AI 模型发布标准，OpenAI / Anthropic 等参与磋商</a></h3>
+        <div class="meta">
+            <span class="source">国际金融报（转 FT）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A079MU00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据英国《金融时报》报道，美国白宫正加快推进 AI 模型标准体系建设，计划与企业共同制定新一轮自愿性技术准则，规范前沿模型发布节奏与安全评估机制。知情人士称，美国政府与 OpenAI、Anthropic、谷歌等企业深入磋商，拟为具备高级网络安全能力的"前沿模型"设立发布前评估要求。报道预计相关框架最快下周公布。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">白宫加速 AI 模型发布标准制定，企业参与自愿性技术准则磋商</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">最快下周公布；参与方含 OpenAI / Anthropic / Google；范围为"前沿模型"</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">美国前沿 AI 模型发布节奏将受政府评估机制约束；中小厂商可能参照</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">最快下周正式公布框架；后续或将出台配套执行细则</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">从"先禁后放"转向"前置评估"，美国 AI 监管从应急性走向制度化</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-chip">芯片</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A09EOW00?scene=news-skill" target="_blank">东方算芯获 123 亿元融资，上海再添 AI 芯片独角兽</a></h3>
+        <div class="meta">
+            <span class="source">芯东西</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A09EOW00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7月1日，上海高性能大算力 AI 芯片创企东方算芯官方网站和微信公众号上线，宣布获 123 亿元融资，美团、小米、京东参投。东方算芯成立于 2024 年 5 月，总部位于上海张江，在西安、北京、南京、苏州、成都、深圳等地设有分部，团队规模超 500 人。原创"软件定义 + 3D 堆叠近存计算"技术路线。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">东方算芯官宣 123 亿元融资，3D 堆叠近存计算路线获资本验证</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">融资金额 123 亿元；成立 2 年；团队 500+ 人；参投方含美团、小米、京东</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 3D 堆叠/近存计算技术路线获得互联网巨头背书，国产替代生态扩张</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">预计将进入产品发布与客户验证阶段，对标海外近存计算厂商</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">3D 堆叠与近存计算成为国产 AI 芯片差异化竞争焦点，资本快速聚集</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-model">国际</span>
+        <h3><a href="https://thenextweb.com/news/kling-ai-2-billion-kuaishou-spinoff-video" target="_blank">美国解除 Anthropic Claude Mythos 5 出口管制，监管对峙出现转机</a></h3>
+        <div class="meta">
+            <span class="source">TheNextWeb / Bloomberg</span> · 2026-07-02 · <a href="https://thenextweb.com/news/kling-ai-2-billion-kuaishou-spinoff-video" target="_blank">thenextweb.com</a>
+        </div>
+        <div class="content">
+            美国政府与 Anthropic 之间的监管对峙出现转机。美国商务部长致函 Anthropic，宣布解除对 Claude Mythos 5 模型的出口限制，允许超 100 家获政府批准的企业和联邦机构访问该模型。标志着双方两周对峙以来最重大的缓和。但同样遭到封禁的另一旗舰模型 Fable 仍在审查中，Anthropic 表示将于 7 月 1 日开始恢复 Fable 的访问。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">美国解除 Anthropic Claude Mythos 5 出口管制，超 100 家机构获准使用</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">管制持续约 3 周；超 100 家美企/机构获授权；Fable 5 仍在审查</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">全球 Anthropic 用户访问范围扩大；Fable 5 仍是关键变量</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Fable 5 预计 7 月 1 日起逐步恢复访问；OpenAI GPT-5.6 仍受限</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">监管目标从"全面封禁"转向"定向授权"，美国 AI 出口管制进入精细化阶段</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-model">企业应用</span>
+        <span class="tag tag-infra">成本</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A0A5W300?scene=news-skill" target="_blank">企业 AI 成本失控：花旗、Adobe、亚马逊等限制员工使用大模型</a></h3>
+        <div class="meta">
+            <span class="source">IT之家（转 404 Media）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A0A5W300?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据 404 Media 从 Atlassian、Adobe、亚马逊等六家企业获取的泄露 Slack 聊天记录、内部截图、邮件等资料显示，科技、文娱、银行等行业众多企业开始限制员工使用 AI 工具，要求改用能力更低的模型以避免 AI 成本失控。其中至少一家企业 AI 月度开销直接增至三倍。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">多家头部企业限制员工使用高级大模型，控制 AI 成本</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">涉及 Atlassian、Adobe、亚马逊等至少 6 家；至少一家月度成本增至 3 倍</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">企业级 AI 用量管理从"鼓励使用"转向"精细管控"；轻量模型需求增长</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">可能出现企业级 AI 用量监控、模型路由、轻量化产品（如 Claude Sonnet 5、Haiku 系列）需求</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">推理成本上升与 Token 价格博弈进入新阶段，"按需分层使用"成为企业 AI 落地主线</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-chip">芯片</span>
+        <span class="tag tag-funding">商业化</span>
+        <h3><a href="https://tera.fm/episodes/techcrunch/2026-07-01" target="_blank">Etched AI 推理芯片预订合同达 10 亿美元，英伟达替代阵营再添筹码</a></h3>
+        <div class="meta">
+            <span class="source">TechCrunch (via Tera FM)</span> · 2026-07-01 · <a href="https://tera.fm/episodes/techcrunch/2026-07-01" target="_blank">tera.fm</a>
+        </div>
+        <div class="content">
+            英伟达 AI 芯片竞争对手 Etched 宣布，其推理系统搭载的专用芯片已锁定 10 亿美元预订合同。Etched 主打"为 Transformer 模型而生"的 Sohu 芯片，将模型架构直接嵌入芯片，相较通用 GPU 在推理任务上具备数量级性能优势。叠加 8 亿美元累计融资，公司估值已突破 50 亿美元，团队超 400 人。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Etched Sohu 推理芯片锁定 10 亿美元预订合同</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">合同金额 10 亿美元；累计融资 8 亿美元；估值 50 亿+；团队 400+</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">ASIC 推理芯片从概念走向规模商业化；对英伟达 GPU 推理市场份额形成挤压</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">目标 2027 年实现吉瓦级产能；正与客户验证首款机架级产品</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"为模型定制芯片"成为推理侧新范式，ASIC 路线在 Transformer 时代获得算力/成本双优势</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-model">3D大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A04SD500?scene=news-skill" target="_blank">VAST 三启万物完成超 10 亿元 A3 战略轮融资，巨人网络参投</a></h3>
+        <div class="meta">
+            <span class="source">凤凰网</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A04SD500?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7月2日，专注于 AI 3D 大模型与通用世界模型研发的 VAST（三启万物）宣布完成超 10 亿元 A3 战略轮融资，巨人网络参与本轮投资。投资方还涵盖汽车、互联网等领域的产业资本及专业投资机构。这是 VAST 继 A+、A++ 轮融资后，一个月内完成的又一笔大额融资，公司长期聚焦 AI 3D 大模型及通用世界模型。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">VAST 完成超 10 亿元 A3 轮融资，产业资本加速布局 3D 大模型</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">本轮金额 10 亿+；1 个月内连续完成 2 轮大额融资；参投含巨人网络</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">3D/世界模型从研发期进入产品落地期；游戏/影视/汽车产业资本入场</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">VAST 将加速 Tripo 等产品在游戏、3D 内容创作场景的产业化落地</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">3D 大模型成为继视频生成后的下一波资本热点，"产业方+专业机构"联合投资结构成熟</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-model">大模型</span>
+        <span class="tag tag-product">发布</span>
+        <h3><a href="https://tera.fm/episodes/techcrunch/2026-07-01" target="_blank">Anthropic 发布 Claude Sonnet 5，主打高性价比智能体场景</a></h3>
+        <div class="meta">
+            <span class="source">TechCrunch (via Tera FM)</span> · 2026-07-01 · <a href="https://tera.fm/episodes/techcrunch/2026-07-01" target="_blank">tera.fm</a>
+        </div>
+        <div class="content">
+            Anthropic 推出 Claude Sonnet 5，强调更强的智能体能力（agentic capabilities）、更低定价与改进的安全性，定位为 Opus、GPT-5.5、Gemini Pro 的"更经济替代"。同一时期，OpenAI 也在与白宫合作下调整发布节奏，将 GPT-5.6 限制在有限合作伙伴范围内。Anthropic 同步宣布在 7 月 1 日开始恢复 Fable 5 的访问。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Anthropic 发布 Claude Sonnet 5，主打智能体与性价比</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">定位：Opus/GPT-5.5/Gemini Pro 的经济替代；同步：Fable 5 7/1 恢复访问</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">企业智能体场景价格下沉加速；中端模型市场竞争白热化</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Anthropic 模型矩阵扩展至 4-5 个产品线；OpenAI GPT-5.6 受限发布</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">大模型竞争从"最强旗舰"转向"分层矩阵 + 智能体落地"，价格/性能组合成为新战场</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+    <div class="footer">
+        <p>📅 报告日期：2026-07-02 ｜ 数据源：腾讯新闻 + Web Search ｜ 严格 3 天时效过滤</p>
+        <p>🤖 由 OpenClaw 自动生成 ｜ <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-02.html">查看往期</a></p>
+    </div>
+</body>
+</html>
