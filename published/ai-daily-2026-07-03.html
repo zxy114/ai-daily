@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月3日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #d2992233; color: #d29922; border: 1px solid #d2992244; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 3 日（星期五）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>快手可灵AI落地近30亿美元融资，创全球视频大模型单轮融资纪录</li>
+            <li>港股大模型日报：Meta推"Meta Compute"云基础设施，Anthropic洽谈三星定制AI芯片</li>
+            <li>微软25亿美元成立Microsoft Frontier Company，6周内四大云厂砸近90亿做AI部署</li>
+            <li>国产AI算力革命：字节跳动洽谈采购5万颗天数智芯AI芯片</li>
+            <li>中昊芯英将于WAIC 2026首秀国产全自研新一代TPU架构AI芯片"须臾"</li>
+            <li>亚马逊加码端侧AI芯片，AZ3 Pro落地Echo Show/Kindle等终端</li>
+            <li>白宫加速制定AI模型发布标准，FT披露与OpenAI/Anthropic/谷歌磋商</li>
+            <li>企业AI成本失控：Adobe/花旗/Atlassian等限制员工使用大模型</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资纪录</span>
+        <span class="tag tag-model">视频大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A03C3A00?scene=news-skill" target="_blank">可灵AI落地近30亿美元融资，创全球视频大模型单轮最高纪录</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（澎湃/红星/光锥智能/投资界）</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A03C3A00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            快手科技 7 月 2 日晚公告，旗下视频生成大模型可灵AI独立运营主体北京可灵完成总额上限 30 亿美元（约 204 亿元）外部增资，投后估值达 180 亿美元，创下全球视频大模型公司单轮最大额融资纪录。本轮由 CPE 源峰、国方创投、BlueFive、腾讯、中信证券、中关村科学城基金联合领投，BAT（腾讯/阿里云/百度）罕见同场入局，光源资本担任独家财务顾问。快手预计未来 12 个月内启动可灵AI赴港IPO。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">可灵AI 完成近 30 亿美元融资，投后估值 180 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">30 亿美元（约 204 亿元）；估值 180 亿美元；ARR 近 5 亿美元；用户突破 1 亿</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国内 AI 单轮融资规模仅次于 DeepSeek 70 亿美元；BAT 罕见同场押注</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">快手预计 12 个月内启动可灵AI 赴港 IPO；快手对北京可灵股权摊薄至 68.33%</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">视频生成赛道进入独立资本化阶段，IPO 路径明确；中东 BlueFive 资本首次投资中国 AI 视频模型</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-infra">算力基础设施</span>
+        <span class="tag tag-model">国际</span>
+        <h3><a href="https://www.163.com/dy/article/L0UBN5M40534A4SC.html" target="_blank">港股大模型日报：Meta推"Meta Compute"卖算力，Anthropic 洽谈三星定制 AI 芯片</a></h3>
+        <div class="meta">
+            <span class="source">网易（综合 The Information/路透）</span> · 2026-07-03 · <a href="https://www.163.com/dy/article/L0UBN5M40534A4SC.html" target="_blank">163.com</a>
+        </div>
+        <div class="content">
+            7月1日 The Information 披露，Meta 正筹划"Meta Compute"云基础设施项目，计划向外部客户出售富余 AI 算力及模型访问权限，包括托管模型 API 和裸算力租赁两种模式，股价当日涨约 9%，而 AI 云服务商 CoreWeave 和 Nebius 跌约 15%。7月2日 Anthropic 被曝正与三星深度接触，探讨定制 AI 芯片开发。两条消息共同暗示，AI 产业正从"不计成本囤算力"转向精细化运营、重视资本回报的成熟周期。费城半导体指数当日跌 5.45%，闪迪跌 14.13%。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Meta 启动"Meta Compute"卖算力；Anthropic 洽谈三星定制 AI 芯片</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">Meta 股价当日 +9%；CoreWeave/Nebius 跌 15%；费城半导体跌 5.45%，闪迪跌 14.13%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">独立 AI 云服务商承压；半导体板块回调；头部模型厂开启自研芯片</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Anthropic 仍以 AWS Trainium/Google TPU/Nvidia GPU 为主，自研芯片作补充</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">AI 产业算力逻辑从"军备竞赛"转向"精细化运营+垂直整合"，云+芯片双线自研成头部共识</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-funding">企业服务</span>
+        <span class="tag tag-infra">部署竞赛</span>
+        <h3><a href="https://www.reuters.com/business/retail-consumer/microsoft-launches-firm-help-companies-adopt-ai-with-25-billion-2026-07-02" target="_blank">微软25亿美元成立Microsoft Frontier Company，AI部署竞赛进入90亿美元阶段</a></h3>
+        <div class="meta">
+            <span class="source">路透社（中文转引：东方财富）</span> · 2026-07-02 · <a href="https://finance.eastmoney.com/a/202607033792546250.html" target="_blank">finance.eastmoney.com</a>
+        </div>
+        <div class="content">
+            微软 7 月 2 日宣布投入 25 亿美元成立 Microsoft Frontier Company，组建约 6000 人的"前沿部署工程"团队，为企业提供 AI 模型选型、系统集成与落地服务。客户已包括 Unilever、Novo Nordisk 等。AWS 同期推出 10 亿美元 FDE 计划，OpenAI 与 Anthropic 分别以 40 亿美元和 15 亿美元入局。六周内四大云厂合计投入近 90 亿美元，标志 AI 产业从"卖模型"全面转向"卖结果"的部署竞赛。微软表示将学习 Palantir FDE 模式，其 Q1 营收 16.3 亿美元、同比增长 85% 已成为行业参照。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">微软 25 亿美元成立 Microsoft Frontier Company，6000 人 AI 部署团队</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">微软 25 亿/6000 人；6 周内四巨头合计近 90 亿美元；AWS 10 亿、OpenAI 40 亿、Anthropic 15 亿</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">传统 AI 咨询公司空间受挤压；企业 AI 落地路径重新定义</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">客户保留 AI 开发成果所有权，数据无需回传微软</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"卖铲子"到"卖金矿"范式转移，部署能力成为头部云厂第二战场</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产芯片</span>
+        <span class="tag tag-infra">算力</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A0545Y00?scene=news-skill" target="_blank">字节跳动洽谈采购5万颗天数智芯AI芯片，国产推理算力通道打开</a></h3>
+        <div class="meta">
+            <span class="source">钛媒体APP</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A0545Y00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            6 月中旬外媒披露，字节跳动正与天数智芯洽谈采购至少 5 万颗 AI 芯片，主要用于推理任务。本次洽谈涉及天数智芯智铠系列云端推理芯片。字节此前已与寒武纪、摩尔线程、燧原等多家国产 AI 芯片厂商建立合作。国产推理算力从"备选"转为"主用通道"趋势明显，互联网大厂正在以大规模采购为国产 AI 芯片厂注入现金流与工程化反馈。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">字节跳动洽谈采购 5 万颗天数智芯 AI 芯片</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">至少 5 万颗；智铠系列云端推理芯片</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">天数智芯、寒武纪、摩尔线程、燧原等国产芯片厂同步受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">预计国产推理芯片订单将从"试水"走向"主用"；更多大厂跟进</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国产 AI 芯片从"可用"进入"规模化采购"阶段，推理任务成为主战场</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-chip">TPU</span>
+        <span class="tag tag-model">芯片发布</span>
+        <h3><a href="https://finance.sina.cn/stock/jdts/2026-07-03/detail-inifpyyq2337091.d.html" target="_blank">中昊芯英将WAIC 2026首秀国产全自研TPU架构AI芯片"须臾"</a></h3>
+        <div class="meta">
+            <span class="source">新浪财经/人民财讯</span> · 2026-07-03 · <a href="https://finance.sina.cn/stock/jdts/2026-07-03/detail-inifpyyq2337091.d.html" target="_blank">finance.sina.cn</a>
+        </div>
+        <div class="content">
+            中昊芯英宣布将在 2026 世界人工智能大会（WAIC，7月17-20日）首秀国产全自研新一代 TPU 架构 AI 专用芯片"须臾"，并发布泰则 2.0 新一代 AI 服务器及配套解决方案。7 月 19 日公司将在世博中心主办"专用算力时代下 TPU 的创新与共进"分论坛。TPU 路线区别于 GPU 的通用并行架构，专为 AI 推理与训练的高吞吐矩阵运算设计。中昊芯英选择"专芯专用"路径切入 AI 算力市场。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">中昊芯英"须臾"TPU 芯片将于 WAIC 2026 首秀</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">TPU 架构；泰则 2.0 服务器；7 月 17-20 日 WAIC 2026</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片从"GPU 替代"扩展到"TPU 自研"路线</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">7 月 19 日中昊芯英主办分论坛正式发布</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">专用架构与通用 GPU 并行发展，国产算力路线开始分化</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-chip">端侧芯片</span>
+        <span class="tag tag-infra">消费电子</span>
+        <h3><a href="https://finance.eastmoney.com/a/202607033792546250.html" target="_blank">亚马逊加码端侧AI芯片，AZ3 Pro落地Echo Show/Kindle等终端</a></h3>
+        <div class="meta">
+            <span class="source">东方财富/路透社</span> · 2026-07-03 · <a href="https://finance.eastmoney.com/a/202607033792546250.html" target="_blank">finance.eastmoney.com</a>
+        </div>
+        <div class="content">
+            亚马逊设备与服务部门负责人 Panos Panay 7 月 2 日表示，公司正加速为消费电子设备开发端到端自研 AI 芯片，未来将用于 Echo Show、Fire TV、Kindle 等产品。公司 2026 年 Q1 自由现金流暴跌 95% 至 12 亿美元、资本开支却达 442 亿美元（全年预计 2000 亿美元）背景下，亚马逊采用与 AI 芯片 Trainium 相同的 COT 模式开发消费电子处理器，由世芯电子负责后端设计。计划 2027 年启动转型，全面切换后年出货量可达 4000 万颗。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">亚马逊加速自研端侧 AI 芯片，落地 Echo/Kindle/Fire TV</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">2027 年起年出货 4000 万颗；Q1 资本开支 442 亿美元；现金流跌 95%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">冲击高通等传统供应商订单；自研芯片覆盖云/AI/消费电子三大领域</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Alexa+ 等 AI 助手将依托新硬件升级</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">大型科技公司在 AI 军备竞赛中被迫进行成本重构，端侧算力成降本关键</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-model">国际</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A079MU00?scene=news-skill" target="_blank">白宫加速制定AI模型发布标准，FT披露与OpenAI/Anthropic/谷歌深度磋商</a></h3>
+        <div class="meta">
+            <span class="source">国际金融报（转引英国《金融时报》）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A079MU00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据英国《金融时报》7 月 2 日报道，美国白宫正加快推进 AI 模型标准体系建设，计划与相关企业共同制定新一轮自愿性技术准则，以规范前沿模型的发布节奏与安全评估机制。知情人士称，美国政府正与包括 OpenAI、Anthropic 及谷歌在内的 AI 企业展开深入磋商，拟为具备高级网络安全能力的"前沿模型"建立发布前安全评估框架。报道指相关方案最早可能于下周公布。背景是美国 6 月 2 日已签署《促进先进 AI 创新与安全》行政令，并正在 8 月 1 日前完成自愿性框架设计。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">白宫与 OpenAI/Anthropic/谷歌磋商自愿性 AI 模型发布标准</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">参考 6 月 2 日 EO 14409；自愿框架 8 月 1 日前完成；最快下周公布</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">所有具备高级网络安全能力的"前沿模型"将受影响</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">8 月 1 日前完成联邦机构自愿框架设计；白宫最快下周公布新方案</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">特朗普政府从"放手发展"转向"安全评估前置"，但仍坚持自愿原则，与 Anthropic 主张的强制监管形成路线分歧</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-cost">成本控制</span>
+        <span class="tag tag-infra">企业AI</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A0A5W300?scene=news-skill" target="_blank">企业AI成本失控：Adobe/花旗/Atlassian等限制员工使用大模型</a></h3>
+        <div class="meta">
+            <span class="source">IT之家（转引 404 Media）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A0A5W300?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            404 Media 从 Atlassian、Adobe、亚马逊等六家企业获取泄露的 Slack 聊天记录、内部截图、邮件等资料显示，科技、文娱、银行等行业企业正在限制员工使用 AI 工具，要求改用能力更低的大模型以避免 AI 成本失控。至少一家企业 AI 月度开销直接增至三倍。同期特斯拉宣布自 7 月 6 日起对员工 AI 工具支出设置每周 200 美元上限，超出额度需批准，但 xAI 产品测试版不受限。报告显示部分特斯拉工程师此前每周 AI Token 使用成本高达数千美元。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">多家头部企业限制员工使用大模型以控制 AI 成本</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">至少一家企业 AI 月开支增至 3 倍；特斯拉周上限 200 美元；个别工程师周花费数千美元</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">大模型 API 提供方收入模式受挑战；Token 计费成企业管理新课题</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">企业或转向"小模型+分级使用"策略；xAI 借特斯拉通道获得测试反馈</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"能力强 ≠ 性价比"，企业 AI 从"全员旗舰"转向"按需分级"模式</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-chip">先进封装</span>
+        <span class="tag tag-infra">技术趋势</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A02UMZ00?scene=news-skill" target="_blank">下一代AI芯片拼什么？先进封装从晶体管微缩转向散热/HBM4E综合战</a></h3>
+        <div class="meta">
+            <span class="source">半导体行业观察</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A02UMZ00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            随着晶体管密度缩放速度放缓，先进封装已成为 AI 芯片性能扩展的主要途径。圆形中介层限制封装尺寸和晶圆利用率，HBM4E 在提高速度时正面对凸块间距 25 微米以下的良率挑战、2048 个 I/O 通道的信号完整性难题，以及单封装功耗突破 2-3kW 的散热困局。TSMC 与微软展示的硅基微流道冷却方案可将热阻降至传统方案的 1/10 以下。封装物理正反向决定架构选择，先进封装成为 AI 芯片代际更替的主要限制因素。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">先进封装成为 AI 芯片代际更替的关键瓶颈</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">凸块间距 <25μm；HBM4E 2048 I/O；单封装 2-3kW；微流道散热效率 10×</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">芯片设计到云厂商需掌握"架构+封装+散热"完整技术栈</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">TSMC/微软硅基微流道方案工程化；国产厂商跟进先进封装</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">封装散热取代晶体管微缩成为 AI 芯片主要竞争维度，"封装即架构"时代来临</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-chip">AI芯片</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A09EOW00?scene=news-skill" target="_blank">东方算芯123亿融资官宣，美团/小米/京东参投上海AI芯片独角兽</a></h3>
+        <div class="meta">
+            <span class="source">芯东西</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A09EOW00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 1 日，上海高性能大算力 AI 芯片创企东方算芯官方网站和微信公众号上线，正式公开亮相。东方算芯 2024 年 5 月成立，总部上海张江，西安、北京、南京、苏州、成都、深圳设有分部，团队规模超 500 人。公司原创"软件定义 + 3D 堆叠近存计算"技术路线，落地 123 亿元融资，美团、小米、京东等参与投资。该路线与博通 2027 年 3D 堆叠芯片出货量预期相吻合，国产 AI 芯片通过封装创新绕开制程限制路径已显雏形。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">东方算芯 123 亿元融资官宣，互联网大厂集体参投</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">123 亿元；500+ 团队；2024 年 5 月成立；软件定义 + 3D 堆叠近存计算</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片在 3D 堆叠+近存计算路线形成首个明星独角兽</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">产品路线图与博通 2027 年节奏对齐；国产替代从概念走向产品化</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"软件定义 + 3D 堆叠 + 近存计算"组合拳为国产 AI 芯片提供绕开制程限制的具体技术路径</span></div>
+        </div>
+    </div>
+
+    <!-- News 11 -->
+    <div class="news-card">
+        <span class="tag tag-model">商业化</span>
+        <span class="tag tag-infra">行业报告</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A08UZQ00?scene=news-skill" target="_blank">中国AI大模型商业化"落地战"全面打响，上半年竞争激化</a></h3>
+        <div class="meta">
+            <span class="source">央广网</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A08UZQ00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 3 日发布的《中国 AI 大模型商业化报告（2026 年上）》指出，2026 年上半年中国 AI 大模型产业竞争激化，在延续技术竞赛、流量争夺、生态抢滩的同时，全面打响大规模商业化"落地战"，应用前景得以验证，行业泡沫则开始出清。报告由北京第四波科技智库、中关村天成创新研究中心联合发布，对比了百川、智谱、月之暗面、可灵、字节豆包、阿里通义等头部厂商商业化路径。报告认为大模型商业化正从 ToC 流量竞争转向 ToB 行业落地与 ARR 兑现。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">《中国 AI 大模型商业化报告（2026 年上）》发布</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">覆盖百川/智谱/月之暗面/可灵/字节豆包/阿里通义等头部厂商</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">行业从流量战转向落地战；泡沫开始出清</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">头部厂商加速 ToB 行业渗透与 ARR 兑现</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国内大模型从"百模大战"进入"落地验证"阶段，ARR 成为新衡量标准</span></div>
+        </div>
+    </div>
+
+    <!-- News 12 -->
+    <div class="news-card">
+        <span class="tag tag-chip">万亿市值</span>
+        <span class="tag tag-infra">资本</span>
+        <h3><a href="https://view.inews.qq.com/a/20260701A092K100?scene=news-skill" target="_blank">寒武纪成科创板首只万亿市值AI芯片股，国产芯片进入新一轮竞争周期</a></h3>
+        <div class="meta">
+            <span class="source">每日经济新闻</span> · 2026-07-01 · <a href="https://view.inews.qq.com/a/20260701A092K100?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            6 月 30 日，AI 芯片企业寒武纪（SH688256）A 股总市值盘中突破 1 万亿元，成为科创板首只仅靠 A 股市值就达到万亿元的上市公司。中芯国际以 1.36 万亿元（A+H）居榜首，海光信息以 8607 亿元 A 股市值紧随其后。自 2025 年 12 月底以来寒武纪股价半年多上涨超 80%，反映资本市场对国产 AI 芯片进入大规模量产与订单兑现阶段的高预期。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">寒武纪 A 股市值突破 1 万亿元，成科创板首只万亿 AI 芯片股</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">市值 1 万亿元；半年涨幅 >80%；海光 8607 亿元</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片板块估值体系重塑；中芯国际/海光信息等同步受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">市场关注寒武纪后续产品交付与业绩兑现能力</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国产 AI 芯片从概念验证进入资本市场定价阶段，与字节/天数智芯采购潮形成正循环</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（华尔街见闻/国际金融报/IT之家/央广网/每日经济新闻/钛媒体APP/半导体行业观察/芯东西/红星/光锥智能/澎湃新闻/蓝鲨硬科技/观察者网/经纬创投）+ Web Search（路透社/网易/东方财富/新浪财经/Crunchbase/TechStartups/Investment View 投资界）</p>
+        <p>🕐 报告时间：2026-07-04 01:00 UTC · 北京时间 09:00</p>
+        <p>⚙️ 生成引擎：OpenClaw AI 新闻日报 · 多源融合 + 3 天时效过滤</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/" target="_blank">AI 新闻日报归档</a></p>
+    </div>
+</body>
+</html>
