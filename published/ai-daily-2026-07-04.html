@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月4日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #d2992233; color: #d29922; border: 1px solid #d2992244; }
+        .tag-strategy { background: #1f6feb33; color: #79c0ff; border: 1px solid #1f6feb44; }
+        .tag-research { background: #8957e533; color: #d2a8ff; border: 1px solid #8957e544; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 4 日（星期六）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>可灵AI 30亿美元融资深度复盘：估值从200亿降至180亿，对赌5年IPO，「出走」快手背后逻辑</li>
+            <li>OpenAI 提议将 5% 股权捐赠美国主权基金，向"AI 公共化"迈进</li>
+            <li>阿里全面禁用 Claude Code（7/10 生效），中美 AI 供应链冲突升级</li>
+            <li>DeepSeek 高峰时段 API 涨价至 2 倍，高盛：国内大模型竞争从价格战回归理性</li>
+            <li>全球 AI Token 支出指数触顶回落近 20%，企业投资回报出现"互联网泡沫级"信号</li>
+            <li>Anthropic/Google/Salesforce 入局 OpenAI 自研芯片潮，云厂垂直整合加速</li>
+            <li>英伟达开源双塔扩散语言模型，吞吐量提升 2.42 倍，挑战自回归范式</li>
+            <li>Meta 扎克伯格承认 AI Agent 进展慢于预期，但算力投入再加码</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资深度</span>
+        <span class="tag tag-model">视频大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260704A077JU00?scene=news-skill" target="_blank">可灵AI 30亿美元融资深度复盘：估值下调、对赌 IPO、「出走」快手背后</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（国际金融报）</span> · 2026-07-04 · <a href="https://view.inews.qq.com/a/20260704A077JU00?scene=news-skill" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7月4日，国际金融报发布对可灵AI 30亿美元融资的深度复盘。投后估值 180 亿美元较 5 月传闻的 200 亿美元下调 10%，暴露一级市场对估值预期回归理性。本轮 BAT（腾讯/阿里云/百度）罕见同场押注，BlueFive（中东资本）、华策影视、芒果超媒等头部文娱产业方首次战略布局。快手对北京可灵股权摊薄至 68.33%，但要求 5 年内完成 IPO，对赌条款严格。国际金融报认为可灵"出走"是头部大厂子公司独立资本化的标志性事件，但能否扛过 AI 视频赛道即将到来的"硬仗期"仍是核心变量。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">可灵AI 30亿美元融资深度复盘，估值从 200 亿降至 180 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">30 亿美元/180 亿估值/快手持股 68.33%/对赌 5 年 IPO/估值下调 10%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">BAT 罕见同场 + 中东资本 + 文娱产业方入局；视频大模型独立估值体系成型</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">12 个月内启动赴港 IPO；ARR/用户/续费指标成核心考核</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">AI 视频赛道从"叙事溢价"回归"业绩兑现"，头部独角兽估值锚向 ARR 与续费</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-policy">主权基金</span>
+        <span class="tag tag-strategy">OpenAI</span>
+        <h3><a href="https://www.ft.com/content/45cba1f6-7e2e-4f0a-9b1a-3a1e6c2a3f4b" target="_blank">OpenAI 提议 5% 股权捐赠美国主权基金，AI 公共化方案落地</a></h3>
+        <div class="meta">
+            <span class="source">路透社 / 金融时报</span> · 2026-07-03 · <a href="https://techstartups.com/2026/07/02/openai-proposes-giving-the-u-s-government-a-5-stake-as-ai-companies-face-growing-scrutiny-ft-reports/" target="_blank">techstartups.com</a>
+        </div>
+        <div class="content">
+            OpenAI CEO Sam Altman 提议将公司 5% 股权（约 40 亿美元）转移到一个类似"阿拉斯加永久基金"的主权基金架构，让美国公众分享 AI 繁荣的财务收益。提议发生在 OpenAI 接受白宫 GPT-5.6 Sol/Terra/Luna 模型分阶段发布、5% 股权换"政府信任"的时间节点。据 FT 报道，Anthropic、谷歌、Meta 可能被纳入同类型方案。方案若落地，将重塑美国 AI 行业 IPO 估值方式：监管方成为利益相关者，但企业的"政府通道"溢价也水涨船高。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">OpenAI 提议 5% 股权捐赠美国主权基金，AI 公共化</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">5% 股权 ≈ 40 亿美元；估值锚定 8000 亿美元；Anthropic/Google/Meta 或同被纳入</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">美国 AI 行业 IPO 估值模型重构；监管机构成利益相关方</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">白宫与 AI 头部公司正在磋商自愿性框架（最快下周公布）</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"5% 换政府通道"成新议价模式：企业让渡股权换监管确定性，AI 资本化进入"国资时代"</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-policy">中美脱钩</span>
+        <span class="tag tag-strategy">模型封禁</span>
+        <h3><a href="https://wallstreetcn.com/articles/3776185" target="_blank">阿里全面禁用 Claude Code，7月10日起生效，中美 AI 供应链冲突升级</a></h3>
+        <div class="meta">
+            <span class="source">华尔街见闻早餐 FM-Radio</span> · 2026-07-04 · <a href="https://wallstreetcn.com/articles/3776185" target="_blank">wallstreetcn.com</a>
+        </div>
+        <div class="content">
+            据媒体披露，阿里巴巴内部下发通知，将于 7 月 10 日起全面禁用 Anthropic 的 Claude Code，认定其存在"后门风险"。此决定是 6 月以来中美 AI 冲突系列升级的一环：Anthropic 指控中国厂商蒸馏攻击、阿里起诉美国国防部、Claude Code 后门事件曝光，企业级模型采购进入"国产替代"加速期。同期中国大厂普遍推进自研模型对 Anthropic 的替代方案，Anthropic 在中国市场的企业级业务空间被显著压缩。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">阿里全面禁用 Claude Code，7 月 10 日生效</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-label"><span class="dim-value">禁用范围：阿里全集团；时间：7/10 起；同期起诉美国国防部</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">Anthropic 中国企业级市场承压；国产大模型在头部互联网企业渗透加速</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">其他中国大厂可能跟进禁用；国产 AI 编程工具需求激增</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">中美 AI 博弈从"技术脱钩"走向"产品脱钩"，企业级市场先于消费级分裂</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-strategy">价格理性</span>
+        <span class="tag tag-model">大模型</span>
+        <h3><a href="https://wallstreetcn.com/articles/3776185" target="_blank">DeepSeek 高峰 API 涨价至 2 倍，高盛：国内大模型竞争回归理性</a></h3>
+        <div class="meta">
+            <span class="source">华尔街见闻（转引高盛）</span> · 2026-07-04 · <a href="https://wallstreetcn.com/articles/3776185" target="_blank">wallstreetcn.com</a>
+        </div>
+        <div class="content">
+            DeepSeek 自 7 月中旬起实施高峰时段 API 价格上调至非高峰 2 倍。高盛报告认为这反映需求旺盛与算力趋紧，推动行业定价回归理性。报告指出行业重心正从"激进价格战"转向"成本控制 + 算力效率 + 商业化能力"，组织精简、迭代迅速的厂商将更具优势，激进价格竞争或进入尾声。报告同时提到阿里通义、字节豆包、智谱等也正调整定价策略，模型层货币化进入"分层计费"阶段。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">DeepSeek 高峰时段 API 涨价至 2 倍，国内大模型价格战降温</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">高峰 2 倍非高峰价；高盛认为"价格竞争或进入尾声"</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">字节/阿里/智谱等可能跟随；模型层货币化从"获客"转向"变现"</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">头部厂商重点投入算力效率与商业化能力建设</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"卷参数→卷价格→卷效率"三段式演进，国内大模型从抢市场转向追求 ROI</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-cost">投资回报</span>
+        <span class="tag tag-infra">泡沫信号</span>
+        <h3><a href="https://wallstreetcn.com/articles/3776185" target="_blank">全球 AI Token 支出指数 5 月触顶后回落近 20%，互联网泡沫级警示信号</a></h3>
+        <div class="meta">
+            <span class="source">华尔街见闻</span> · 2026-07-04 · <a href="https://wallstreetcn.com/articles/3776185" target="_blank">wallstreetcn.com</a>
+        </div>
+        <div class="content">
+            全球 AI 关键指标 LLM Token Expenditure Index 于 2026 年 5 月触顶后回落近 20%。该指数是价格与使用量交互的综合结果，作为"边际支付意愿"的代理变量。乐观方归因于 Token 价格超 90% 降幅推动需求结构调整；悲观方则警示 AI 投资与销售间 46% 增长缺口，已超互联网泡沫时期 2000 年的水平，支付意愿或近上限。同期特斯拉宣布对工程师 AI Token 支出设每周 200 美元上限，Atlassian 月度 AI 开支从 500 万飙至 1500 万美元，企业级 Token 预算管理进入精细化时代。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">全球 AI Token 支出指数 5 月触顶后回落近 20%</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">指数回落 20%；AI 投资-销售缺口 46%；超 2000 年互联网泡沫水平</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">大模型 API 提供方收入增速可能放缓；企业级"按需分级"模式成为主流</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Token 价格或二次上调；小模型/开源模型渗透率提升</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"增长故事"让位于"单位经济性"，AI 估值锚向"可计费用户/续费"等现金流指标</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-chip">自研芯片</span>
+        <span class="tag tag-infra">垂直整合</span>
+        <h3><a href="https://wallstreetcn.com/articles/3776185" target="_blank">Anthropic 洽三星定制芯片 + OpenAI 算力自给：头部模型厂集体向上游延伸</a></h3>
+        <div class="meta">
+            <span class="source">华尔街见闻（综合 The Information/路透）</span> · 2026-07-04 · <a href="https://wallstreetcn.com/articles/3776185" target="_blank">wallstreetcn.com</a>
+        </div>
+        <div class="content">
+            7 月 2 日起 The Information、彭博、路透等先后披露：Anthropic 正在与三星深度接触洽谈定制 AI 芯片开发，对标 OpenAI 与博通、台积电的定制芯片方案；OpenAI 已锁定首个自研推理芯片 2026 下半年流片。Anthropic 仍以 AWS Trainium/Google TPU/Nvidia GPU 为主，自研芯片定位"补充"而非"替代"。市场解读：模型厂自研芯片不只是压降英伟达采购成本，更要让模型架构与底层硅片深度协同，在推理效率、能耗与单位经济性上取得跨层突破。叠加 Together AI 7/1 完成 8 亿美元 C 轮（估值 83 亿），Crusoe 7/2 谈 30 亿美元新一轮，AI 算力基础设施投资持续加码。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Anthropic 洽三星 + OpenAI 自研芯片 + Crusoe 30 亿 + Together AI 8 亿</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">Together 8 亿美元 C 轮/估值 83 亿；Crusoe 谈 30 亿；OpenAI 推理芯片下半年流片</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">英伟达客户结构分化；模型厂垂直整合加速；半导体供应链重构</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Anthropic 自研芯片 2027 流片预期；OpenAI 与博通/台积电合作量产</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"模型-芯片"协同设计成为头部共识，云厂-芯片厂-模型厂三角关系深度重塑</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-research">开源模型</span>
+        <span class="tag tag-model">架构创新</span>
+        <h3><a href="https://www.tmtpost.com/8052685.html" target="_blank">英伟达开源 Nemotron 双塔扩散语言模型，吞吐量提升 2.42 倍</a></h3>
+        <div class="meta">
+            <span class="source">钛媒体（Edge AI Daily）</span> · 2026-07-04 · <a href="https://www.tmtpost.com/8052685.html" target="_blank">tmtpost.com</a>
+        </div>
+        <div class="content">
+            英伟达 2026 年 7 月开源 Nemotron-Labs-TwoTower 双塔扩散语言模型，采用 60B 参数双塔架构（上下文塔 + 去噪塔），通过并行生成机制突破传统自回归模型逐 Token 生成的限制。在保留 98.7% 原版生成质量的前提下，将文本生成吞吐量提升 2.42 倍。综合基准测试中 MMLU 78.56→78.24、ARC-Challenge 91.72→92.66，代码和数学任务有小幅下滑但常识推理稳定。模型采用 NVIDIA Nemotron Open Model License 允许商用，可能推动大模型从纯自回归转向"自回归+扩散"混合架构，推理服务提供商单位成本可大幅降低。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">英伟达开源 Nemotron 双塔扩散语言模型</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">60B 参数双塔；吞吐量 +2.42 倍；质量保留 98.7%；商用许可</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">推理服务商单位成本下降；边缘设备 AI 交互体验升级</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">学界跟进混合架构；DeepSeek/阿里等可能推出对标方案</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"逐字蹦"的自回归范式遭遇范式挑战，扩散语言模型在吞吐量场景有结构性优势</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-strategy">Meta</span>
+        <span class="tag tag-model">AI Agent</span>
+        <h3><a href="https://www.tmtpost.com/8052685.html" target="_blank">扎克伯格承认 AI Agent 进展慢于预期，Meta 同时加码算力与"应用工厂"</a></h3>
+        <div class="meta">
+            <span class="source">钛媒体（Edge AI Daily）</span> · 2026-07-04 · <a href="https://www.tmtpost.com/8052685.html" target="_blank">tmtpost.com</a>
+        </div>
+        <div class="content">
+            Meta CEO 扎克伯格在内部会议坦言 AI Agent 过去四个月进展慢于预期，预计成果需 3-6 个月才能显现。同期 Meta AI 负责人 Alexandr Wang 透露代号"西瓜"的新模型在基准测试上已追平 OpenAI 的 GPT-5.5，且算力投入比上一代高一个数量级。Meta 2026 年资本支出 1250-1450 亿美元（较原计划上调），其中与 CoreWeave 算力租赁协议累计超 350 亿美元。同时 Meta 通过"应用工厂"策略批量推出 AI 原生应用（Pocket/Vibes/Edits/Arena/Forum），试图用应用层突破对冲智能体层滞后。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">扎克伯格承认 Meta AI Agent 进展慢，"西瓜"新模型追平 GPT-5.5</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">Meta 资本支出 1250-1450 亿美元；CoreWeave 协议 350+ 亿美元；裁员 8000 人（10%）</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI Agent 商业化预期全面下修；应用层与算力层成新战场</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Meta Compute 卖算力 + Pocket/Edits 等 AI 应用矩阵持续铺开</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"Agent 不能等，先用应用层 + 算力层变现"成头部共识，AI 行业进入"两层夹击"模式</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-strategy">国际合作</span>
+        <h3><a href="https://aitoolsrecap.com/Blog/ai-news-july-3-2026" target="_blank">Five Eyes 联合警告：AI 网络攻击能力逼近临界点</a></h3>
+        <div class="meta">
+            <span class="source">unrot.co（综合 Five Eyes 联合声明）</span> · 2026-07-04 · <a href="https://unrot.co/blogs/today-top-10-ai-news-july-4-2026" target="_blank">unrot.co</a>
+        </div>
+        <div class="content">
+            7 月 4 日，Five Eyes 情报联盟（美/英/加/澳/新西兰）发布罕见联合公开声明，警告各国政府与企业领袖：具备发起复杂网络攻击能力的前沿 AI 模型正以"超出多数安全团队规划速度"逼近能力临界点。声明与 6 月 12 日美国商务部令 Anthropic 暂停 Fable 5/Mythos 5 外国用户访问、6 月 26 日 OpenAI GPT-5.6 分阶段发布形成事件链。声明暗示"自愿性"框架正被多边监管共识加速替代，Anthropic 主张的强制监管路线获得主要盟友支持。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Five Eyes 联合警告 AI 网络攻击能力逼近临界点</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">Five Eyes 五国联合声明；声明日期 2026-07-04</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">跨国 AI 安全治理框架加速成型；自愿原则可能转向多边强制</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">8/1 联邦自愿框架截止；G7 后续会议可能纳入 AI 安全标准</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">AI 监管从"美国单边主导"转向"盟友协同"，Anthropic 主张的强制路线获国际背书</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-research">学术范式</span>
+        <span class="tag tag-model">世界模型</span>
+        <h3><a href="https://www.tmtpost.com/8052685.html" target="_blank">北京智源 Orca 论文：从"预测下一个 Token"转向"预测下一个物理状态"</a></h3>
+        <div class="meta">
+            <span class="source">钛媒体（Edge AI Daily）</span> · 2026-07-04 · <a href="https://www.tmtpost.com/8052685.html" target="_blank">tmtpost.com</a>
+        </div>
+        <div class="content">
+            北京智源人工智能研究院（BAAI）2026 年 6 月发布 Orca 论文，提出从"预测下一个 Token/帧/动作"转向"预测下一个物理状态"的 AI 新范式，旨在构建通用世界基础模型，实现从统计模仿到物理理解的跃迁。Orca 采用"无意识学习 + 有意识学习"框架，通过 125000 小时视频训练，在零动作监督下实现机器人任务 36.6% 成功率，比专业基线高近 10 个百分点。该范式若验证成功可能影响万亿美元算力基础设施投资方向，为具身智能和机器人产业提供新突破点。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">BAAI Orca 论文提出"预测下一个物理状态"新范式</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">125000 小时视频；机器人任务 36.6% 成功率；零动作监督</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">具身智能/机器人产业；算力基础设施投资逻辑面临重构</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">学界跟进实验；BAAI 持续开源扩展</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">从"语言 AI"到"物理 AI"是下一波范式跃迁，Orca 给出可验证的中国方案</span></div>
+        </div>
+    </div>
+
+    <!-- News 11 -->
+    <div class="news-card">
+        <span class="tag tag-funding">数据中心</span>
+        <span class="tag tag-infra">AI 基建</span>
+        <h3><a href="https://siliconangle.com/2026/07/03/ai-data-center-builder-crusoe-reportedly-raising-3b-30b-valuation" target="_blank">Crusoe 谈 30 亿美元新一轮，AI 数据中心建设进入"工厂化"</a></h3>
+        <div class="meta">
+            <span class="source">SiliconANGLE（彭博）</span> · 2026-07-03 · <a href="https://siliconangle.com/2026/07/03/ai-data-center-builder-crusoe-reportedly-raising-3b-30b-valuation" target="_blank">siliconangle.com</a>
+        </div>
+        <div class="content">
+            AI 数据中心建设商 Crusoe 正谈判 30 亿美元新轮融资，估值有望从 100 亿升至 300 亿美元（约 3 倍）。Crusoe 已签约 4.9 吉瓦算力产能，pipeline 超 40 吉瓦；为 OpenAI 在德州建设 1.2 吉瓦旗舰集群，为 Meta 提供德州/密苏里两地数据中心。公司 3 月开设预制模块化工厂，将数据中心建设周期从"年"压缩到"月"。Crusoe 估值飙升反映市场对"AI 工厂化建设"赛道的高预期，叠加 Together AI 7/1 完成 8 亿美元 C 轮（估值 83 亿，由 Aramco Ventures 领投），AI 基础设施投资仍处加码期。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Crusoe 谈 30 亿美元新一轮，估值 300 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">30 亿美元/估值 300 亿/4.9GW 算力/40GW pipeline/OpenAI/Oracl/Meta 客户</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 基础设施建设方成"卖水人"赛道；模块化数据中心成新主流</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Crusoe 工厂扩产；其他 AI 数据中心创业公司跟进</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"算力过剩"叙事被数据反驳，AI 数据中心仍是稀缺资源，建厂能力是下一个分水岭</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（华尔街见闻/国际金融报/钛媒体/极客公园/红星新闻/华夏时报/光源资本）+ Web Search（路透社/华尔街见闻/SiliconANGLE/unrot.co/techstartups.com/Edge AI Daily）</p>
+        <p>🕐 报告时间：2026-07-05 01:00 UTC · 北京时间 09:00</p>
+        <p>⚙️ 生成引擎：OpenClaw AI 新闻日报 · 多源融合 + 3 天时效过滤</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/" target="_blank">AI 新闻日报归档</a></p>
+    </div>
+</body>
+</html>
