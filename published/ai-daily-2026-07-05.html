@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月5日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #8957e533; color: #d2a8ff; border: 1px solid #8957e544; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #d2992233; color: #d29922; border: 1px solid #d2992244; }
+        .tag-strategy { background: #1f6feb33; color: #79c0ff; border: 1px solid #1f6feb44; }
+        .tag-research { background: #8957e533; color: #d2a8ff; border: 1px solid #8957e544; }
+        .tag-global { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-product { background: #23863633; color: #56d364; border: 1px solid #23863644; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 5 日（星期日）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>可灵AI 30亿美元融资完整披露：BAT 罕见同场 + 中东资本，估值 180 亿美元，5 年 IPO 对赌</li>
+            <li>白宫加速制定 AI 模型发布标准，最快下周公布，与 OpenAI/Anthropic/Google 深度磋商</li>
+            <li>企业 AI 成本失控：花旗/Adobe/Atlassian 限制员工使用大模型，"按需分级"成新主流</li>
+            <li>火山引擎豆包日均 Token 调用量 180 万亿，MaaS 份额 49.5%，中国公有云每两个 Token 一个来自火山</li>
+            <li>华为吃 43%、寒武纪抢 11%：2026 国产 AI 芯片产能"饥饿游戏"全面展开</li>
+            <li>OpenAI 提议 5% 股权捐赠美国主权基金，AI 公共化方案引发全球关注</li>
+            <li>字节跳动洽购天数智芯 5 万颗推理芯片，国产算力替代加速</li>
+            <li>Anthropic 估值或达 9000 亿美元，融资 650 亿美元反超 OpenAI</li>
+            <li>新华社：中国推动 AI 产品"出海"惠及全球，数字经济大会展示成果</li>
+            <li>Fable 5 解禁后 Anthropic 签下"前沿 AI 治理公约"，自愿框架向多边强制过渡</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-model">视频大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260705A08RSP00" target="_blank">可灵AI 30 亿美元融资完整披露：BAT 罕见同场 + 中东资本，估值 180 亿美元</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（澎湃新闻/蓝鲨硬科技/财联社综合）</span> · 2026-07-03 / 2026-07-05 · <a href="https://view.inews.qq.com/a/20260703A021XH00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            快手旗下视频生成大模型可灵 AI 完成近 30 亿美元（约 204 亿元）外部增资，投后估值 180 亿美元，创下全球视频大模型公司单笔融资最高纪录。本轮由 CPE 源峰、国方创投、BlueFive、腾讯、中信证券、中关村科学城基金（联合国科投资）联合领投，阿里云、百度罕见同场入局。快手对北京可灵股权摊薄至 68.33%，并要求 5 年内完成 IPO。BAT 三巨头在 AI 视频赛道同场押注，反映国内头部互联网公司对"AI 视频 = 下一代流量入口"的共识；可灵"出走"快手成为头部大厂子公司独立资本化的标志性事件。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">可灵AI 30 亿美元融资完整披露，BAT 罕见同场 + 中东资本 BlueFive 入局</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">30 亿美元/180 亿估值/快手持股 68.33%/BAT 同场/对赌 5 年 IPO</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">视频大模型独立估值体系成型；中东资本首次入局中国视频 AI 赛道</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">12 个月内启动赴港 IPO；ARR/续费成核心考核</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">AI 视频赛道从"叙事溢价"回归"业绩兑现"，BAT 抱团押注意味行业进入"集团军作战"阶段</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-strategy">白宫</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A079MU00" target="_blank">白宫加速制定 AI 模型发布标准，最快下周公布</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（国际金融报/金融时报综合）</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A079MU00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据英国《金融时报》披露，美国白宫正加快推进 AI 模型标准体系建设，计划与相关企业共同制定新一轮自愿性技术准则，规范前沿模型的发布节奏与安全评估机制。知情人士称，白宫正与 OpenAI、Anthropic、Google 深入磋商，拟为具备高级网络安全能力的"前沿模型"建立发布前评估机制。该方案与特朗普 7/1 签署的"AI 网络安全与前沿模型框架"行政令形成配套——8/1 前各联邦机构须设计出开发者"自愿参与"的前置沟通框架。Anthropic 在 Fable 5 解禁谈判中已部分接受该框架条款。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">白宫加速制定 AI 模型发布自愿性技术标准</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">最快下周公布；8/1 自愿框架截止；OpenAI/Anthropic/Google 参与磋商</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">美国前沿 AI 模型发布节奏受政府前置评估约束</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">8/1 联邦自愿框架截止；G7 与欧盟 AI 法案衔接</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"自愿→半强制"已成美国 AI 监管新范式，Fable 5 事件证明行政令+框架配合具备实质约束力</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-cost">企业 ROI</span>
+        <span class="tag tag-strategy">模型分级</span>
+        <h3><a href="https://view.inews.qq.com/a/20260702A0A5W300" target="_blank">企业 AI 成本失控：花旗/Adobe/Atlassian 限制员工使用大模型</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（IT 之家 / 404 Media） · 交叉验证：CNBC</span> · 2026-07-02 · <a href="https://view.inews.qq.com/a/20260702A0A5W300" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            404 Media 从 Atlassian、Adobe、亚马逊等六家企业获取的泄露 Slack 聊天记录、内部后台截图显示，科技、文娱、银行等多行业企业正限制员工使用 AI 工具，要求改用能力更低的大模型以避免成本失控——其中至少一家企业 AI 月度开销直接增至三倍。同期 CNBC 报道 Uber 已对部分 AI 工具实施月度分级配额，基础档 1500 美元/月，员工可申请更高档。该趋势与 LLM Token 支出指数 5 月触顶后回落 20% 一致，标志企业级 AI 消费从"放养"进入"精细化预算管理"阶段。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">多家企业限制员工使用大模型以控制 AI 成本</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">Atlassian 月度 AI 开支从 500 万→1500 万美元；Uber 基础档 1500 美元/月</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">企业级 AI 用量与开支进入"分级配额 + 模型路由"时代</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">"模型路由"(routing) 工具需求激增；中小模型渗透率提升</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"前沿模型只在必要时调用"成新共识，企业 AI 投资从"普惠"转向"按需付费"</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-model">国内大模型</span>
+        <span class="tag tag-infra">MaaS</span>
+        <h3><a href="https://view.inews.qq.com/a/20260705A08LTF00" target="_blank">豆包大模型日均 Token 调用量 180 万亿，火山引擎 MaaS 份额 49.5%</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（财联社 / 科创板日报）</span> · 2026-07-05 · <a href="https://view.inews.qq.com/a/20260705A08LTF00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            火山引擎夏季 Force 原动力大会披露：豆包大模型日均 Token 调用量突破 180 万亿，过去一年增长超 10 倍；在中国公有云 MaaS 市场，火山引擎以 49.5% 份额占据近半壁江山，中国公有云上每两个 Token 消耗就有一个来自火山引擎。该数据与全行业 Token 支出指数回落形成鲜明对比，反映 MaaS 头部集中化加速——中小企业调用集中向豆包/通义/DeepSeek 等头部模型，模型层"赢家通吃"格局初步形成。火山引擎正与阿里云、华为云在政企客户中展开直接竞争。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">豆包大模型日均 Token 调用量 180 万亿，火山引擎 MaaS 份额近半</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">180 万亿 Token/日；同比增长 10 倍；MaaS 份额 49.5%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">中国 MaaS 市场"赢家通吃"加速；阿里云/华为云承压</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">字节持续扩大推理算力采购；模型 API 价格或继续下调</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">Token 总量增长 vs 指数回落：增量来自头部模型集中，存量中小模型承压</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产芯片</span>
+        <span class="tag tag-infra">产能争夺</span>
+        <h3><a href="https://view.inews.qq.com/a/20260705A032KJ00" target="_blank">华为吃 43%、寒武纪抢 11%：2026 国产 AI 芯片产能"饥饿游戏"</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（钛媒体）</span> · 2026-07-05 · <a href="https://view.inews.qq.com/a/20260705A032KJ00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            钛媒体披露 2026 国产 AI 芯片市场份额：华为昇腾拿下 43%，寒武纪 11%，天数智芯、燧原、摩尔线程等共分剩余份额。报告指 2026 年深圳某 AI 芯片公司 CEO 把办公桌搬到中芯南方工厂旁的快捷酒店里"驻场抢产能"。行业普遍面临"软件栈已调通但流片排期到 Q4"的窘境，推理芯片供给侧成为 AI 公司最核心瓶颈。互联网大厂在 2026 加速拥抱国产芯片：字节已与天数智芯洽谈 5 万颗 AI 芯片采购；阿里、百度、腾讯加大推理侧国产化比例。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">华为/寒武纪主导国产 AI 芯片市场，产能成为最大瓶颈</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">华为 43% / 寒武纪 11% / 其他 46%；字节拟采购天数智芯 5 万颗</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">互联网大厂推理侧全面国产化；中小芯片公司面临"产线排队"</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">中芯/华虹产能持续扩产；更多芯片公司转向"软件先行"策略</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">国产替代从"能用"迈向"用得起/排得上"，产能即竞争力</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-strategy">OpenAI</span>
+        <span class="tag tag-policy">主权基金</span>
+        <h3><a href="https://www.theguardian.com/technology/2026/jul/02/openai-stake-us-government-ai-sam-altman" target="_blank">OpenAI 提议将 5% 股权捐赠美国主权基金，AI 公共化方案落地</a></h3>
+        <div class="meta">
+            <span class="source">卫报（路透社 / 金融时报综合）</span> · 2026-07-02 · <a href="https://www.theguardian.com/technology/2026/jul/02/openai-stake-us-government-ai-sam-altman" target="_blank">theguardian.com</a>
+        </div>
+        <div class="content">
+            OpenAI CEO Sam Altman 提议将公司 5% 股权捐赠给类似"阿拉斯加永久基金"的主权基金架构，让美国公众分享 AI 繁荣收益。该提议在 OpenAI 与白宫就 GPT-5.6 分阶段发布达成协议后浮出水面。Altman 与 OpenAI 高管认为让美国公众在头部 AI 公司拥有"财务股份"是"分享 AI 收益"的最佳方式。FT 报道称 Anthropic、Google、Meta 可能被纳入同类型方案。提议若落地将重塑美国 AI 行业 IPO 估值：监管方成为利益相关者，但企业的"政府通道"溢价也水涨船高。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">OpenAI 提议 5% 股权捐赠美国主权基金</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">5% 股权 ≈ 40 亿美元；估值锚定 8000 亿美元；Anthropic/Google/Meta 或同被纳入</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">美国 AI 行业 IPO 估值模型重构；监管机构成利益相关方</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">白宫与 AI 头部公司正在磋商自愿性框架</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"5% 换政府通道"成新议价模式：企业让渡股权换监管确定性</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产芯片</span>
+        <span class="tag tag-infra">算力采购</span>
+        <h3><a href="https://view.inews.qq.com/a/20260703A0545Y00" target="_blank">国产 AI 算力革命"让子弹飞"：字节跳动洽购天数智芯 5 万颗推理芯片</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（钛媒体 / 时间线 Timelines）</span> · 2026-07-03 · <a href="https://view.inews.qq.com/a/20260703A0545Y00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            6 月中旬外媒披露字节跳动正与天数智芯洽谈采购至少 5 万颗 AI 芯片，主要用于推理任务，芯片型号为天数智芯智铠系列云端推理芯片。叠加华为 43% 市场份额 + 寒武纪 11%，国产 AI 算力进入"互联网大厂全面拥抱"阶段。文章认为国产芯片"让子弹飞"时刻已到——互联网大厂的采购订单正给国产芯片公司提供从"能用"到"规模化"的关键验证窗口，AI 算力市场结构正悄然重构。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">字节跳动洽购天数智芯 5 万颗推理芯片</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">5 万颗芯片；推理任务；智铠系列</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">互联网大厂推理算力国产化加速；天数智芯成新晋"国产替代"主力</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">阿里/腾讯/百度可能跟进；天数智芯扩产</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">推理侧国产替代"从 0 到 1"已完成，进入"规模化采购"新阶段</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资估值</span>
+        <span class="tag tag-strategy">Anthropic</span>
+        <h3><a href="https://www.nytimes.com/2026/05/28/technology/anthropic-tops-openai-valuation.html" target="_blank">Anthropic 估值或达 9000 亿美元，650 亿美元融资反超 OpenAI</a></h3>
+        <div class="meta">
+            <span class="source">纽约时报 / CNBC / 卫报综合</span> · 2026-07-01 ~ 07-02 · <a href="https://www.nytimes.com/2026/05/28/technology/anthropic-tops-openai-valuation.html" target="_blank">nytimes.com</a>
+        </div>
+        <div class="content">
+            Anthropic 完成 650 亿美元融资，估值 9000 亿美元，反超 OpenAI 上轮 7300 亿美元估值。核心驱动是 11 月以来 Claude Opus 4.8 在 vibecoding（自然语言写代码）能力的跃升——数百家企业签约付费使用。同期 Anthropic 与 Google 达成 10 亿美元预付 + 30 亿美元里程碑 + 5 年 TPU 大单的深度合作，Claude 既成 Gemini 竞品也成 Google Cloud 重要客户。Fable 5 经历 19 天政府下令暂停后于 7/1 恢复服务，并签署"前沿 AI 治理公约"，同意"网安风险评分框架"等约束条款。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Anthropic 完成 650 亿美元融资，估值 9000 亿美元</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">650 亿美元融资/9000 亿估值/Google 10+30 亿合作/Fable 5 解禁</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 头部公司估值排序重排；企业级 vibecoding 商业化加速</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Fable 5 重新上线；Anthropic 签"前沿 AI 治理公约"</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">估值反超但接受"强制治理"——Anthropic 走出"既要又要"路线，AI 巨头开始为"安全溢价"买单</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-global">出海</span>
+        <span class="tag tag-strategy">政策</span>
+        <h3><a href="https://view.inews.qq.com/a/20260705A07Z9000" target="_blank">新华社：中国推动 AI 产品"出海"惠及全球</a></h3>
+        <div class="meta">
+            <span class="source">腾讯新闻（新华社）</span> · 2026-07-05 · <a href="https://view.inews.qq.com/a/20260705A07Z9000" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            2026 全球数字经济大会期间，新华社发文总结中国推动 AI 产品"出海"惠及全球的阶段性成果：搭载 AI 技术的中医智能检测仪、跨境数字人客服等产品在东南亚、中东、非洲市场快速铺开；硬件 + 模型 + 解决方案的整体输出模式正成为"中国 AI 出海"新范式。同时阿里、字节、华为、科大讯飞等通过本地化合作、合资设厂、技术授权等方式拓展海外市场。文章认为 AI 出海是"数字丝绸之路 2.0"的核心载体，与传统跨境电商形成代际升级。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">新华社发文总结中国 AI 产品"出海"阶段性成果</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">2026 全球数字经济大会；东南亚/中东/非洲市场快速铺开</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">中国 AI 解决方案在新兴市场加速渗透；硬件+模型+服务模式成型</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">更多大厂出海；本地化合规与算力部署成关键</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">中国 AI 出海从"卷模型"转向"卷落地"，硬件+应用打包是壁垒所在</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-strategy">国际合作</span>
+        <h3><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-3-2026" target="_blank">Fable 5 解禁后 Anthropic 签下"前沿 AI 治理公约"，自愿框架向多边强制过渡</a></h3>
+        <div class="meta">
+            <span class="source">Build Fast with AI（综合 NYT/卫报/卫报）</span> · 2026-07-03 · <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-3-2026" target="_blank">buildfastwithai.com</a>
+        </div>
+        <div class="content">
+            Fable 5 在 6/12 被美国商务部以国家安全为由暂停外国用户访问 19 天后，于 7/1 重启服务。Anthropic 同意与 Amazon、Microsoft、Google 共同签署"前沿 AI 治理公约"，建立模型风险评分框架（jailbreak 越狱风险 + 网络安全威胁评分）。同日 Menlo Ventures 完成 50 年来最大单笔 VC 基金，主要押注 Anthropic。该公约是 Anthropic 6 月以来主张"AI 强制监管"路线的具体落地——自愿框架正式向"多边+评分制"过渡。Claude Sonnet 5 也于 6/30 发布，对应 vibecoding 场景做深度优化。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Fable 5 重启 + 前沿 AI 治理公约落地</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">19 天禁令期；Menlo Ventures 单笔 50 年最大；Claude Sonnet 5 同日发布</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">自愿原则向多边强制过渡；Anthropic 主张的强制路线获主要盟友支持</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">8/1 联邦自愿框架截止；G7 后续会议可能纳入 AI 安全标准</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"模型发布评分制"是 AI 治理的下一站，Fable 5 事件或成类似 2018 GDPR 的分水岭</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（财联社/科创板日报/澎湃新闻/蓝鲨硬科技/钛媒体/新华社/IT之家/国际金融报）+ Web Search（卫报/纽约时报/CNBC/Build Fast with AI）</p>
+        <p>🕐 报告时间：2026-07-06 01:00 UTC · 北京时间 09:00</p>
+        <p>⚙️ 生成引擎：OpenClaw AI 新闻日报 · 多源融合 + 3 天时效过滤</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/" target="_blank">AI 新闻日报归档</a></p>
+    </div>
+</body>
+</html>
