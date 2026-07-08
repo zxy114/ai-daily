@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月7日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #6e768133; color: #c9d1d9; border: 1px solid #6e768144; }
+        .tag-industry { background: #2ea04333; color: #56d364; border: 1px solid #2ea04344; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 7 日（星期二）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + Web Search | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>腾讯混元 Hy3 正式开源：295B MoE 激活 21B，SWE-Bench 74.4%，定价对标 GPT-5.5</li>
+            <li>美团 LongCat-2.0 宣布为业内首个国产芯片全流程训练的 1.6T 万亿参数模型</li>
+            <li>DeepSeek 被曝自研 AI 推理芯片：减少对英伟达 / 华为依赖，项目约一年前启动</li>
+            <li>可灵 AI 30 亿美元融资正式落地，估值 180 亿美元创全球视频大模型单轮纪录</li>
+            <li>中国官方与头部 AI 公司讨论限制顶尖模型"出海"，大模型被定位为国家级技术资产</li>
+            <li>美方撤销 Anthropic Mythos 5 / Fable 5 出口管制，政策再度反转</li>
+            <li>VAST（三启万物）A3 轮融资超 10 亿，巨人网络等游戏 / 汽车产业资本首次集中入局 3D 大模型</li>
+            <li>蚂蚁灵波发布 LingBot-Depth 2.0 + LingBot-Vision 视觉基座，阿里千问升级 Fun-ASR 实时语音</li>
+            <li>OpenRouter 数据：中国大模型周调用量连续 10 周超美国，DeepSeek-V4-Flash 全球第一</li>
+            <li>港股 AI 板块剧烈分化：腾讯 Hy3 发布 +2.0%、智谱 +5.2%、快手 -12%</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-model">开源模型</span>
+        <span class="tag tag-chip">MoE 架构</span>
+        <h3><a href="https://hunyuan.tencent.com/research/hy3" target="_blank">腾讯混元 Hy3 正式开源：295B 总参 / 21B 激活，SWE-Bench 74.4% 比肩 5 倍体量模型</a></h3>
+        <div class="meta">
+            <span class="source">腾讯混元官方 / GIGAZINE / The Decoder / Business Analytics Review</span> · 2026-07-06 / 07-07 · <a href="https://hunyuan.tencent.com/research/hy3" target="_blank">hunyuan.tencent.com</a>
+        </div>
+        <div class="content">
+            7 月 6 日，腾讯混元正式发布并开源新一代旗舰大模型 Hy3，采用 MoE 架构，总参 295B、单 token 激活 21B（含 3.8B MTP 层）、256K 上下文，支持长程推理与 Agentic 编码。SWE-Bench Verified 得分 74.4%，较 Hy2（53.0%）单代提升 40%，逼近 Claude Opus 4.6（80.8%），超过 GLM-5（77.8%）、Kimi-K2.5（76.8%）。模型在 Hugging Face、GitHub、ModelScope 三平台以 Apache 2.0 协议开源，OpenRouter 提供两周免费 API，Nous Research / Kilo Code 等海外平台同步接入。WorkBuddy 团队反馈"用 Hy3 处理文档比 GLM-5.2 少 47.4% tokens"。API 定价 1 元 / 百万 tokens 输入，4 元 / 百万 tokens 输出。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">腾讯混元 Hy3 正式开源 + API 上线，国产大厂旗舰全面对标 GPT-5.5 / GLM-5.2</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">295B / 21B MoE；SWE-Bench 74.4%；推理成本降 40%；定价 1 元/百万 tokens</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">WorkBuddy / 元宝 / 微信 / Marvis / ima 全业务接入，海外 API 平台陆续上线</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Hy3 preview 4 月 22 日已发，本次为正式版 + 商用授权；OpenRouter 提供 2 周免费</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"激活参数小、总参大"的 MoE 路线成为国产旗舰共识，腾讯以"开源 + 低价 API"切入 Agent 编码市场</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产芯片</span>
+        <span class="tag tag-model">全栈自研</span>
+        <h3><a href="https://www.caixin.com/2026-07-06/102461482.html" target="_blank">美团 LongCat-2.0 开源：1.6T MoE 全球首个万卡国产芯片全流程训练的基础大模型</a></h3>
+        <div class="meta">
+            <span class="source">财新网 / SCMP / TechXplore / 财联社</span> · 2026-07-06 · <a href="https://www.caixin.com/2026-07-06/102461482.html" target="_blank">caixin.com</a>
+        </div>
+        <div class="content">
+            7 月 6 日，美团宣布在 GitHub / Hugging Face / ModelScope 同步开源 LongCat-2.0，采用 MIT 协议，模型权重、推理引擎、核心技术文档一并公开。该模型是业界首个在 5 万卡国产算力集群上完成训练 + 推理全流程的万亿参数 MoE 模型，总参 1.6T、单 token 激活 33B-56B（平均约 48B），上下文窗口 100 万 tokens。模型在 6 月 30 日正式发布，本轮开源面向开发者与产业下游。同日，华为昇腾、摩尔线程、沐曦股份同步宣布完成推理适配；财新指出这是"中国 AI 算力栈首次完整跑通端到端"的标志性事件。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">LongCat-2.0 是全球首个在国产芯片上完成预训练 + 推理全流程的万亿参数基础大模型</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">1.6T 总参 / 48B 激活；5 万卡国产集群；100 万 tokens 上下文</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">华为昇腾 / 摩尔线程 / 沐曦同日完成适配；DeepSeek V4-Pro 此前仅推理用国产芯片</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">MIT 协议允许免费商用；LongCat 系列将进一步深耕 Agentic 编码</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"China can serve but not train at the frontier"叙事被打破，国产芯片在大规模训练上首次跑通</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-chip">自研芯片</span>
+        <span class="tag tag-model">算力自主化</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A01VC400" target="_blank">DeepSeek 被曝自研 AI 推理芯片：减少对英伟达 / 华为依赖，项目约一年前已启动</a></h3>
+        <div class="meta">
+            <span class="source">路透社 / IT之家 / 三言科技 / 新浪财经 / Binance Square</span> · 2026-07-07 / 07-08 · <a href="https://view.inews.qq.com/a/20260708A01VC400" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 7 日晚间，路透社援引三位知情人士披露：DeepSeek 正在研发自有 AI 芯片，主要面向推理任务，目标是降低对英伟达和华为的依赖。该项目约一年前启动，DeepSeek 近期悄然加大芯片设计工程师招聘力度，并与多家芯片设计、代工制造、存储芯片企业洽谈合作。如果推进顺利，DeepSeek 将从专注模型研发转向"模型 + 芯片"双线布局，与已在自研 AI 芯片的华为、阿里巴巴、百度展开竞争。这是继 OpenAI Jalapeño 之后，国内外顶级大模型公司"造芯"的最新动向。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">DeepSeek 启动自研 AI 推理芯片，标志性"造芯"运动再添一员</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">起步约 1 年前；推理优先；与设计 / 代工 / 存储多类企业洽谈</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">英伟达推理市场份额面临新分食；国产芯片代工链获得战略级客户</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">招聘芯片设计人才加速；与代工厂对接具体工艺节点</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"模型 + 芯片"垂直整合成为大模型头部共识，DeepSeek 选推理侧切入为最务实的差异化路径</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-model">视频大模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260707A09SPP00" target="_blank">可灵 AI 30 亿美元融资正式落地，投后估值 180 亿美元创全球视频大模型纪录</a></h3>
+        <div class="meta">
+            <span class="source">财经网科技 / 界面新闻 / 澎湃 / SCMP / TechNode</span> · 2026-07-06 / 07-07 · <a href="https://view.inews.qq.com/a/20260707A09SPP00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 2 日晚间，快手科技在港交所公告：旗下独立运营主体"北京可灵智能科技"完成近 30 亿美元（约 204 亿元人民币）外部增资，投后估值 180 亿美元（约 1223 亿元人民币）。本轮由 CPE 源峰、国方创投、BlueFive、腾讯、中关村科学城基金（联合国科投资）、中信证券联合领投，数十家一线机构共同参与，汇聚阿里云、百度等顶级产业资本与华策影视、芒果等文娱产业方。光源资本任独家财务顾问。BlueFive 来自阿布扎比，为中东资本首次投资中国 AI 视频模型。本轮为国内 AI 领域近一年第二大规模单轮融资（仅次于 DeepSeek 70 亿美元），亦刷新全球视频大模型公司单轮最大融资纪录。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">可灵 AI 30 亿美元独立融资落地，BAT 三巨头罕见同台</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">30 亿美元；估值 180 亿美元；ARR 近 5 亿美元；全球用户破 1 亿</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">中东资本首次进入中国 AI 视频赛道；全球视频大模型估值锚定</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">12 个月内启动赴港 IPO；资金用于算力 / 数据中心 / 人才</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"独立资本化 + 中东资金 + 港股路径"组合为国产 AI 资产打开新范式</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管</span>
+        <span class="tag tag-model">国家级资产</span>
+        <h3><a href="https://view.inews.qq.com/a/20260707A0A87100" target="_blank">中国讨论限制顶尖 AI 模型"出海"，大模型正被定位为国家级技术资产</a></h3>
+        <div class="meta">
+            <span class="source">不一定有用的频道 / 走出去智库 CGGT</span> · 2026-07-07 · <a href="https://view.inews.qq.com/a/20260707A0A87100" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据腾讯新闻"不一定有用的频道"援引接近监管的渠道，中国有关部门近期与多家头部 AI 公司接触，讨论限制海外用户访问最先进大模型的可行性。这并非正式政策，但已被业内视为强烈信号：顶尖模型已不再只是产品，更接近国家级技术资产。同期，6 月底可灵 AI 30 亿美元融资中 General Atlantic 等美方资本的进入曾引发"是否需要事先审批"的讨论，中东资本 BlueFive 同时参与。本轮政策风向显示，国内对"中国 AI 不能随便出海"与"外国资本不能随便投资中国 AI"两条线同时收紧。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">国内讨论限制顶尖 AI 模型对外访问，最强信号已现</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">非正式政策；头部公司"被接触"；与外资准入收紧同步</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产模型 API 出海路径可能受限；Kimi 海外营收、Kling 全球用户等业务面临调整</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">海外开发者访问国产 API 或需"白名单"；外资参投头部 AI 公司或需审批</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"模型即资产"逻辑下，中美 AI 脱钩由硬件层向模型层延伸，Kimi/Kling 等出海样本将受冲击</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-policy">出口管制</span>
+        <span class="tag tag-industry">全球治理</span>
+        <h3><a href="https://view.inews.qq.com/a/20260706A08LFV00" target="_blank">美国撤销对 Anthropic Mythos 5 / Fable 5 出口管制，AI 治理矛盾信号再度释放</a></h3>
+        <div class="meta">
+            <span class="source">走出去智库 CGGT / CNBC / Fortune / Anthropic 官方</span> · 2026-07-06 · <a href="https://view.inews.qq.com/a/20260706A08LFV00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据 CGGT 观察与 CNBC 同步报道，美国商务部于 6 月 30 日前后撤销 6 月 12 日针对 Anthropic 旗下 Mythos 5 与 Fable 5 两款前沿模型的全球出口管制令，两款模型已恢复公开访问。Anthropic 同步发布声明，称美方目前仅口头披露"窄向、非通用"越狱技术，本质为要求模型读取代码库并修复软件缺陷。此次解禁是特朗普政府年内针对前沿 AI 政策的多次摇摆之一；此前美方曾对 OpenAI GPT-5.6 实施"小范围可信合作伙伴"准入限制，并传出白宫拟与三大头部共建"自愿性模型发布标准"。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">美方解除 Anthropic 两款前沿模型出口管制，政策再现 180 度调整</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">6 月 12 日管制 → 6 月 30 日撤销；窗口期 18 天</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">全球前沿 AI 供应链节奏短期改善；Anthropic 数据保留 30 天政策保留</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">白宫最快本周公布与 OpenAI / Anthropic / 谷歌的"自愿性"模型发布标准</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"管制—放开—再管制"循环表明出口管制难抑前沿模型扩散，标准协调正在取代禁令</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资</span>
+        <span class="tag tag-model">3D / 世界模型</span>
+        <h3><a href="https://view.inews.qq.com/a/20260706A04QTW00" target="_blank">VAST（三启万物）A3 轮融资超 10 亿元，巨人网络等游戏 / 汽车产业资本首度集体入局</a></h3>
+        <div class="meta">
+            <span class="source">环球网 / 投资界 / 93913 元宇宙 / 财联社</span> · 2026-07-06 · <a href="https://view.inews.qq.com/a/20260706A04QTW00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 2 日消息，专注 AI 3D 大模型与通用世界模型研发的 VAST（三启万物）宣布完成超 10 亿元人民币 A3 战略轮融资，巨人网络（002558.SZ）参与本轮投资。本轮还吸引吉利资本、4399、贪玩游戏、某知名互联网战投、亦庄国投、基石资本、毅达资本、成都科创投、复星创富、华控基金、锡创投、慕华科创、策源资本等机构参投，老股东渶策资本、元生资本继续追投。这是 VAST 一个月内继 A+ / A++ 之后的又一笔大额融资，Tripo 系列 3D 模型稳居全球盲测榜单第一。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">VAST 单月内完成又一笔 10 亿+ 融资，3D / 世界模型赛道获游戏 / 汽车产业资本首次集中加注</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">A3 轮 10+ 亿元；近一个月三轮；Tripo 3D 盲测全球第一</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">游戏 / 汽车 / 互联网 / 国资首次集中押注世界模型路线</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">资金用于核心算法迭代、全球商业化与 Project Eden 世界模型</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">3D / 世界模型被视作继视频生成之后的多模态新战场，Tripo 商业化路径已跑通</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-model">多模态</span>
+        <span class="tag tag-infra">空间感知</span>
+        <h3><a href="https://www.jiemian.com/article/14717644.html" target="_blank">蚂蚁灵波发布 LingBot-Depth 2.0 + LingBot-Vision，国产视觉基座首次聚焦"边界结构"预训练</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻 / 港股大模型日报 / 蚂蚁灵波官方</span> · 2026-07-07 · <a href="https://www.jiemian.com/article/14717644.html" target="_blank">jiemian.com</a>
+        </div>
+        <div class="content">
+            7 月 7 日，蚂蚁集团旗下具身智能公司灵波科技正式发布空间感知模型 LingBot-Depth 2.0，并同步推出视觉基座模型 LingBot-Vision。LingBot-Depth 2.0 基于 1.5 亿规模数据训练，在深度补全基准 16 项测评中获 12 项第一，室内大面积深度缺失场景深度误差较上一代降低约 50%，在玻璃、镜面、透明物体等传统深度相机易失效的场景表现突出。LingBot-Vision 是业内首个将"边界结构"作为预训练目标的视觉模型，可实现亚像素级边界定位与空间结构理解，本次开源 ViT-G/L/B/S 四个版本权重及技术报告。蚂蚁灵波同时宣布与奥比中光深化合作，计划推出集成 LingBot-Depth 能力的 SDK 和商业版一体化相机。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">蚂蚁灵波一次性发布空间感知 + 视觉基座双模型，押注具身智能底座</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">1.5 亿训练样本；深度补全 12/16 项第一；ViT-G/L/B/S 四版本开源</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">机器人 / 智能家居 / 自动驾驶视觉感知链条直接受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">与奥比中光合作 SDK + 商业版相机；持续推进具身大脑研发</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"边界结构"作为预训练目标是蚂蚁的差异化押注，与字节豆包 / 阿里千问的具身路线形成对比</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-model">实时语音</span>
+        <span class="tag tag-infra">多语种</span>
+        <h3><a href="https://www.jiemian.com/article/14717644.html" target="_blank">阿里千问升级 Fun-ASR-Realtime：百毫秒首字延迟，支持 16 种方言 + 30 种语言</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻 / 港股大模型日报 / 阿里千问官方</span> · 2026-07-06 · <a href="https://www.jiemian.com/article/14717644.html" target="_blank">jiemian.com</a>
+        </div>
+        <div class="content">
+            7 月 6 日，阿里千问大模型宣布升级实时语音识别大模型 Fun-ASR-Realtime，首字延迟控制在百毫秒级别，流式识别准确率接近离线模型水平，支持 16 种方言和 30 种语言。在覆盖八大方言区的 16 种方言识别测试中，该模型字符准确率平均达 88.62%，在 12 类方言上领先，超越火山与腾讯相关产品。模型针对泰语等东亚、东南亚多语言场景进行了专项优化，识别准确率提升 20%，适用于出海客服、国际会议等场景。API 已上线阿里云百炼平台，离线模式模型 Fun-ASR-Flash 也已上线。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">千问实时语音 ASR 升级，方言 + 出海双线竞争力强化</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">首字延迟百毫秒级；16 种方言 / 30 种语言；东南亚语种 +20% 准确率</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">出海客服 / 国际会议 / 中文方言应用受益；与火山、腾讯错位竞争</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">阿里云百炼 API 持续迭代；Fun-ASR-Flash 离线模式上线</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"语音"成为继文字 / 图像 / 视频之后国产大模型下一重点突破方向</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-infra">调用量</span>
+        <span class="tag tag-industry">中国领先</span>
+        <h3><a href="https://www.jiemian.com/article/14717644.html" target="_blank">OpenRouter：中国大模型周调用量连续 10 周超美国，DeepSeek-V4-Flash 全球第一</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻 / OpenRouter / 港股大模型日报</span> · 2026-07-07 · <a href="https://www.jiemian.com/article/14717644.html" target="_blank">jiemian.com</a>
+        </div>
+        <div class="content">
+            据 OpenRouter 最新数据测算，上周（6 月 29 日至 7 月 5 日）全球 AI 大模型总调用量为 46.7 万亿 Token，其中中国 AI 大模型周调用量达 23.45 万亿 Token，环比增长 15.01%，连续 6 周增长，并连续 10 周超过美国稳居全球首位；同期美国 AI 大模型周调用量为 4.28 万亿 Token。全球调用量排名前 6 均为中国大模型：DeepSeek-V4-Flash 以 5.34 万亿 Token 连续 7 周居首；小米 MiMo-V2.5 4.38 万亿 Token 第二；MiniMax M3 4.11 万亿 Token 第三；腾讯 Hy3 preview 3.13 万亿 Token 第四；智谱 GLM-5.2 2.58 万亿 Token 第五；阶跃星辰 Step 3.7 Flash 1.55 万亿 Token 第六。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">中国大模型在第三方 API 平台全面压制美国，全球前 6 全为中国模型</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">中国 23.45 万亿 Token / 周 vs 美国 4.28 万亿 Token / 周；环比 +15.01%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产大模型出海商业化跑通；OpenRouter 等中立渠道成为重要指标</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">美国厂商或加大"低价 + 高速"模型迭代以应对中国价格战</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">中美 AI 竞争已从"模型能力比拼"演化为"全球开发者使用份额"竞赛</span></div>
+        </div>
+    </div>
+
+    <!-- News 11 -->
+    <div class="news-card">
+        <span class="tag tag-industry">港股</span>
+        <span class="tag tag-model">板块分化</span>
+        <h3><a href="https://www.jiemian.com/article/14717644.html" target="_blank">港股 AI 板块剧烈分化：腾讯 Hy3 发布 +2.0%、智谱 +5.2%，快手 -12%、商汤 -6.7%</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻 / 东方财富 / 港股大模型日报</span> · 2026-07-07 · <a href="https://www.jiemian.com/article/14717644.html" target="_blank">jiemian.com</a>
+        </div>
+        <div class="content">
+            7 月 7 日，港股冲高回落。恒生指数跌 0.51% 报 23496.89 点，恒生科技指数跌 0.75% 报 4507.04 点，全日成交 3197.11 亿港元。AI 及大模型产业链表现剧烈分化：腾讯控股涨 2.0%，正式发布混元 Hy3 并斥资 2.05 亿港元回购；美团 -W 涨 4.5%，LongCat-2.0 开源、摩尔线程已完成适配；智谱涨 5.2%，A 股 IPO 辅导工作完成、推出 ZCode 编程代理；另一边快手 -W 暴跌 12.0%，商汤 -W 跌 6.7%。半导体板块同样回调，存储芯片领跌，兆易创新 -12.2%、澜起科技 -10.2%。具身智能概念逆势活跃，量化派暴涨 55.7%。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">港股 AI 板块"开源模型 / 国产算力"涨，"算力供给紧张"跌</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">腾讯 +2.0% / 智谱 +5.2% / 美团 +4.5%；快手 -12.0% / 商汤 -6.7% / 兆易 -12.2%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">资本市场以"开源 + 国产替代"为正向叙事，对"算力供给紧张"赛道谨慎</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">智谱 A 股 IPO 辅导继续推进；可灵港股 IPO 12 个月内启动</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"估值锚"从 ARR / 营收转向"开源生态 + 国产化贡献 + 港股路径"三维</span></div>
+        </div>
+    </div>
+
+    <!-- News 12 -->
+    <div class="news-card">
+        <span class="tag tag-chip">5nm 国产</span>
+        <span class="tag tag-infra">工艺迭代</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A01SH000" target="_blank">华为更新"韬定律" V2 论文：揭示 5nm 工艺多尺度时间缩放理论，国产先进制程再添理论支撑</a></h3>
+        <div class="meta">
+            <span class="source">腾讯科技 / 华为半导体 / 半导体行业观察</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A01SH000" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 8 日，华为更新"韬定律"系列论文 V2 版《A time scaling theory for multi-…》，由华为半导体业务总裁何庭波牵头，论文聚焦 5nm 工艺下多尺度时间缩放理论。这是继 2024 年首版之后的关键理论迭代，业界普遍解读为华为在受限的 EUV / DUV 工艺条件下，用系统级协同设计弥补单芯片物理瓶颈的又一次工程突破。结合同期 LongCat-2.0 训练全流程国产化、DeepSeek 自研推理芯片等事件，国产 AI 算力栈"硬件 + 模型 + 工艺理论"三线齐进的趋势越发明确。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">华为"韬定律"V2 论文发布，5nm 多尺度时间缩放理论填补国产工艺关键空白</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">5nm 工艺；多尺度时间缩放；V1 → V2 关键迭代</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片设计 / 工艺协同 / 编译器优化全栈受益</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">预计相关理论将落地到昇腾下一代产品 + EDA 工具链</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"硬件 + 模型 + 工艺理论"三线齐进，是国产 AI 算力在受限环境下的差异化路径</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（界面新闻 / 财经网 / 财联社 / 走出去智库 / 三言科技 / 环球网 / 观察者网 / 不一定有用的频道 等）+ Web Search（路透社 / SCMP / The Decoder / GIGAZINE / 财新 / TechNode / OpenRouter）</p>
+        <p>⏰ 报告生成时间：2026-07-08 09:00 CST | 📅 报告日期：2026-07-07</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-07.html">https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-07.html</a></p>
+    </div>
+</body>
+</html>
