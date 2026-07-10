@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月9日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #6e768133; color: #c9d1d9; border: 1px solid #6e768144; }
+        .tag-industry { background: #2ea04333; color: #56d364; border: 1px solid #2ea04344; }
+        .tag-global { background: #1f6feb33; color: #79c0ff; border: 1px solid #1f6feb44; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 9 日（星期四）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻 + VentureBeat | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>SpaceX 发布 Grok 4.5：业内首款「编程 + 智能体」专项模型，单任务成本仅 0.49 美元（不到 Claude Opus 4.7 的 1/10），AI 编程价格战升级</li>
+            <li>OpenAI GPT-Live 上线：第三代语音架构实现「全双工 + 边说边听」，异步调用 GPT-5.5 后台推理，ChatGPT 变同事</li>
+            <li>腾讯混元 Hy3 正式版开源：295B MoE + Apache 2.0 许可，工具调用 / 智能体搜索全面领先 GLM-5.2</li>
+            <li>智谱启动 314 亿港元配售融资：2026 港股科技最大单笔配售，国产大模型「算力军备」升级</li>
+            <li>中国大模型周调用量 23.45 万亿 token 连续 6 周增长，DeepSeek V4 正式版高峰 API 提价</li>
+            <li>中企 AI 加速器预算国产占比飙至 46%（一年由 30% 升 16 个百分点），华为 / 海光成最大赢家</li>
+            <li>燧原科技 IPO 注册获批：国产 GPU「四小龙」齐聚科创板</li>
+            <li>腾讯云发布 Agent Bucket：业内首个面向 AI 智能体的原生云存储服务</li>
+            <li>阶跃星辰官宣 AI 智能体终端 / 手机，全球大模型厂商首家落地</li>
+            <li>拟人化 AI 互动监管收紧：豆包 / 通义千问 7 月 15 日下线用户自建智能体功能</li>
+            <li>Anthropic 发布 Claude 内部「类人意识机制」研究：J 空间类比人脑全局工作空间</li>
+            <li>美国撤销对 Anthropic Mythos 5 / Fable 5 出口管制，向全球 AI 治理释放矛盾信号</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-model">Grok 4.5</span>
+        <span class="tag tag-cost">价格战</span>
+        <span class="tag tag-global">国际视角</span>
+        <h3><a href="https://venturebeat.com/technology/spacexs-grok-4-5-launches-at-half-the-price-of-rivals-heres-why-that-could-rattle-anthropic-and-openai" target="_blank">SpaceX 发布 Grok 4.5：编程 + 智能体专项模型，单任务成本仅 0.49 美元</a></h3>
+        <div class="meta">
+            <span class="source">VentureBeat / X.AI / Artificial Analysis / CNBC</span> · 2026-07-08 · <a href="https://venturebeat.com/technology/spacexs-grok-4-5-launches-at-half-the-price-of-rivals-heres-why-that-could-rattle-anthropic-and-openai" target="_blank">venturebeat.com</a>
+        </div>
+        <div class="content">
+            SpaceX 7 月 8 日发布 Grok 4.5，业内首款专为「编程 + 智能体」训练的模型，也是其 60 亿美元收购 Cursor 后的首个落地产品。模型主打「每任务 token 减半 + 吞吐量更高 + 价格腰斩」，定价 2 美元/百万输入、6 美元/百万输出 token。Musk 公开对标 Claude Opus 4.7 性能，但速度更快。Artificial Analysis 评测显示其在 GDPval-AA v2 真实世界智能体知识工作指数排名第四（Elo 1543），但单任务完成成本仅 0.49 美元，低于榜单前三名近 90%，「明确处于性能 / 成本 Pareto 前沿」。Cursor 团队将真实工程师的代码编辑 / 评审 / 调试数据直接喂给训练，SpaceX 同时开放 Memphis Colossus 超级计算机（20 万张 Nvidia GPU，规划扩至 100 万张）作为算力底座。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">SpaceX 发布编程 / 智能体专项模型 Grok 4.5，AI 编程价格战开打</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">$2/$6 每百万 token；单任务成本 $0.49；Elo 1543 排名第四；20 万 → 100 万 GPU 算力</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">Anthropic / OpenAI 编程档位定价压力陡增；企业级 Agent 部署 ROI 显著提升</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Cursor 编辑器集成；Tesla / SpaceX 内部工程团队已大规模采用</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">Musk 用「经济性」绕开「基准跑分」内卷——以 1/10 成本 + 可用速度重新定义编程模型价值</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-model">GPT-Live</span>
+        <span class="tag tag-global">全双工语音</span>
+        <h3><a href="https://venturebeat.com/technology/openai-launches-gpt-live-a-full-duplex-voice-upgrade-that-lets-chatgpt-talk-more-like-a-person" target="_blank">OpenAI 上线 GPT-Live：全双工语音让 ChatGPT「像同事一样说话」</a></h3>
+        <div class="meta">
+            <span class="source">VentureBeat / OpenAI 官方</span> · 2026-07-08 · <a href="https://venturebeat.com/technology/openai-launches-gpt-live-a-full-duplex-voice-upgrade-that-lets-chatgpt-talk-more-like-a-person" target="_blank">venturebeat.com</a> · <a href="https://openai.com/index/introducing-gpt-live/" target="_blank">openai.com</a>
+        </div>
+        <div class="content">
+            OpenAI 7 月 8 日发布 GPT-Live 语音双模型（GPT-Live-1 + GPT-Live-1 mini），iOS / Android / ChatGPT.com 同步上线。GPT-Live-1 是付费（Go / Plus / Pro）默认语音模型，mini 服务免费用户。技术核心是「全双工架构」：模型边听边说、连续处理输入输出、可每秒多次决定「说话 / 继续听 / 暂停 / 打断 / 调用工具」，告别 Advanced Voice Mode 时代「沉默即结束」导致的频繁误打断。架构上首次将「语音交互层」与「推理层」解耦——简单问题 GPT-Live 直接回答，复杂任务异步委托给后台 GPT-5.5，期间可继续与用户对话。OpenAI 表示后续将持续把最新前沿模型接入 GPT-Live 后端。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">ChatGPT 语音进入第三代「全双工」时代，OpenAI 重写语音交互栈</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">GPT-Live-1 + mini 双模型；全球同步上线；支持多层级付费体系；后台默认 GPT-5.5</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">C 端语音助手体验跃迁；企业级实时语音 Agent 落地门槛大幅降低</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">API 接入预约中；新模型发布即可被 GPT-Live 调用</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「语音 + 推理」分层是「模型可热插拔」的关键工程实践，让 OpenAI 不用为每个新模型重做语音栈</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-model">开源</span>
+        <span class="tag tag-global">Tencent Hy3</span>
+        <h3><a href="https://venturebeat.com/technology/tencents-apache-licensed-hy3-takes-on-glm-5-2-at-half-the-size-and-wins-everywhere-except-coding" target="_blank">腾讯混元 Hy3 正式版开源：295B MoE + Apache 2.0，工具调用 / 智能体搜索全面领先</a></h3>
+        <div class="meta">
+            <span class="source">VentureBeat / Tencent Hunyuan / Hugging Face</span> · 2026-07-08 · <a href="https://venturebeat.com/technology/tencents-apache-licensed-hy3-takes-on-glm-5-2-at-half-the-size-and-wins-everywhere-except-coding" target="_blank">venturebeat.com</a> · <a href="https://huggingface.co/tencent/Hy3" target="_blank">huggingface.co</a>
+        </div>
+        <div class="content">
+            腾讯 Hunyuan 团队正式发布 Hy3 完整版本：295B 总参 / 21B 激活参数的 MoE（top-8 路由 192 专家）、3.8B MTP 投机解码层、256K 上下文，相比 4 月预览版最大变化是许可反转——采用 Apache 2.0 开源。架构不变但行为大幅优化：50+ 内部产品团队反馈驱动后训练流水线升级。Tencent 官方定位「同等规模显著领先，旗舰开源 2-5 倍参数模型可比」。盲测中 270 位专家、312 次有效对比，Hy3 4 分制下拿 2.67（GLM-5.1 仅 2.51），前端开发 / CI/CD / 数据存储优势明显。但编程维度上 GLM-5.2（744B / 40B 激活）几乎全维度领先：SWE-bench Verified 84.2 vs 78.0、Terminal-Bench 2.1 81 vs 71.7。Hy3 真正强项是 BrowseComp 84.2、DeepSearchQA 91.0、MCP-Atlas 79.1、AA-LCR 73.4——是当前开源搜索 + 工具重型 Agent 工作负载最优解。OpenRouter 免费两周。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">腾讯混元 Hy3 正式版 + Apache 2.0 许可，开源 MoE 工具 / 智能体领域登顶</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">295B 总参 / 21B 激活；256K 上下文；盲测 2.67/4 分；编程维度落后 GLM-5.2</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">EU / UK / 韩企业可合法部署；开源智能体模型选型重心向「搜索 + 工具」倾斜</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">OpenRouter 免费两周；待 Artificial Analysis 独立验证</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「许可证变更」而非「跑分刷新」是本次最大新闻——解除中国企业全球部署最大合规障碍</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-funding">融资纪录</span>
+        <span class="tag tag-infra">港股</span>
+        <h3><a href="https://view.inews.qq.com/a/20260709A09WYR00" target="_blank">智谱启动 314 亿港元配售融资，创 2026 港股科技单笔配售新高</a></h3>
+        <div class="meta">
+            <span class="source">证券时报e公司 / 每日经济新闻</span> · 2026-07-09 · <a href="https://view.inews.qq.com/a/20260709A09WYR00" target="_blank">view.inews.qq.com</a> · <a href="https://view.inews.qq.com/a/20260709A03P1O00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            港股「大模型第一股」智谱 7 月 9 日公告启动约 314 亿港元（约 36 亿美元）配售：通过一般授权以「配售新 H 股」方式发行约 1980 万股新 H 股。本次融资将创 2026 港股科技企业单次配售募资规模新高，也是国内大模型赛道上市后最大一笔股权融资。同日智谱股价大幅上涨 11.34% 收 2032 港元。资金将主要用于算力扩张、模型研发与商业化布局。当日港股通信息技术 ETF 涨 2.89%，恒生科技 ETF 涨 0.17%，兆易创新涨 11.39%。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">智谱 314 亿港元配售落地，国产大模型融资再创新高</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">314 亿港元；新股 1980 万股；当日股价 +11.34%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">港股科技板块联动上涨；国产大模型赛道「算力军备」全面升级</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">资金用于算力 / 研发 / 商业化；H 股流通盘扩大</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">配售而非定增——监管对上市后大模型公司再融资「开绿灯」，信号意义大于资金本身</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-model">调用量</span>
+        <span class="tag tag-cost">API 提价</span>
+        <h3><a href="https://view.inews.qq.com/a/20260709A07EDO00" target="_blank">中国 AI 大模型周调用量 23.45 万亿 token 连续 6 周增长，DeepSeek V4 正式版高峰 API 提价</a></h3>
+        <div class="meta">
+            <span class="source">界面新闻 / OpenRouter 数据 / 国信证券</span> · 2026-07-09 · <a href="https://view.inews.qq.com/a/20260709A07EDO00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            据 OpenRouter 最新数据测算，6 月 29 日至 7 月 5 日全球 AI 大模型总调用量为 46.7 万亿词元，其中中国 AI 大模型周调用量达 23.45 万亿词元，环比增长 15.01%，连续 6 周增长，全球占比首次突破 50%。同期 DeepSeek V4 正式版高峰时段 API 定价翻倍，反映国产算力供给约束持续加强。科创芯片 ETF 鹏华当日收涨 8.6% 以上，半导体芯片股全线爆发。国信证券观点：海外高端芯片持续受限，国产算力链加速适配并放量。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">国产模型全球调用量首破 50% 份额，DeepSeek 提价映射算力稀缺</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">23.45 万亿 token / 周；环比 +15.01%；连续 6 周正增长；DS V4 API 高峰提价 100%</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产芯片 / 算力链直接受益；中小开发者成本承压</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">国产代工 / HBM 加速扩产；定价策略分化将出现</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「量 + 价」同步上行是稀缺的供需双热信号——中国大模型首次拿到全球调用量过半</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产替代</span>
+        <span class="tag tag-infra">预算切换</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A074AV00" target="_blank">中企 AI 加速器预算国产占比 12 个月由 30% 飙至 46%，华为 / 海光成最大赢家</a></h3>
+        <div class="meta">
+            <span class="source">驱动之家 / 彭博行业研究 / Tech in Asia / TrendForce</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A074AV00" target="_blank">view.inews.qq.com</a> · <a href="https://www.techinasia.com/news/chinese-firms-domestic-ai-chip-budgets-46-survey" target="_blank">techinasia.com</a>
+        </div>
+        <div class="content">
+            彭博行业研究最新调查报告：60 名中国软件、金融、制造、零售业高管预计未来 12 个月将把 46% 的 AI 加速器预算投向国产芯片（目前 30%），一年升 16 个百分点。80% 高管表示今年 AI 基础设施总支出已超预算，主因是 AI 项目成本高企。腾讯、阿里巴巴、百度已全面铺开国产 AI 加速器采购。彭博同期披露，政府层面将投入约 2 万亿元人民币（约 2940 亿美元）用于数据中心建设，并要求其中至少 80% 的核心部件（如芯片）来自国产企业。H20 等中端英伟达芯片「越来越难拿到」进一步催化切换速度。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">中企 AI 芯片采购预算一年内向国产大幅倾斜，结构性切换已成定局</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">国产占比 30% → 46%；80% 高管 AI 基建超预算；2 万亿元五年规划、80% 国产化要求</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">英伟达中国区营收承压；华为昇腾 / 海光等国产 AI 芯片加速放量</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">阿里 / 百度 / 腾讯继续扩大国产芯片采购；国产代工与 HBM 同步受益</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">采购逻辑从「性能优先」切换至「国产 + 性能」三角约束，可供给比跑分更重要</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-chip">国产 GPU</span>
+        <span class="tag tag-funding">IPO</span>
+        <h3><a href="https://view.inews.qq.com/a/20260709A0BMUJ00" target="_blank">燧原科技 IPO 注册获批，国产 GPU「四小龙」齐聚科创板</a></h3>
+        <div class="meta">
+            <span class="source">红星新闻 / 潮新闻</span> · 2026-07-09 · <a href="https://view.inews.qq.com/a/20260709A0BMUJ00" target="_blank">view.inews.qq.com</a> · <a href="https://view.inews.qq.com/a/20260709A0AL4O00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            7 月 9 日中国证监会正式同意上海燧原科技股份有限公司科创板 IPO 注册申请。燧原科技被业界称为「国产 GPU 四小龙」之一，以云端 AI 芯片为核心业务，构建了「AI 芯片 → AI 加速卡及模组 → 智算系统及集群 → AI 计算及编程软件平台」完整产品体系。公司主营业务收入从 2023 年的 2.92 亿元快速增长，IPO 后将与其他三家「国产 GPU 四小龙」成员（壁仞、摩尔线程、沐曦）齐聚科创板，国产替代资本化通道进一步打开。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">燧原科技获科创板 IPO 注册批文，国产 GPU 四小龙齐聚资本市场</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">主营收入 2023 年 2.92 亿元；四大产品线齐备；2026 年内上市</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产 AI 芯片资本化路径打通；估值锚定 + 二级流动性提升</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">路演 / 定价 / 挂牌；其他三家竞对加快上市节奏</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「四小龙齐聚」意味着国产 GPU 行业从「跑马圈地」进入「资本 + 客户 + 算子」三重比拼阶段</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-infra">智能体基础设施</span>
+        <span class="tag tag-industry">Agent</span>
+        <h3><a href="https://view.inews.qq.com/a/20260709A06J3J00" target="_blank">腾讯云发布 Agent Bucket：业内首个面向 AI 智能体的原生云存储服务</a></h3>
+        <div class="meta">
+            <span class="source">凤凰网科技</span> · 2026-07-09 · <a href="https://view.inews.qq.com/a/20260709A06J3J00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            腾讯云 7 月 9 日正式发布 Agent Bucket（智能体桶），业内首款专为 AI Agent 场景设计的原生存储服务。该服务可为亿级 Agent 提供独立云空间，统一存放用户上传资料及 Agent 运行中产生的工作数据、记忆、工具调用记录等。Agent Bucket 与对象存储、文件存储并列，成为云存储的第三种基础形态。腾讯云此举意图复制其在消费云时代「云服务器 / 对象存储 / CDN」分层基础设施的成功路径，在企业级 Agent 爆发前夜抢先卡位。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">腾讯云推出 Agent Bucket，云存储出现「智能体原生」第三形态</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">亿级 Agent 容量；统一存放用户资料 + Agent 记忆 / 工具调用日志</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">Agent 平台方需要新的存储抽象；OSS / 文件存储传统厂商面临重构压力</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">阿里云 / 华为云预计快速跟进；Agent 中间件 / 框架层（LangGraph / AutoGen）需适配</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「存储 + 记忆 + 调用链」是 Agent 与传统应用最大的运行时差异——基础设施厂商正在重写自己的抽象层</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-model">智能体终端</span>
+        <span class="tag tag-industry">AI 手机</span>
+        <h3><a href="https://view.inews.qq.com/a/20260709A032AE00" target="_blank">阶跃星辰官宣 AI 智能体终端 / 手机，全球大模型厂商首家落地</a></h3>
+        <div class="meta">
+            <span class="source">IT之家 / 科创板日报</span> · 2026-07-09 · <a href="https://view.inews.qq.com/a/20260709A032AE00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            阶跃星辰 7 月 9 日通过公众号官宣将推出新一代智能体终端，带来 Agent 时代的新答案。科创板日报同期披露，阶跃星辰即将发布 AI 终端品牌、智能体系统及首款 AI 智能体手机。此前 OpenAI 已公开押注新一代 AI 终端（计划 2027 年上市），阶跃星辰抢先落地 AI 智能体手机，成为全球大模型厂商中第一家将 Agent 终端量产化的公司。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">阶跃星辰抢先发布 AI 智能体手机，全球大模型厂商首家量产化</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">终端品牌 + 智能体系统 + 智能手机三件套；OpenAI 计划 2027 上市</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产手机厂商（小米 / OPPO / vivo）面临 Agent OS 合作 / 自研选择；硬件供应链重启</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">发布会排期；操作系统 / 应用生态适配；渠道铺货</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「Agent 手机」比「AI 手机」更进一步——手机从「装 App」变「调度 Agent」，是端侧 AI 的范式跃迁</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-policy">拟人化监管</span>
+        <span class="tag tag-industry">C 端收缩</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A0AIBB00" target="_blank">拟人化 AI 互动监管收紧，豆包 / 通义千问将于 7 月 15 日下线用户自建智能体</a></h3>
+        <div class="meta">
+            <span class="source">中国经营报（中经记者李昆昆、李正豪） / 字节豆包 / 阿里通义千问 官方</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A0AIBB00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            字节豆包、阿里通义千问两大头部 AI 平台同步官宣将于 7 月 15 日正式下线用户自建智能体功能。豆包通知称，因产品功能调整，平台智能体功能将于 7 月 15 日下线；下线后用户可留存一段时间内的智能体资料与对话记录，需自行截图或导出备份；10 月 15 日后相关数据将依据《隐私政策》处理。此次调整是近期拟人化 AI 互动监管政策落地的直接体现。监管对「长期陪伴型 AI」「自建人格角色」的合规红线进一步明确，业内普遍预期其他平台将在 2-4 周内跟进调整。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">豆包 + 通义千问同步下线用户自建智能体，C 端人格化 AI 玩法短期收紧</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">7 月 15 日下线；10 月 15 日数据清理；两家头部同步行动</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">星野 / Talkie / Character.AI 等「陪伴向」产品商业模式承压；UGC 智能体生态面临调整</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">其他头部平台预期 2-4 周内跟进；平台级「角色市场」或转向白名单制</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">监管选择「功能下线」而非直接处罚，是相对温和但信号强烈的合规收紧手段</span></div>
+        </div>
+    </div>
+
+    <!-- News 11 -->
+    <div class="news-card">
+        <span class="tag tag-model">意识研究</span>
+        <span class="tag tag-global">Anthropic</span>
+        <h3><a href="https://view.inews.qq.com/a/20260707A03HXT00" target="_blank">Anthropic 发布 Claude 内部「类人意识机制」研究：J 空间类比人脑全局工作空间</a></h3>
+        <div class="meta">
+            <span class="source">智东西（公众号：zhidxcom）/ 谷歌 DeepMind 科学家</span> · 2026-07-07 · <a href="https://view.inews.qq.com/a/20260707A03HXT00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            智东西 7 月 7 日报道，Anthropic 一篇最新论文证明，能观察到 Claude 的「内心想法」：其内部存在和人脑高度相似的区分机制——仅有一小部分内部信息能像人类的有意识想法一样被调取思考，大部分运算都在底层自动运行。底层自动运行区域被称为 J 空间（jSpace），对应人脑神经科学中的「全局工作空间」（Global Workspace）理论。谷歌 DeepMind 科学家公开点赞并参与讨论。这与 7 月 8 日 Anthropic 同步上线的 Claude Cowork 移动 / Web 端及「J-Lens」可解释性研究形成系列化布局。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Anthropic 论文揭示 Claude 内部存在类人「全局工作空间」机制</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">J 空间 = 顶层可调取；底层自动运行；与人脑全局工作空间理论同构</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">可解释性研究升温；公众对「AI 是否有意识」讨论加剧；监管压力上升</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Claude Cowork 移动 / Web 端上线；J-Lens 工具开放；与 DeepMind 联合研究</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">把「意识」作为机制（mechanism）而非性质（property）讨论——是 AI 可解释性研究的关键祛魅</span></div>
+        </div>
+    </div>
+
+    <!-- News 12 -->
+    <div class="news-card">
+        <span class="tag tag-policy">出口管制</span>
+        <span class="tag tag-global">AI 治理</span>
+        <h3><a href="https://view.inews.qq.com/a/20260706A08LFV00" target="_blank">美国撤销对 Anthropic Mythos 5 / Fable 5 出口管制，向全球 AI 治理释放矛盾信号</a></h3>
+        <div class="meta">
+            <span class="source">走出去智库 CGGT / Al Jazeera / BBC / CNBC</span> · 2026-07-06 · <a href="https://view.inews.qq.com/a/20260706A08LFV00" target="_blank">view.inews.qq.com</a>
+        </div>
+        <div class="content">
+            美国商务部再度调整前沿 AI 监管政策，撤销 6 月 12 日针对 Anthropic 两款模型 Mythos 5 与 Fable 5 的出口管制措施，引发全球 AI 行业与治理领域广泛关注。走出去智库（CGGT）观察到，此轮解禁是特朗普政府年内针对前沿 AI 的多次摇摆调整之一，叠加此前对 OpenAI 新模型的准入限制，凸显美国在技术安全防控与产业竞争力之间的持续博弈。同期白宫拟与 OpenAI / Anthropic / 谷歌共建「自愿性」模型发布标准，最快本周公布。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">美方对 Anthropic Mythos 5 / Fable 5 解禁，年内出口管制政策频繁转向</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">管制 → 解禁窗口期约 24 天；同期拟推自愿性发布标准</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">全球前沿 AI 部署节奏短期改善；「出口管制」威慑力被市场重新定价</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">白宫最快本周公布自愿性标准；监管节奏继续高位震荡</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">「管制—放开—再管制」循环表明硬性出口管制难抑前沿模型扩散，标准协调正在取代禁令</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻（证券时报e公司 / 每日经济新闻 / 凤凰网 / 中国经营报 / 北京日报 / 智东西 / 走出去智库 / 驱动之家 / 红星新闻 / 潮新闻 / 界面新闻 / IT之家 等）+ Web Search（VentureBeat / OpenAI 官方 / Hugging Face / Tech in Asia / Al Jazeera / CNBC / X.AI / OpenRouter）</p>
+        <p>⏰ 报告生成时间：2026-07-10 08:55 CST | 📅 报告日期：2026-07-09</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-09.html">https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-09.html</a></p>
+    </div>
+</body>
+</html>
