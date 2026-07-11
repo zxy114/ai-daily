@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻日报 — 2026年7月10日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #8b949e;
+        }
+        .header .subtitle {
+            font-size: 0.9em;
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .summary-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .summary-box h2 {
+            color: #f0883e;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .summary-box li {
+            padding: 6px 0;
+            color: #8b949e;
+        }
+        .summary-box li::before {
+            content: "▸ ";
+            color: #f0883e;
+        }
+        .news-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-card .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .tag-chip { background: #1f6feb33; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .tag-model { background: #23863633; color: #3fb950; border: 1px solid #23863644; }
+        .tag-funding { background: #db6d2833; color: #f0883e; border: 1px solid #db6d2844; }
+        .tag-policy { background: #da363433; color: #f85149; border: 1px solid #da363444; }
+        .tag-infra { background: #8957e533; color: #bc8cff; border: 1px solid #8957e544; }
+        .tag-cost { background: #6e768133; color: #c9d1d9; border: 1px solid #6e768144; }
+        .tag-industry { background: #2ea04333; color: #56d364; border: 1px solid #2ea04344; }
+        .tag-global { background: #1f6feb33; color: #79c0ff; border: 1px solid #1f6feb44; }
+        .news-card h3 {
+            color: #e6edf3;
+            font-size: 1.15em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .news-card h3 a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .news-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .news-card .meta {
+            font-size: 0.82em;
+            color: #6e7681;
+            margin-bottom: 12px;
+        }
+        .news-card .meta .source {
+            color: #8b949e;
+            font-weight: 600;
+        }
+        .news-card .content {
+            color: #adbac7;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        .news-card .dims {
+            border-top: 1px solid #21262d;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .news-card .dims .dim {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        .news-card .dims .dim-label {
+            min-width: 90px;
+            font-size: 0.8em;
+            color: #6e7681;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .news-card .dims .dim-value {
+            font-size: 0.85em;
+            color: #8b949e;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #484f58;
+            font-size: 0.8em;
+        }
+        .footer a { color: #58a6ff; text-decoration: none; }
+        .divider {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 30px 0;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.6em; }
+            .news-card { padding: 16px; }
+            .news-card .dims .dim-label { min-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 新闻日报</h1>
+        <div class="date">2026 年 7 月 10 日（星期五）</div>
+        <div class="subtitle">多源融合 · 腾讯新闻（财联社 / 央广网 / 智东西 / IT之家 / 凤凰WEEKLY / 北京日报 / 中国经营报）+ The Verge / CNBC / Reuters  | 严格 3 天时效过滤</div>
+    </div>
+
+    <div class="summary-box">
+        <h2>📋 今日要点</h2>
+        <ul>
+            <li>智谱 / MiniMax 同日"前后脚"融资，合计募资约 474 亿港元，国产大模型算力军备再升级</li>
+            <li>国内首个全国产十万卡 AI 超集群「曙光 8000 登峰」正式落成，接入国家超算互联网</li>
+            <li>SK 海力士登陆美股创外国企业 IPO 历史纪录，首日股价飙升 13%</li>
+            <li>燧原科技科创板 IPO 注册生效，国产 GPU「四小龙」齐聚资本市场</li>
+            <li>中企 AI 加速器预算国产占比预计 12 个月内由 30% 升至 46%，华为 / 海光最大赢家</li>
+            <li>拟人化 AI 互动监管收紧：豆包 / 通义千问 7 月 15 日同步下线用户自建智能体</li>
+            <li>政务大模型部署应用指引发布：辅助决策独立成大类，与政务服务 / 社会治理并列</li>
+            <li>OpenAI 高层重组：Greg Brockman 持续执掌产品线，Fidji Simo 转任兼职顾问（IPO 临近）</li>
+            <li>NYT 及多家出版商指控 OpenAI 隐瞒训练证据，申请法院制裁</li>
+            <li>Apple 反诉：指控 OpenAI 前员工存在"系统性窃取"模式</li>
+            <li>Meta 自研 AI 芯片「Iris」9 月量产，加入每半年推一版的 MTIA 产品线</li>
+            <li>百度"搭子"发布升级计划：智能路由 / 多端共享记忆 / 全自动化 Skill 流程</li>
+        </ul>
+    </div>
+
+    <!-- News 1 -->
+    <div class="news-card">
+        <span class="tag tag-funding">大模型双雄</span>
+        <span class="tag tag-chip">港股配售</span>
+        <span class="tag tag-infra">算力军备</span>
+        <h3><a href="https://view.inews.qq.com/a/20260710A075GU00" target="_blank">智谱 / MiniMax 同日"前后脚"巨额融资，国产大模型再掀港股配售潮</a></h3>
+        <div class="meta">
+            <span class="source">智东西 / IT之家 / 财联社 / 证券时报 e 公司 / 九派财经</span> · 2026-07-09/10 · <a href="https://view.inews.qq.com/a/20260710A075GU00" target="_blank">view.inews.qq.com</a> · <a href="https://view.inews.qq.com/a/20260710A0AT2G00" target="_blank">IT之家</a> · <a href="https://view.inews.qq.com/a/20260709A09WYR00" target="_blank">证券时报</a>
+        </div>
+        <div class="content">
+            7 月 9 日智谱公告拟配售最多 1978 万股新 H 股，每股 1588 港元，预计募资总额约 314.11 亿港元（约 272 亿人民币），创 2026 年港股科技企业单次配售规模新高，亦是国产大模型上市以来最大股权融资；当日股价高开高走，收涨 11.34% 至 2032 港元。次日 7 月 10 日，MiniMax（0100.HK）公告拟通过股份配售 + 可转债合计募资约 160 亿港元（约 138.83 亿人民币），配售价每股 268 港元（较收盘价 297.4 港元折让 9.89%），配售净额约 94.91 亿港元。资金用途均指向 AI 基础设施与模型研发。投资方涵盖亚太、欧洲、美国市场多家顶级主权基金、长线基金、一线中资机构和多策略基金，MiniMax 配售还吸引 20 余家长线及主权基金参与。智谱管理层同步表态"火速融资扩充算力"。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">智谱（314 亿港元）+ MiniMax（160 亿港元）同日联动巨额再融资，国产大模型掀起港股配售潮</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">智谱配售价 1588 港元、配股 1978 万股；MiniMax 配售 3560 万股、配售价 268 港元；资金 80% 用于算力与模型</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">全球长线 / 主权基金加速配置中国 AI 资产；港股流动性结构改变；同业算力竞赛提速</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">资金分批投入万卡 / 十万卡级算力底座；新代际旗舰模型有望年内发布</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">智谱 + MiniMax 不约而同选择"配售"而非纯债务融资——既是港股估值修复信号，也意味着一级 / 二级市场对国产头部大模型估值锚的同步抬升</span></div>
+        </div>
+    </div>
+
+    <!-- News 2 -->
+    <div class="news-card">
+        <span class="tag tag-infra">十万卡集群</span>
+        <span class="tag tag-global">国产算力</span>
+        <span class="tag tag-policy">超算互联网</span>
+        <h3><a href="https://view.inews.qq.com/a/20260710A06D8V00" target="_blank">国内首个全国产十万卡 AI 超集群「曙光 8000 登峰」正式落成</a></h3>
+        <div class="meta">
+            <span class="source">央广网 / 中科曙光 / 光合组织</span> · 2026-07-10 · <a href="https://view.inews.qq.com/a/20260710A06D8V00" target="_blank">央广网</a> · <a href="https://view.inews.qq.com/a/20260710A0CE5700" target="_blank">长安街知事</a>
+        </div>
+        <div class="content">
+            7 月 10 日光合组织 2026 智能计算应用大会上，中科曙光宣布中国首个全国产十万卡 AI 超集群——曙光 8000（登峰）正式落成，并同步接入国家超算互联网。万卡级系统相比，十万卡级部署需在集群规模、网络互联、稳定性、并行框架与并行编译、能效与绿色低碳等五大维度实现跨代际跨越——意味着从硬件、网络到上层软件栈均需全国产方案支撑。会议指出，AI 竞争胜负手正在从"模型层"下沉到底层算力：Google 持续迭代 TPU、Amazon 推广 Trainium、Meta 自研 MTIA。十万卡国产集群的落成，叠加 7 月 8 日彭博行业研究显示中企 AI 加速器预算国产占比 12 个月内由 30% 升至 46%，标志国产算力底座进入"以数量级扩张换生态主导"阶段。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">国内首个全国产 10 万卡级 AI 超集群"曙光 8000 登峰"正式落地，接入国家超算互联网</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">10 万卡规模；五大维度自主可控；同步公布中国 AI 芯片预算占比上行通道（30% → 46%）</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">大模型训练从千卡 / 万卡进入十万卡时代；国家超算互联网服务范围扩大</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">对外承接大模型 / 科学智能 / 智能体训练任务；预计吸引更多国产 AI 芯片 + 服务器厂商加入生态</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"全国产 + 十万卡"组合既回应了出口管制压力，也定义了未来 12-24 个月国产 AI 算力规模化路径</span></div>
+        </div>
+    </div>
+
+    <!-- News 3 -->
+    <div class="news-card">
+        <span class="tag tag-global">存储芯片</span>
+        <span class="tag tag-infra">美国 IPO</span>
+        <span class="tag tag-cost">市值纪录</span>
+        <h3><a href="https://view.inews.qq.com/a/20260711A02PPR00" target="_blank">SK 海力士登陆美股创外国企业 IPO 历史纪录，首日股价飙升 13%</a></h3>
+        <div class="meta">
+            <span class="source">凤凰网科技 / 彭博社 / CNBC</span> · 2026-07-11 · <a href="https://view.inews.qq.com/a/20260711A02PPR00" target="_blank">凤凰网</a>
+        </div>
+        <div class="content">
+            韩国存储芯片制造商 SK 海力士 7 月 11 日（美东 10 日）完成登陆美股，募资规模使其成为美国股市历史上规模最大的外国企业 IPO，首日股价飙升 13%。在 AI 算力需求驱动 HBM、DDR5 等高端存储供不应求背景下，SK 海力士作为英伟达 GPU 的核心 HBM 供应商，通过双重上市进一步绑定美国资本市场与北美 AI 客户。彭博社指出，市场正试图回答：AI 能否打破芯片行业过往的盛衰周期。机构观点分歧明显——一边是 HBM 持续紧张、AI 客户长约锁产能；另一边是消费级 DRAM / NAND 等待市场回归中低端，供需周期仍存在反复风险。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">SK 海力士完成美国股市史上最大外国企业 IPO，首日飙涨 13%</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">外国企业 IPO 历史最大规模；首日 +13%；HBM 锁产能 + AI 客户长约</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">北美 AI 资本结构进一步"硬件化"；HBM 价格预期与供给稳定性改善</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">美韩资本市场对接加深；存储周期叙事进入机构定价视野</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"AI 能否打破芯片周期"是 HBM 这一品类的核心悬念——SK 海力士用资本动作给出了倾向性答案</span></div>
+        </div>
+    </div>
+
+    <!-- News 4 -->
+    <div class="news-card">
+        <span class="tag tag-industry">GPU IPO</span>
+        <span class="tag tag-infra">国产算力</span>
+        <span class="tag tag-funding">科创板</span>
+        <h3><a href="https://view.inews.qq.com/a/20260710A0ABML00" target="_blank">燧原科技科创板 IPO 注册生效，国产 GPU"四小龙"齐聚资本市场</a></h3>
+        <div class="meta">
+            <span class="source">凤凰 WEEKLY / 上交所 / 燧原科技招股书</span> · 2026-07-10 · <a href="https://view.inews.qq.com/a/20260710A0ABML00" target="_blank">凤凰 WEEKLY</a>
+        </div>
+        <div class="content">
+            7 月 9 日上交所官网披露，上海燧原科技股份有限公司科创板 IPO 审核状态变更为"注册生效"，标志着继摩尔线程、沐曦股份、壁仞科技之后，国产 GPU"四小龙"最后一家登陆资本市场。燧原成立于 2018 年，是国内较早布局云端 AI 芯片的企业，长期坚持自研 DSA（领域专用架构）路线。本次拟募资 60 亿元投入下一代 AI 芯片研发。但招股书亦披露：累计亏损超 47 亿元，预计今明两年实现盈利。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">燧原科技科创板 IPO 注册生效，国产 GPU "四小龙"最后一家登陆资本市场</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">拟募资 60 亿元押注下一代 AI 芯片；累计亏损 47 亿元；预计今明两年盈利</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">国产云端 AI 芯片格局从"散兵游勇"演变为"四小龙 + 大厂自研"双轨制</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">技术路线 DSA 与 GPGPU 并存；加快数据中心 / 智算中心渗透</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"四小龙齐聚资本市场"意味着国产 AI 芯片进入"二级市场定价 + 一级研发接力"的新阶段，但累计亏损仍待规模化收入验证</span></div>
+        </div>
+    </div>
+
+    <!-- News 5 -->
+    <div class="news-card">
+        <span class="tag tag-cost">去英伟达</span>
+        <span class="tag tag-infra">国产替代</span>
+        <span class="tag tag-industry">预算占比</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A074AV00" target="_blank">彭博：中企 AI 加速器预算国产占比 12 个月飙至 46%，华为 / 海光成最大赢家</a></h3>
+        <div class="meta">
+            <span class="source">驱动之家 / 彭博行业研究</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A074AV00" target="_blank">驱动之家</a>
+        </div>
+        <div class="content">
+            彭博行业研究最新发布的调查报告显示，中国企业正加速从英伟达 AI 加速器转向本土产品。在对 60 名中国软件、金融、制造和零售业高管的调查中，受访者预计未来 12 个月将把 46% 的 AI 加速器预算投向国产芯片，高于目前的 30%。80% 的受访高管表示今年 AI 基础设施总支出已超预算，主因是 AI 项目成本高企。腾讯、阿里巴巴等头部云厂商已在自研 ASIC 和采购国产 GPU 上双向发力，华为昇腾、海光信息被普遍视为最大赢家。这一数据与 7 月 10 日"曙光 8000 登峰"国产十万卡集群落成形成呼应。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">中企 AI 加速器预算国产占比 12 个月内预计从 30% 升至 46%</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">+16pp 涨幅；80% 受访者 AI 基础设施支出超预算；60 位软件 / 金融 / 制造 / 零售高管样本</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">英伟达在中国市场定价 / 渠道策略承压；国产芯片 + 服务器厂商订单快速积累</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">头部云厂商自研 ASIC 加码；国产 AI 服务器 / 集群订单大涨</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"预算切分"是出口管制后最具象的产业反应——46% 是预期值而非实际值，但已足以重塑国产芯片估值锚</span></div>
+        </div>
+    </div>
+
+    <!-- News 6 -->
+    <div class="news-card">
+        <span class="tag tag-policy">监管收紧</span>
+        <span class="tag tag-industry">C 端 AI</span>
+        <span class="tag tag-chip">智能体下线</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A0AIBB00" target="_blank">拟人化 AI 互动监管收紧：豆包 / 通义千问 7 月 15 日同步下线用户自建智能体</a></h3>
+        <div class="meta">
+            <span class="source">中国经营报 / 字节跳动 / 阿里通义</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A0AIBB00" target="_blank">中国经营报</a>
+        </div>
+        <div class="content">
+            字节跳动豆包与阿里通义千问两大头部 AI 平台同步官宣：将于 7 月 15 日正式下线用户自建智能体（agent）功能。豆包发布通知称，因产品功能调整，平台智能体功能将下线；下线后用户可留存一段时间内的智能体资料与对话记录，需自行截图或导出备份；10 月 15 日后，相关数据将依据隐私政策处理。这是自年初"AI 拟人化互动"合规要求发布以来，头部 C 端平台首次大规模产品调整，被业内视为头部厂商集体配合监管节奏、承担合规成本的明确信号。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">豆包 / 通义千问同步下线用户自建智能体，头部 C 端 AI 平台首次大规模合规整改</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">7 月 15 日正式下线；10 月 15 日数据按隐私政策处置；两家头部同步行动</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">C 端个性化智能体生态进入"功能收缩 + 合规先行"阶段；UGC AI 工具市场降温</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">用户资料 / 对话备份流程预计成行业标准；B 端智能体服务承接 C 端需求溢出</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"两家同步"而非"一家率先"是这次监管落地最值得关注的信号——头部厂商已就合规成本形成行业共识</span></div>
+        </div>
+    </div>
+
+    <!-- News 7 -->
+    <div class="news-card">
+        <span class="tag tag-policy">政务 AI</span>
+        <span class="tag tag-model">大模型部署</span>
+        <span class="tag tag-chip">辅助决策</span>
+        <h3><a href="https://view.inews.qq.com/a/20260708A04VCN00" target="_blank">中央网信办 / 国家发改委联合发布《政务领域人工智能大模型部署应用指引》</a></h3>
+        <div class="meta">
+            <span class="source">北京日报客户端 / 中央网信办 / 国家发展改革委</span> · 2026-07-08 · <a href="https://view.inews.qq.com/a/20260708A04VCN00" target="_blank">北京日报</a>
+        </div>
+        <div class="content">
+            中央网信办、国家发展改革委联合印发的《政务领域人工智能大模型部署应用指引》将政务服务、社会治理、机关办公、辅助决策并列为政务领域的几类应用方向。其中辅助决策与前三类区别明显——目标并非提高办事效率或改善公众体验，而是提升政府决策本身的质量。在 AI 治理维度，"决策责任归属 + 模型可解释性 + 决策留痕"将成为后续配套细则的关键变量。从配套机制角度看，应用指引的发布意味着政务大模型采购进入"目录 + 安全评估"双轨阶段。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">中央网信办 + 国家发改委联合发布政务领域 AI 大模型部署应用指引</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">四大方向：政务服务 / 社会治理 / 机关办公 / 辅助决策；辅助决策独立成类</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">政务大模型采购进入"目录 + 安全评估"双轨；央国企 / 部委大模型订单加速释放</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">配套实施细则与评估标准有望近期公布；地方政府大模型采购预算重排</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"辅助决策"被首次独立列类，意味着 AI 进入治理核心环节而非仅外围——责任归属与可解释性的合规要求将大幅抬升</span></div>
+        </div>
+    </div>
+
+    <!-- News 8 -->
+    <div class="news-card">
+        <span class="tag tag-model">百度</span>
+        <span class="tag tag-chip">搭子升级</span>
+        <span class="tag tag-industry">Agent</span>
+        <h3><a href="https://view.inews.qq.com/a/20260710A0A8SQ00" target="_blank">百度"搭子"发布升级计划：智能路由 / 多端记忆共享 / 业界首个全自动化 Skill 流程</a></h3>
+        <div class="meta">
+            <span class="source">深水研究 DeepWater Research / 百度</span> · 2026-07-10 · <a href="https://view.inews.qq.com/a/20260710A0A8SQ00" target="_blank">深水研究</a>
+        </div>
+        <div class="content">
+            百度 7 月 10 日举行搭子发布会，公开回答"AI 到底是工具、助手还是伙伴"——答案指向"搭子"。本轮升级涵盖智能路由、多端共享记忆、Browser Use、专业 Skill 生态、PPT 生成等能力，业界首个全自动化 Skill 上线流程和自媒体专业套件同步推出，企业版亦同步上线。从战略叙事看，"卷系统而非卷模型"是今年 AI 巨头共同方向；百度选择以"搭子"为入口，把智能体 / 工具 / 记忆作为差异化抓手。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">百度"搭子"产品升级 + 业界首个全自动化 Skill 上线流程</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">智能路由 + 多端共享记忆 + Browser Use + PPT 生成；企业版同步上线</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 助手市场进入"系统层"竞争；专业 Skill 生态成为差异化点</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">企业版渗透提速；自媒体专业套件拉动创作者生态</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"全自动化 Skill 流程"是百度押注的差异化——把模型 / 工具 / 用户三方共创门槛降到最低</span></div>
+        </div>
+    </div>
+
+    <!-- News 9 -->
+    <div class="news-card">
+        <span class="tag tag-global">OpenAI</span>
+        <span class="tag tag-industry">IPO 临近</span>
+        <span class="tag tag-chip">人事重组</span>
+        <h3><a href="https://www.cnbc.com/2026/07/10/openai-power-consolidates-under-co-founder-greg-brockman-ahead-of-ipo.html" target="_blank">OpenAI 高层重组：Greg Brockman 持续执掌产品线，Fidji Simo 转任兼职顾问</a></h3>
+        <div class="meta">
+            <span class="source">The Verge / CNBC / OpenAI</span> · 2026-07-10 · <a href="https://www.cnbc.com/2026/07/10/openai-power-consolidates-under-co-founder-greg-brockman-ahead-of-ipo.html" target="_blank">cnbc.com</a> · <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">theverge.com</a>
+        </div>
+        <div class="content">
+            据 CNBC 报道，OpenAI 联合创始人 Greg Brockman 将在 CEO Sam Altman 之外继续执掌产品线。Fidji Simo 在医疗休假结束后不会回归全职岗位，将转为公司的"兼职顾问"角色。这一调整被解读为 IPO 前的权力整合——Altman + Brockman 双核负责核心业务方向，Simo 这一前"AGI 业务负责人"职权弱化。同期报道显示，Simo 对外身份继续担任多家公司董事。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">OpenAI 高层重组：Greg Brockman 持续执掌产品线，Fidji Simo 转兼职顾问</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">核心权力向 Altman + Brockman 集中；前 AGI 负责人职位弱化</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">OpenAI 上市路径再明确；组织人事变动向投资人预期靠拢</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">IPO 时间表推进；产品线整合提速；外部董事席位可能扩大</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"AGI 负责人"职位被兼职化是组织层面对叙事再校准——避免"激进叙事"影响估值模型</span></div>
+        </div>
+    </div>
+
+    <!-- News 10 -->
+    <div class="news-card">
+        <span class="tag tag-policy">版权诉讼</span>
+        <span class="tag tag-global">OpenAI</span>
+        <span class="tag tag-industry">训练证据</span>
+        <h3><a href="https://www.nytimes.com/2026/07/09/technology/new-york-times-openai.html" target="_blank">NYT 及多家出版商指控 OpenAI 隐瞒训练证据，申请法院制裁</a></h3>
+        <div class="meta">
+            <span class="source">The Verge / The New York Times / DocumentCloud</span> · 2026-07-09 · <a href="https://www.nytimes.com/2026/07/09/technology/new-york-times-openai.html" target="_blank">nytimes.com</a> · <a href="https://www.documentcloud.org/documents/28443941-memorandum-of-law-in-support-of-news-plaintiffs-motion-for-sanctions-against-openai/" target="_blank">documentcloud.org</a>
+        </div>
+        <div class="content">
+            《纽约时报》联合多家出版机构向法院提交动议，指控 OpenAI 未按法院要求披露其 AI 系统如何被训练和使用的关键证据，申请对 OpenAI 实施法律制裁。这是 NYT vs OpenAI 版权诉讼的升级——出版方主张 OpenAI 在训练数据来源、合成数据使用、模型评估数据集等环节存在系统性披露不足。诉状附带的公开法律备忘录显示，原告方要求法院强制 OpenAI 提交"训练数据集样本 + 评估 / 安全测试数据集清单"。该案进展可能成为美国版权法适用于生成式 AI 训练的关键判例。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">NYT 等出版商指控 OpenAI 隐瞒训练关键证据，申请法院制裁</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">诉方要求强制披露：训练数据集样本、评估 / 安全测试数据集清单</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">美国版权法适用于生成式 AI 训练的关键判例可能形成；其他厂商或被连带监管</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">法院举证 / 制裁裁定；潜在和解谈判；更多出版机构加入</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"申请制裁"而非"撤回诉讼"是新闻点——原告方已进入要求惩罚性救济阶段</span></div>
+        </div>
+    </div>
+
+    <!-- News 11 -->
+    <div class="news-card">
+        <span class="tag tag-global">Apple vs OpenAI</span>
+        <span class="tag tag-chip">人才诉讼</span>
+        <span class="tag tag-industry">商业秘密</span>
+        <h3><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">Apple 反诉 OpenAI：指控前员工存在"系统性窃取"模式</a></h3>
+        <div class="meta">
+            <span class="source">The Verge / Apple</span> · 2026-07-10 · <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">theverge.com</a>
+        </div>
+        <div class="content">
+            据 The Verge 报道，Apple 在新提交的法律文件中主张已掌握 OpenAI 一批从 Apple 离职转入 OpenAI 的前员工存在"系统性窃取"模式——具体指控涵盖机密模型架构信息、研发路线图、内部评估基准等。Apple 要求法院扩大禁令范围，限制特定员工继续参与 OpenAI 内部相关项目。"系统性"措辞较此前单点窃密案明显升级，意味着 Apple 认为已具备充足证据证明存在跨员工的协同窃取行为。这一诉讼与 NYT vs OpenAI 同步推进，叠加效应可能放大 OpenAI 的法律风险敞口。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Apple 反诉指控 OpenAI 前员工存在"系统性窃取"模式</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">指控覆盖架构 / 路线图 / 评估基准；要求扩大禁令范围限制相关人员参与</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">OpenAI 人才招聘 / 项目分拆节奏受干扰；硅谷 AI 人才流动合规成本上升</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">禁令范围裁定；可能涉及苹果 ML 团队组织调整</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">"系统性"措辞从单点纠纷升级为对 OpenAI 招聘体系的合规质疑——为后续禁令救济 / 赔偿谈判铺路</span></div>
+        </div>
+    </div>
+
+    <!-- News 12 -->
+    <div class="news-card">
+        <span class="tag tag-global">Meta</span>
+        <span class="tag tag-infra">自研芯片</span>
+        <span class="tag tag-cost">去英伟达</span>
+        <h3><a href="https://about.fb.com/news/2026/03/expanding-metas-custom-silicon-to-power-our-ai-workloads/" target="_blank">Meta 自研 AI 芯片「Iris」9 月量产，加入每半年推一版的 MTIA 产品线</a></h3>
+        <div class="meta">
+            <span class="source">The Verge / Reuters / Meta</span> · 2026-07-09 · <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">theverge.com</a> · <a href="https://about.fb.com/news/2026/03/expanding-metas-custom-silicon-to-power-our-ai-workloads/" target="_blank">about.fb.com</a>
+        </div>
+        <div class="content">
+            据 Reuters 援引知情人士，Meta 计划 9 月开始量产新一代自研 AI 加速芯片 Iris，加入 MTIA（Meta Training and Inference Accelerator）产品线。Meta 此前已承诺每六个月推出一款新自研芯片，目标是降低对英伟达和 AMD 的依赖。Iris 在前代 Artemis 基础上预计带来更高能效比与更大显存配置，主要支撑 Meta 推荐 / 内容理解 / 广告投放 / 生成式 AI 推理等内部负载。叠加 SK 海力士美国 IPO、Tenstorrent 资本动作、英伟达 GB300 出货节奏，2026 下半年 AI 算力供应链呈现"模型厂商 + 云厂商 + 国家级玩家"同时发起自研的趋势。
+        </div>
+        <div class="dims">
+            <div class="dim"><span class="dim-label">核心事件</span><span class="dim-value">Meta 自研 AI 芯片 Iris 计划 9 月量产，加入 MTIA 半年一迭代产品线</span></div>
+            <div class="dim"><span class="dim-label">关键数据</span><span class="dim-value">半年一版节奏；Iris 比前代 Artemis 能效 + 显存升级；面向推理 + 推荐负载</span></div>
+            <div class="dim"><span class="dim-label">影响范围</span><span class="dim-value">AI 算力自研阵营再添巨头；英伟达 / AMD 中端推理市场份额承压</span></div>
+            <div class="dim"><span class="dim-label">后续动作</span><span class="dim-value">Iris 量产节奏跟踪；2027 H1 MTIA 下一代型号路线图</span></div>
+            <div class="dim"><span class="dim-label">解读分析</span><span class="dim-value">Meta 半年一版的承诺是少见的"芯片迭代密度宣言"——这意味着负载定义权向应用层进一步集中</span></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer">
+        <p>📡 数据来源：腾讯新闻一手中文源（智东西 / IT之家 / 财联社 / 证券时报 e 公司 / 九派财经 / 央广网 / 长安街知事 / 凤凰 WEEKLY / 驱动之家 / 中国经营报 / 北京日报 / 深水研究 DeepWater Research）+ 国际视角（The Verge / CNBC / Reuters / The New York Times / DocumentCloud / Meta 官方）</p>
+        <p>⏰ 报告生成时间：2026-07-11 09:16 CST | 📅 报告日期：2026-07-10</p>
+        <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-10.html">https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-10.html</a></p>
+    </div>
+</body>
+</html>
