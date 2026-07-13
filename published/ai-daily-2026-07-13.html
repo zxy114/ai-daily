@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年7月13日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+.summary-box li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-card .news-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-card h3 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 7 月 13 日</div>
+  <div class="subtitle">多源融合 · 腾讯新闻 + The Verge / OpenAI / VentureBeat · 10 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>"世界模型"赛道半年吸金超 400 亿元，中国 33 家企业密集抢跑</li>
+    <li>OpenAI 推出企业级 ChatGPT Work 与旗舰 GPT-5.6，剑指 IPO 前夕</li>
+    <li>Greg Brockman 正式接管 OpenAI 产品线，Fidji Simo 退居兼职顾问</li>
+    <li>寒武纪成为科创板首个万亿市值 AI 芯片公司，11 个月股价暴涨 363%</li>
+    <li>SK 海力士预警：2027 年将迎存储芯片史上最严重缺货潮</li>
+    <li>国内首个全国产十万卡 AI 超集群"曙光 8000"在郑州落成</li>
+    <li>国产 GPU 燧原科技科创板 IPO 注册生效，募资 60 亿押注下一代芯片</li>
+    <li>MiniMax 拟配股+可转债融资 160 亿港元，创始人宣布零薪酬</li>
+    <li>OpenAI 宣布 ChatGPT Atlas 浏览器即将关停</li>
+    <li>AI 数据中心需求外溢，燃气轮机价格 3 年涨约 300%</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>"世界模型"赛道半年融资超 400 亿元，中国 33 家企业密集抢跑</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-tech">技术突破</span>
+    <span class="source-badge">📅 2026-07-12 · 🔗 潮新闻（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260712A07D1W00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>谷歌发布 Gemma 4 模型之际，全球"世界模型"（World Model）赛道上半年融资爆发，中国 46 起融资、超 400 亿元资金涌入，33 家企业密集抢跑，超 10 家估值过 10 亿美元</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>中国上半年"世界模型"领域融资 46 起、总金额超 400 亿元；33 家公司入局；OpenAI、英伟达、特斯拉、宇树等头部机构和企业均加码该方向</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>自动驾驶、具身智能、视频生成、物理仿真等所有需要"AI 理解真实世界"的下游应用</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>头部企业加速推新模型与开源生态布局，资本市场对世界模型估值锚正在形成</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>继大语言模型之后，"世界模型"被视为通往 AGI 的下一关键拼图——它教会 AI"看懂世界"而非仅"说话"，是具身智能与物理 AI 的底层技术栈</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>OpenAI 推出企业级 ChatGPT Work，搭载旗舰 GPT-5.6 剑指 IPO</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">产品发布</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-09/10 · 🔗 OpenAI 官方 + VentureBeat · <a href="https://openai.com/index/chatgpt-for-your-most-ambitious-work/">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>OpenAI 在 7 月 9 日同步发布旗舰模型 GPT-5.6 与企业级产品 ChatGPT Work，并宣布 GPT-5.6 成为 Microsoft 365 Copilot 首选模型；Work 平台打通邮件、Slack、日历等办公套件，可自主承接数小时长任务</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Work 平台能跨应用整合上下文、拆解复杂项目并独立完成数小时的多步骤任务；GPT-5.6 同步成为微软 365 Copilot 首选模型</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>企业 SaaS、知识工作自动化、AI Agent 赛道全部覆盖，OpenAI 正从"聊天工具"升级为"操作系统"</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>独立 Codex 应用保留为编程专用入口，Work 平台逐步承担企业通用 Agent 角色</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>OpenAI 在 ChatGPT 5 周年之际将产品边界从"对话"拓展到"工作流执行"，叠加微软渠道和独立产品矩阵，AI Agent 商业化竞争已从"模型能力"升级为"系统集成能力"</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>Greg Brockman 正式接管 OpenAI 产品线，Fidji Simo 退居兼职顾问</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-10/11 · 🔗 The Verge / CNBC · <a href="https://www.theverge.com/ai-artificial-intelligence">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>CNBC 报道，OpenAI 联合创始人 Greg Brockman 将在公司 IPO 前夕永久接管产品线，原 AGI 业务负责人 Fidji Simo 因身体原因休假后转为"兼职顾问"角色</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>产品线权力进一步向创始团队集中，Simo 此前的 AGI 应用业务由 Brockman 整体接管</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>OpenAI 公司治理与战略走向、IPO 前的市场预期、潜在投资人信心</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>OpenAI 拟在 IPO 前向市场展示"创始团队主导产品"的稳定叙事</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>OpenAI 正以"创始人回归"姿态迎接 IPO，与多数科技公司上市前削弱创始人话语权的传统相反，体现 Sam Altman 团队对产品节奏与商业化协同的强掌控</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>寒武纪成科创板首家万亿市值 AI 芯片企业，11 个月股价暴涨 363%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-chip">芯片</span>
+    <span class="source-badge">📅 2026-07-12 · 🔗 品牌观察官（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260712A03Y2V00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>寒武纪盘中股价触及 1620 元、收报 1595.55 元，正式跨过万亿市值门槛，成为科创板首家万亿市值 AI 芯片公司；其从 8 年累计亏损 54.17 亿元转为 2026 年一季度单季净赚超 10 亿元</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>股价自 2025 年 7 月 348 元涨至 1620 元，11 个月涨幅 363%；2026 Q1 单季净利超 10 亿元，扭转 8 年累亏 54.17 亿元的局面</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产 AI 芯片板块估值锚、上下游供应链、科创板整体 AI 含量</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>寒武纪将加大新一代训练+推理芯片研发投入，进一步提升单位算力能效比</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>寒武纪的盈利拐点叠加万亿市值，标志国产 AI 芯片从"政策预期"进入"业绩兑现"阶段；这一拐点反过来强化了"算力国产化"的资本叙事</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>SK 海力士 CEO 预警：2027 年将迎存储芯片史上最严重缺货潮</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-12 · 🔗 红星新闻（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260712A06GVZ00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>SK 海力士 CEO 郭鲁正公开表示，AI 算力需求叠加新建晶圆厂投产滞后，全球存储芯片行业将在 2027 年遭遇史上最严重的供应短缺，2030 年后相当长时间内需求仍将超过供给</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>SK 海力士已是 HBM3/HBM4 主要供应商；CEO 直接将 2027 年定义为"存储芯片行业最糟糕一年"</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球服务器、智能手机、个人电脑整机制造业，AI 数据中心建设节奏</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>三星、SK 海力士、美光等头部厂商加速扩产，长江存储、长鑫存储等国产存储企业也将受益</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>头部厂商 CEO 公开承认供应紧张，说明 AI 需求已实质挤压消费电子产能，HBM 与 DDR5 的优先级将进一步压倒 PC/手机存储，2027 年或成"算力决定整机生死"的分水岭</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>国内首个全国产十万卡 AI 超集群"曙光 8000"在郑州落成</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-10 · 🔗 央广网（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260710A06D8V00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>中科曙光在"光合组织 2026 智能计算应用大会"上宣布，国内首个全国产十万卡 AI 超集群——曙光 8000（登峰）正式落成，并接入国家超算互联网</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>十万卡规模；从千卡、万卡集群向十万卡演进；强调"全国产"——芯片、互联、电源、软件栈全栈自主</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国家算力基础设施、大模型训练产业链、国产 AI 芯片与高速互联厂商</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>集群后续将向科研机构、头部模型公司开放训练算力服务</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>十万卡是检验"全国产 AI 栈"是否能在真实负载下规模化的关键门槛，曙光 8000 落成意味着国产 AI 算力从"可用"进入"敢用"</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>国产 GPU"四小龙"燧原科技科创板 IPO 注册生效，募资 60 亿押注下一代 AI 芯片</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-10 · 🔗 凤凰 WEEKLY（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260710A0ABML00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>国产 GPU"四小龙"中最后一家燧原科技科创板 IPO 审核状态变更为注册生效，拟募资 60 亿元用于下一代 AI 芯片研发；公司坚持自研 DSA（领域专用架构）路线</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>成立于 2018 年，累计亏损超 47 亿元；预计今明两年盈利；募资 60 亿元</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产云端 AI 芯片竞争格局、模型训练硬件供应链、A 股半导体板块</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>燧原将于近期完成科创板挂牌，下一代 DSA 架构产品将直接对标国际一线训练芯片</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>摩尔线程、沐曦、壁仞、燧原"四小龙"全部完成 IPO 关键步骤，国产 GPU 进入"上市后再拼技术与生态"的下半场，DSA 路线能否在通用 GPU 之外打开市场将成为关键看点</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>MiniMax 拟融资 160 亿港元：配售+可转债双管齐下，创始人宣布零薪酬</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-11 · 🔗 中国经营报（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260711A05BR900">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 10 日，大模型公司 MiniMax（0100.HK）公告拟融资约 160 亿港元（约 138.83 亿元人民币），由股份配售与可转换债券两部分组成；创始人同步宣布零薪酬</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>配售 3560 万股 A 类股份，每股 267.99 港元，募资约 95.41 亿港元；可转债部分约 65 亿港元；累计约 160 亿港元</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>港股大模型板块、二级市场情绪、机构对国内 AI 应用层公司的估值锚</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>资金将用于大模型研发、推理基础设施扩容与海外市场拓展</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>上市刚满 6 个月即进行 160 亿港元再融资，叠加创始人"零薪酬"姿态，意在向二级市场传递长期承诺；但限售股解禁前夜的大额配售也意味着老股东可能需要重新评估持仓</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>OpenAI 宣布 ChatGPT Atlas 浏览器即将停运，资源转向 ChatGPT Work</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">产品发布</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-10 · 🔗 The Verge · <a href="https://www.theverge.com/ai-artificial-intelligence">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>The Verge 报道，OpenAI 决定关停独立的 ChatGPT Atlas AI 浏览器，相关资源将整合到企业级 ChatGPT Work 平台中</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Atlas 上线时间较短，独立浏览器用户量与留存未达预期；Work 平台将承担更多入口角色</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>AI 浏览器赛道（Perplexity Comet、Arc 浏览器衍生态产品）整体节奏</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Work 平台将逐步承担原 Atlas 入口流量与开发者关系</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>OpenAI 选择性放弃独立 C 端浏览器赛道，把入口资源聚焦到企业级 Work 平台，反映 AI 入口之争从"抢占浏览器"回归到"抢占工作流"</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>AI 数据中心需求外溢：燃气轮机价格 3 年累计上涨约 300%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-12 · 🔗 IT之家（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260712A07FVY00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>央视财经等媒体报道，AI 数据中心建设潮推动上游设备需求暴增，燃气轮机作为大型数据中心备电与分布式发电核心设备，3 年价格累计上涨约 300%</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>燃气轮机 3 年涨幅约 300%；AI 数据中心建设是核心驱动</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>电力设备、燃气轮机（GE Vernova、西门子能源、东方电气、航发动力等）整条产业链</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>传统燃机制造商加速扩产，AI 数据中心运营商重新评估电力供应架构与可再生能源组合</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AI 算力扩张已外溢到能源装备层，"算力即电力"的硬约束正在重塑传统动力机械产业格局——AI 行业的边际成本上移压力开始向产业链上游传导</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 数据来源：腾讯新闻（极客公园/中国经营报/央广网/红星新闻/凤凰 WEEKLY/品牌观察官/IT 之家/潮新闻）+ The Verge / OpenAI 官方 / VentureBeat / CNBC</p>
+  <p>🕐 报告生成于 2026-07-13 09:03 (UTC+8) · 3 天内有效新闻</p>
+  <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-13.html">在线阅读</a></p>
+</div>
+
+</body>
+</html>
