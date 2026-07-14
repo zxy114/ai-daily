@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年7月14日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+.summary-box li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-card .news-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-card h3 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 7 月 14 日</div>
+  <div class="subtitle">多源融合 · 腾讯新闻（央视/前哨/智东西/凤凰/连线/潮新闻/AI芯天下/芯流智库）+ AP/WSJ/Barron's/Fortune/Insider/MIT/Gizmodo · 10 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>国产 AI 算力"三箭齐发"：上海自研芯片 520 万亿次算力、美团 LongCat-2.0 用 5 万张国产卡训练、DeepSeek/智谱被曝跨界造芯</li>
+    <li>MiniMax 港股股价单日跌 17%、160 亿港元融资难敌限售股解禁压力，"大模型长跑模式"成市场新叙事</li>
+    <li>Musk 与 Altman 公开互指"欺骗投资人"，SpaceX Grok 4.5 以竞品半价突袭</li>
+    <li>美股 AI 板块连续回调，台积电 6 月营收同比 +38% 创新高，仍难重振 AI 投资热情</li>
+    <li>微软 Nadella 罕见公开暗批 Anthropic 等模型厂商"哭诉蒸馏攻击"为不合理</li>
+    <li>数百位经济学家联名公开信：必须立即应对 AI 对就业与经济的颠覆性冲击</li>
+    <li>Sanders 风格"AI 股票全民持有"计划获 2/3 美国人民调支持</li>
+    <li>世界模型成中美共识新赛道，谷歌 Gemma 4 入场、MIT Tech Review 专题关注</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>国产 AI 算力"三箭齐发"：上海自研芯片突破 + 美团 LongCat-2.0 + DeepSeek/智谱造芯</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-13/14 · 🔗 央视新闻 / 前哨王煜全 / AI芯天下（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260713A0AEF500">链接1</a> <a href="https://view.inews.qq.com/a/20260714A01ZSJ00">链接2</a> <a href="https://view.inews.qq.com/a/20260713A0ANQF00">链接3</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 13 日，央视新闻报道我国首颗采用"软件定义+三维近存计算"架构的 AI 芯片在上海亮相；同一天前哨王煜全披露美团 LongCat-2.0（1.6 万亿参数）已用 5 万张国产卡从零训练完成，并在 OpenRouter 上冲上全球调用量第一；路透社信源称 DeepSeek、智谱已先后启动自研推理芯片计划</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>上海自研芯片 14nm 工艺、每秒 520 万亿次浮点算力；美团 LongCat-2.0 参数量 1.6 万亿，使用 5 万张国产卡训练；DeepSeek 造芯项目约一年前启动；寒武纪一季度实现经营现金流转正</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产云端 AI 芯片公司、推理算力供给侧、模型公司成本结构、中美算力竞争格局</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>软件定义+近存计算路线将向更多芯片设计公司扩散；模型公司"自研芯片+采购国产卡"双轨模式可能成为新标配</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>国产 AI 算力第一次呈现"模型公司主导训练+芯片公司硬件突破+造芯计划暗线推进"的三层联动，标志从"被动适配"走向"自下而上定义硬件"，在美方出口管制持续收紧的背景下，自主权建设速度明显加快</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>MiniMax 港股单日跌 17%：160 亿港元融资难抵限售股解禁压力</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 凤凰卫视 / 智东西 / 连线Insight（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260713A083SS00">链接1</a> <a href="https://view.inews.qq.com/a/20260713A0B54G00">链接2</a> <a href="https://view.inews.qq.com/a/20260712A02UKF00">链接3</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 10 日，国内大模型公司 MiniMax 公告配售新股+发行可转债募资约 160 亿港元（约 138.34 亿元），创始人闫俊杰同步宣布零薪酬并捐出 5% 股份做员工激励；但利好未能阻止股价：自 7 月 9 日限售股解禁以来持续承压，7 月 13 日收盘跌 17.13% 至 222.6 港元，市值 698.2 亿港元</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>融资金额约 160 亿港元（≈ 138 亿元人民币）；股价单日跌幅 17.13%；市值从 7 月初高位蒸发显著</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>港股大模型板块、二级市场对国内 AI 应用层公司估值锚、机构持仓策略</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>资金将用于大模型研发、推理基础设施扩容与海外市场拓展；公司将进入"长跑模式"叙事</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>上市刚满 6 个月即大额再融资+创始人零薪酬姿态，本意是传递长期承诺；但限售股集中解禁暴露了"一级估值与二级流动性的剪刀差"，反映港股资金对国内大模型公司商业化兑现节奏的耐心正在被快速消耗</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>Musk 与 Altman 公开互指"欺骗投资人"，SpaceX Grok 4.5 以半价突袭</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业动态</span>
+    <span class="tag tag-tech">产品发布</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 Fortune / VentureBeat · <a href="https://www.msn.com/en-us/news/technology/elon-musk-and-sam-altman-are-accusing-each-other-of-scamming-investors-as-spacex-and-openai-jockey-to-lead-ai-revolution/ar-AA27PIgN">链接1</a> <a href="https://venturebeat.com/technology/spacexs-grok-4-5-launches-at-half-the-price-of-rivals-heres-why-that-could-rattle-anthropic-and-openai/">链接2</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>在 SpaceX 与 OpenAI 间隔一天先后发布新模型的敏感节点，Elon Musk 与 Sam Altman 隔空互怼"欺骗投资人"；同期 SpaceX 旗下 Grok 4.5 以"竞品约一半的 API 价格"正式开放，剑指 Anthropic 与 OpenAI 中端 API 市场</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Grok 4.5 定价约为 Anthropic Claude、OpenAI GPT 同档模型的 50% 左右；Musk 与 Altman 公开点名互呛发生在两家"24 小时内发新模型"的高曝光窗口</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>前沿大模型定价竞争、企业级 LLM 采购决策、SpaceX/OpenAI 两家公司治理叙事</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Grok 4.5 价格压力将迫使 Anthropic、OpenAI 重新评估中端 API 定价；双方投资人在舆论战中的态度将左右估值</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>从"科技口水战"升级为"投资人信任战"，叠加 Grok 4.5 半价冲击，标志前沿大模型从"技术对标"进入"价格战+信任战"双线竞争——这场口水战对资本市场叙事的影响，可能比模型本身更深远</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>美股 AI 板块连续回调，台积电 6 月营收创新高仍难重振情绪</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-13/14 · 🔗 The Wall Street Journal / Barron's · <a href="https://www.msn.com/en-us/money/top-stocks/us-stocks-fall-as-ai-selloff-oil-jump-rattle-markets/ar-AA27Qhyg">链接1</a> <a href="https://www.msn.com/en-us/money/topstocks/why-tsmc-s-record-revenue-isn-t-reviving-the-ai-trade/ar-AA27OeSz">链接2</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>WSJ 报道美股 7 月 13 日大幅下挫，AI 芯片股集中抛售叠加油价跳升引发市场避险情绪；Barron's 进一步指出，台积电 6 月合并营收同比 +38%、环比大增 68%，创单月历史新高，仍未能扭转 AI 投资热情的降温</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>台积电 6 月营收同比 +38%、环比 +68%；美股芯片板块单日普跌；机构对"AI 资本开支还能持续多久"的质疑声显著上升</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球 AI 算力链估值、二级市场对 AI 概念的定价、上下游硬件公司（GPU、HBM、CoWoS、ABF）景气预期</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>英伟达、AMD 等头部芯片公司或在二季报披露前承受估值压力；机构可能加大对"实际 AI 营收兑现度"指标的考核</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>台积电"营收创纪录+股价不涨"的悖论说明，AI 投资叙事已从"基建扩张预期"切换到"回报兑现验证"——单纯讲供给侧扩张的故事，正在被市场要求配上应用层 ARR 与企业付费转化</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>微软 Nadella 罕见公开暗批 Anthropic 等模型厂商"哭诉蒸馏攻击"为不合理</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业动态</span>
+    <span class="tag tag-policy">政策争议</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 Business Insider · <a href="https://www.msn.com/en-us/money/other/microsofts-satya-nadella-takes-a-veiled-swipe-at-anthropic-and-other-ai-model-makers/ar-AA27MDL2">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>微软 CEO Satya Nadella 在公开场合罕见表态，批评部分前沿模型厂商把"被蒸馏攻击"挂在嘴边却不采取技术防御手段，认为这与微软自身遭遇问题时的处理方式形成鲜明对比，矛头直指 Anthropic 等公司</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Nadella 没有点名具体公司，但"Anthropic 等模型厂商"在英文报道中普遍被读作核心指向</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>前沿大模型 API 商业模式、模型知识产权与防御性技术、微软与 Anthropic 竞合关系</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>模型厂商可能加快在 API 输出中部署更主动的"反蒸馏"技术（输出扰动、行为指纹等），而不仅是事后公关</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是 Nadella 第一次以如此直白方式对前沿模型同行"价值导向"开火，反映微软对"自家算力+第三方模型"组合的护城河有信心，同时希望把"防御责任"压回模型厂商一侧</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>数百位经济学家联名公开信：必须立即应对 AI 对就业与经济的颠覆性冲击</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策争议</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 Associated Press News · <a href="https://apnews.com/article/ai-must-act-now-job-displacement-783469467e0df1463df44518f33295ee">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>美联社报道，数百位经济学家联名发布公开信，警告 AI 可能在不远的将来大规模替代就业、深度重塑经济结构，呼吁政策制定者"必须立即行动"（act now）</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>联署经济学家数量为"数百位"，信中用词"必须立即行动"，态度比以往同类声明更激进</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美欧 AI 监管立法节奏、税收与劳动力政策、企业 AI 部署的合规与公关风险</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>白宫与国会可能加速 AI 监管框架立法；OECD、G20 等多边场合的 AI 议题权重将进一步上升</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>经济学家集体从"旁观 AI"走向"预警 AI"，意味着 AI 的社会经济影响已不再是技术圈内讨论，而开始进入主流宏观政策议程——这将是 2026 下半年美国 AI 监管立法的最重要推力之一</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>Sanders"AI 股票全民持有"计划获 2/3 美国人民调支持</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策争议</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 Gizmodo · <a href="https://gizmodo.com/over-2-3-of-americans-support-bernie-sanders-style-ai-stock-ownership-plan-poll-shows-2000784466">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>美国一项最新民调显示，超过 2/3 的美国人支持参议员 Bernie Sanders 提出的"AI 股票全民持有"方案——其核心思路是当 AI 大幅提升生产率时，由政府代表全民持有部分 AI 公司股权，从而将技术红利社会化分配</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>支持率 2/3+；Sanders 的方案在 AI 怀疑论群体中也获得较高共鸣</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美国 AI 监管立法方向、OpenAI/Anthropic 等公司治理结构、华尔街对前沿 AI 公司估值模型</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>类似提案可能在 2026 大选周期内被其他参选人借用；AI 公司可能在治理结构上提前做出"社会责任"调整以应对</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AI 从"技术问题"开始被主流民意视为"分配问题"，2/3 的支持率意味着这类政策不再只是左翼口号，可能反向逼迫 OpenAI 等公司在 IPO 前给出"全民分红/股权稀释"等创新性安排</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>世界模型成中美共识新赛道：谷歌 Gemma 4 入场 + MIT Tech Review 专题关注</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">技术突破</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-12/13 · 🔗 潮新闻（腾讯新闻）/ MIT Technology Review · <a href="https://view.inews.qq.com/a/20260712A07D1W00">链接1</a> <a href="https://www.technologyreview.com/2026/07/13/1140339/the-download-sperm-donor-limits-ai-world-models/">链接2</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>谷歌正式发布 Gemma 4，被视为世界模型（World Model）赛道又一标志性开源动作；潮新闻报道中国上半年"世界模型"赛道 46 起融资、超 400 亿元资金涌入，33 家企业密集抢跑；MIT Technology Review 同日发布专题，将世界模型列为当下最值得跟踪的 AI 范式之一</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>中国上半年世界模型融资 46 起、总金额 400+ 亿元、33 家公司入局、超 10 家估值过 10 亿美元；Gemma 4 加入战局</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>具身智能、自动驾驶、视频生成、物理仿真、机器人训练等所有需要 AI 理解真实世界动态的下游领域</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>中美头部机构将持续推出更大参数规模的世界模型；硬件层对"时空一致性"算力的需求将快速上升</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>世界模型是 AGI 路径上中美少有的共识方向——大语言模型解决"理解与表达"，世界模型解决"理解物理世界与时间"；它的成熟将让具身智能、机器人与自动驾驶从 demo 走向规模化部署</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>国产 GPU 沐曦股份冲刺"生态突围"，国内 AI 加速卡 2025 出货约 400 万张</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-market">市场数据</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 芯流智库（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260713A07RRV00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>芯流智库援引 IDC 数据，2025 年中国 AI 加速卡市场总出货约 400 万张，英伟达仍以约 55% 份额居首；沐曦股份等国产 GPU 公司在生态适配、推理性能、软硬协同上加速突围</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>2025 年中国 AI 加速卡总出货 400 万张；英伟达份额 55%；国产 GPU 正在抢剩余 45% 市场</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>云端推理算力供给、企业大模型部署成本、国产软件栈（CUDA 替代生态）建设</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>沐曦等公司将围绕推理性能、模型适配数量、与主流框架（PyTorch、MindSpore）兼容性做长期投入</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>在 400 万张年度出货量级下，国产 GPU 的"5% 增量"对市场格局重塑意义有限，但生态突围决定了下一轮份额竞争——"CUDA 兼容"或"自建软件栈"将成为 2026 下半年国产 GPU 公司最关键的两条路线</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>AI 社会撕裂加剧：媒体呼吁监管在"创新"与"安全"之间找到新平衡点</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策争议</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 潮新闻（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260713A07O9S00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>潮新闻刊发评论指出，AI 改稿、做 PPT、辅助医疗诊断等已深入日常生活，但随之而来的"AI 撕裂社会"风险被严重低估；监管需要在"鼓励创新"与"防范滥用"之间尽快找到新的平衡点</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>评论列举 AI 改稿、PPT、医疗等已落地的应用领域，提示社会层面对滥用风险尚未形成共识</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国内 AI 立法节奏、内容平台合规、模型公司部署策略、公众对 AI 的整体接受度</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计国内监管层将在分级分类、内容标识、深度合成等领域推出更细化的配套规则</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>与"经济学家公开信"、"Sanders 计划"形成中美呼应——AI 监管在 2026 年下半年将从"原则性立法"进入"操作层面规则"，国内在 AI 微短剧、拟人化互动等领域已先行落地类似思路</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 数据来源：腾讯新闻（央视新闻/前哨王煜全/AI芯天下/芯流智库/智东西/凤凰卫视/连线Insight/潮新闻）+ Associated Press / The Wall Street Journal / Barron's / Fortune / Business Insider / Gizmodo / MIT Technology Review / VentureBeat</p>
+  <p>🕐 报告生成于 2026-07-14 09:03 (UTC+8) · 3 天内有效新闻</p>
+  <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-14.html">在线阅读</a></p>
+</div>
+
+</body>
+</html>
