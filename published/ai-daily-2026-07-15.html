@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年7月15日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.92em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  color: var(--accent);
+  font-size: 1.15em;
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+.summary-box li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  font-size: 0.95em;
+}
+.summary-box li::before {
+  content: "▸";
+  color: var(--accent);
+  position: absolute;
+  left: 4px;
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+}
+.news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.news-number {
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.9em;
+}
+.news-card h3 {
+  font-size: 1.12em;
+  line-height: 1.4;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 7 月 15 日</div>
+  <div class="subtitle">多源融合 · 腾讯新闻（央视/上观/PConline/智东西/腾讯科技/i 黑马/金融界/钛媒体/界面新闻/IT之家/CSDN/南方都市报）+ The Verge · 10 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>国内政策强信号：工信部等 4 部门首次提出「智能体互联网络」，与豆包/千问下线智能体功能形成"软硬两手"指引</li>
+    <li>国际诉讼：苹果诉 OpenAI 商业秘密案持续发酵，OpenAI 公开回应"诉讼无事实依据"</li>
+    <li>监管对话：DeepMind CEO 哈萨比斯公开呼吁美国牵头建立全球 AI 监管机构；近 200 位学者联名警告 AI 引发的就业冲击</li>
+    <li>国产算力再加码：东方算芯 DF1000 + 中昊芯英 TPU 须臾 同期登场，14nm 工艺对标海外先进 GPU</li>
+    <li>应用层融资活跃：AI 视频大模型爱诗科技 C 轮 29.8 亿元收官（阿里领投）</li>
+    <li>中国市场动作密集：阿里内部禁用 Claude、豆包/千问下线自建智能体、智谱启动「摸高计划」</li>
+    <li>Anthropic 一周内连推教育版 Claude 并密集挖角，前 Monzo CEO Tom Blomfield 加入 AI 计算团队</li>
+    <li>Gemini in Chrome 正式在英国推出，Desktop AI Agent 渠道战全面铺开</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>国内 AI 政策强信号：四部门首提「智能体互联网络」，豆包/千问同步下线自建智能体功能</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">政策</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-15 / 07-08 · 🔗 金融界（腾讯新闻） · 中国经营报（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260715A02IVH00">链接1</a> <a href="https://view.inews.qq.com/a/20260708A0AIBB00">链接2</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>新华社消息，工信部等 4 部门联合发布《关于推动互联网基础资源高质量发展的指导意见》，首次提出探索构建具备统一通信协议、数据交互标准的「智能体互联网络」，明确到 2030 年建成高效协作、智能互联的新型互联网基础设施；同一时间窗口内，字节豆包、阿里通义千问均公告将于 7 月 15 日下线用户自建智能体功能。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>4 部门联合发文、16 项任务、2030 年节点目标；豆包/千问 7 月 15 日同步下线，相关对话记录保留窗口至 10 月 15 日。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>智能体生态协议层、企业级 Agent 平台、C 端拟人化 AI 服务、行业级数据互通标准。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计主管部门将陆续出台智能体互联协议标准与配套合规细则；头部厂商可能加快把"智能体"重心从 C 端自建迁移到企业级托管与垂直行业解决方案。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>"建统一协议 + 收紧 C 端自建"组合拳非常清晰：上层鼓励互联互通做大蛋糕，下层通过合规整改避免拟人化 AI 滥用造成社会风险。这是国内首次以"基础设施级"文件给 Agent 赛道定锚，参照对象即美国 Anthropic/Google 主导的 MCP 协议，意味中国要走自己的协议路线。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>苹果诉 OpenAI 商业秘密案持续发酵：OpenAI 公开回应"诉讼无事实依据"、庭审预计持续多年</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">诉讼</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-13~15 · 🔗 The Verge / 界面新闻 / 诗与星空 / 北京日报客户端（腾讯新闻） · <a href="https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets">The Verge</a> <a href="https://view.inews.qq.com/a/20260715A02EM600">界面新闻</a> <a href="https://view.inews.qq.com/a/20260714A0CDEO00">诗与星空</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>苹果于 7 月 10 日在加州北区联邦法院起诉 OpenAI 及其子公司 IO Products（Jony Ive 硬件公司），指控两名前苹果硬件高管 Tang Tan、Chang Liu 在离职后系统性窃取未发布产品的工程文件、供应链关系及 CAD 原型，用于推进 OpenAI 2027 年计划发布的第一款 AI 硬件；OpenAI 7 月 14 日声明"诉讼无事实依据"，辩称不存在对其他公司商业秘密的兴趣；NBC 进一步披露 OpenAI 曾在 2 月回复苹果但沟通因法律团队混淆 Wang/Chang 姓氏而中断。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>诉状 41 页；含 400+ 名前苹果员工现就职 OpenAI；指控具体到"download dozens of Apple 机密硬件文件""指导同事通过 Line Messenger 规避审计"等细节。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>OpenAI 2027 年硬件产品时间表、消费级 AI 硬件供应链、人才竞争合规边界、大公司间"挖角 + 商业秘密"诉讼范式。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>The Verge 评论指出本案可能"数年才会尘埃落定"；预计苹果将主张 OpenAI 首款硬件产品发布计划被冻结；OpenAI 可能以"人才自由流动"作为抗辩核心。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是 Apple 首次以"系统性挖角"为名起诉 AI 公司，规格远超以往竞业诉讼。起诉书刻意不提 Jony Ive 一名，但留有"机构层面有组织不端行为"的兜底表述，反映 Apple 在 Io Products 收购已成既成事实后选择"敲山震虎"。OpenAI 2027 硬件旗舰节奏被实质拖入司法变数，对消费级 AI 硬件赛道的"软件公司跨界"叙事是一次重大压制。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>DeepMind CEO 哈萨比斯公开呼吁：美国应牵头建立"全球 AI 监管机构"</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">监管</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-14 · 🔗 IT之家 / The Verge（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260714A0CBF100">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>据 The Verge 等报道，谷歌 DeepMind 创始人兼 CEO Demis Hassabis 公开倡议美国政府主导成立"全球 AI 监督机构"，使其在前沿模型出现险情时拥有紧急"刹车"权，并可以参考美国金融业监管局（FINRA）的架构制定全球统一标准。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Hassabis 提议参考 FINRA 模式；明确"前沿模型险情"为触发条件；强调美国"主导而非跟随"。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球 AI 治理框架走向、前沿模型公司合规成本、地缘 AI 监管话语权、中美欧三方监管平衡。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Hassabis 的提议将与同期美国国内撤销 Anthropic Mythos 5/Fable 5 出口管制（走出去智库报道）形成"对外主张全球统一 + 对内频繁摇摆"的张力；预计欧盟与中国仍将坚持自有的治理路径。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Hassabis 的表态比 6 月 Anthropic Mythos 事件后的"反对碎片化监管"立场更进一步，明确给出"美国应主导"的诉求。这是产业领袖中第一次系统给出"类 FINRA"的实操架构设想，把治理从原则讨论推向机制设计；对国内是借鉴信号——可参考 FINRA 模式设计国家级 AI 监督机构，避免各地网信办口径不一。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>近 200 位学者 + 16 位诺奖得主联名公开信：呼吁立即应对 AI 对就业与经济的颠覆性冲击</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">公共政策</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-14 · 🔗 CSDN（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260714A096F600">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>诺贝尔奖得主 16 人、知名 AI 研究者与经济学家近 200 人共同签署公开信《We Must Act Now》，呼吁各国政府在前沿模型规模化落地前建立就业保障、再培训基金与产业过渡机制；信件不再由科技公司 CEO 主导，科技界与经济学界联合表达担忧。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>诺奖得主 16 位、联署近 200 人；信件标题"We Must Act Now"；明确"立即行动"而非"长期观察"。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国家级 AI 立法节奏、再培训预算规模、企业自动化决策透明度、跨国税收与劳动力政策协调。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计七国集团（G7）、OECD 后续会议将把这封信作为参考材料；各国财政部门可能就"自动化税"与劳动力转型基金启动实质讨论。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这封信与上周"经济学家公开信 + Sanders 计划 + 中国拟人化 AI 下线"形成跨洋共振——AI 监管在 2026 下半年从"原则性立法"全面进入"操作层面规则"阶段，由"被动防御滥用"转向"主动管理就业冲击"。对中国而言，再培训、就业保障、技能账户等机制可能成为下一波政策落地点。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>国产 AI 算力加码：东方算芯 DF1000 + 中昊芯英 TPU "须臾" 同周登场</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">芯片</span>
+    <span class="tag tag-tech">技术突破</span>
+    <span class="source-badge">📅 2026-07-13~14 · 🔗 央视新闻 / 上观新闻 / PConline太平洋科技 / 芯东西（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260713A0AEF500">链接1</a> <a href="https://view.inews.qq.com/a/20260714A0B9ST00">链接2</a> <a href="https://view.inews.qq.com/a/20260714A07MGN00">链接3</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 13 日东方算芯首颗大算力 AI 芯片 DF1000 在上海全球首发，采用"软件定义 + 三维近存计算"架构、14nm 制程即实现每秒 520 万亿次浮点算力，训练性能介于 NVIDIA A 系列与 H 系列之间；同日，杭州中昊芯英发布第二代自研 TPU"须臾"，1792 TOPS 算力、整体性能对标海外先进 GPU 与 TPU。两颗芯片均将在 2026 WAIC 集中亮相。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>DF1000：14nm 工艺、520 TFLOPS、训练性能介于 A/H 系列；须臾：1792 TOPS、能效与 token 成本显著优化；东方算芯董事长魏少军明确表态"不要迷信先进制程"。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国产云端 AI 芯片市场、模型公司推理采购成本、WAIC 议程、国产 GPU 生态建设路径。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>两款芯片在 WAIC 2026 期间（7 月 16 日起）将有更完整 demo 与生态合作伙伴披露；预计头部互联网公司会进入新一轮芯片适配评估期。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>继 7 月初美团 LongCat-2.0 用 5 万张国产卡训练完后，国产芯片出现"独立厂牌集中爆发"：DF1000 走架构创新路线（软件定义+近存计算），须臾走 TPU 类比路线。这是从"单点突破"走向"路线分化"的明显信号——不同国产芯片开始为不同的 workload 画像（训练 vs 推理、能效 vs 峰值算力）做差异化定位。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>AI 视频大模型爱诗科技 C 轮累计 29.8 亿元融资收官，阿里领投 C+ 轮</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">融资</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-14 · 🔗 腾讯科技（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260714A02PGQ00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 14 日，AI 视频大模型公司爱诗科技完成整体 C 轮融资，累计金额 29.8 亿元人民币；其中 C+ 轮由阿里巴巴领投，老股东跟投。资金将用于视频生成模型迭代、多模态栈整合与海外市场拓展。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>C 轮累计 29.8 亿元；阿里领投 C+；爱诗科技主营 PixVerse 系列视频生成模型。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>视频生成赛道竞争格局、云厂商对视频模型公司的战略投资、生成式视频商业化变现。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计爱诗将在 2026 下半年推出更长时长、更高一致性的视频生成模型，并借助阿里云渠道触达更多 C 端与电商客户。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>继智谱、可灵、MiniMax、DeepSeek 之后，爱诗科技接棒成为又一家获得"云厂商战投背书"的多模态公司。阿里在国产 IaaS 之上叠加"战投矩阵"（通义/Lazada/爱诗）形成系统化布局，意味着头部云厂商已不再满足于做算力提供方，而要成为多模态产品矩阵的资本主体。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>中国市场合规整改集中落地：阿里内部禁用 Claude、豆包/千问下线自建智能体、智谱启动"摸高计划"</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">合规</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-14 · 🔗 i 黑马（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260714A09K3E00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>i 黑马本周大模型行业周报披露三条主线：阿里内部禁用 Anthropic Claude 系列（与 6 月底 Anthropic 指控阿里"2.5 万账号 2800 万次滥用"对峙后落地）；字节豆包与阿里通义千问同步公告 7 月 15 日下线用户自建智能体功能；智谱启动代号"摸高计划"的下一代模型迭代，对标 GPT-5/Gemini 3。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>指令基线日期 7 月 15 日；智谱 6 月底刚完成 314 亿港元二次配售；近一周智谱 / 可灵 / MiniMax / DeepSeek 累计融资接近千亿人民币。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国内 To-C 智能体产品合规、企业级智能体采购、国产模型对标节奏、中外大模型"硬脱钩"加速。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计 Q3 各头部公司均会推出面向 B 端的智能体产品矩阵，"竖井式"垂直智能体（供应链、法律、医疗）将成为下一波落地点。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>"内外两条线"叠加：对外，禁用 Claude 是应对 Anthropic 公开指控的反向自清；对内，下线自建智能体是配合拟人化 AI 合规新规。"摸高计划"则是国内大模型公司在融资弹药到位后向 GPT-5/Gemini 3 级旗舰正面发起的对标冲刺。本周可视为国内大模型"清场 + 冲顶"并行的拐点。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>Anthropic 加码教育市场：推出"Claude for Teachers"、前 Monzo CEO Tom Blomfield 加入 AI 计算团队</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">产品发布</span>
+    <span class="tag tag-industry">人才与组织</span>
+    <span class="source-badge">📅 2026-07-13~14 · 🔗 The Verge / Anthropic 官网 · <a href="https://www.theverge.com/ai-artificial-intelligence">The Verge AI</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 一周内两件大事：其一，面向美国 K-12 教师的"Claude for Teachers"产品上线，提供免费验证访问、教学技能库、与 50 州学术标准对齐的循证课程；其二，前英国 Monzo 银行 CEO、Y Combinator 合伙人 Tom Blomfield 宣布离开 YC 加入 Anthropic AI 计算团队，是继 Google 诺贝尔奖得主 John Jumper、前 Tesla AI 负责人 Andrej Karpathy 之后的又一位高端人才加盟。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>覆盖 50 州学术标准；教师专属库含教学技能+循证课程；Anthropic 连续 3 个月保持每月至少 1 名重磅外部人才加盟节奏。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美国 K-12 教育 AI 市场渗透、与 OpenAI ChatGPT Edu 的正面竞争、Anthropic 在金融 × AI 跨界资源整合能力、组织战略层"复合型"领军人物汇聚。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计 Anthropic 后续将沿着"教育 / 金融 / 编程"三大垂直领域分别形成产品线，与通用 API 形成矩阵互补。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Anthropic 正在用"深耕垂直 + 高密度人才"两条腿对抗 OpenAI 的"广撒网 + 消费级"打法。Blomfield 这种具备金融科技一手操盘经验的 CEO 级别人才在 AI 公司中罕见加入，反映 Anthropic 在金融垂直的明确野心；这与 Mythos 5 出口管制风波同步发生，人才引进成为其对冲外部政治不确定性的关键资源。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>Gemini in Chrome 正式在英国推出，桌面级 AI Agent 渠道战全面铺开</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">产品发布</span>
+    <span class="tag tag-industry">渠道战</span>
+    <span class="source-badge">📅 2026-07-13 · 🔗 Google 官方博客 / The Verge · <a href="https://blog.google/products-and-platforms/products/chrome/were-expanding-gemini-in-chrome-to-users-in-the-uk/">blog.google</a> <a href="https://www.theverge.com/ai-artificial-intelligence">The Verge</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Google 宣布 Gemini in Chrome 正式在英国 Desktop 用户上线，并将在下月扩展到 iOS；用户可在 Chrome 内跨标签总结、调度日历、地图、Gmail 与 YouTube，集成 Nano Banana 2 图像生成能力；该功能配套 prompt injection 防护与"敏感操作二次确认"安全机制；仍暂未在欧盟上线。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>首日英国 Desktop 端开放；iOS 次月跟进；Nano Banana 2 集成；模型具备 prompt injection 防御训练。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>浏览器作为 AI Agent 入口之争、桌面生产力工具生态、Google 应用矩阵（Gmail/Calendar/Maps/YouTube）协同、欧盟监管节奏。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计 8 月 iOS 上线后，Google 将启动"Gemini in Chrome"大规模用户教育投入；OpenAI 预计将把 ChatGPT Atlas 或 Operator 与 macOS/Windows 进一步整合作为反制。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Gemini in Chrome 是"操作系统级 AI Agent 入口"路线的重要里程碑——把 AI 直接嵌入浏览器底层，比 ChatGPT Sidebar 占据更高优先级的上下文位。欧盟仍未上线，是 Google 与欧盟《数字市场法案》《AI 法案》博弈的延续；这意味着"AI Agent 入口"已成地缘合规新战场。</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>广东第四批备案大模型发布：32 家企业领证，全省累计 164 款备案大模型</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">合规备案</span>
+    <span class="tag tag-industry">行业动态</span>
+    <span class="source-badge">📅 2026-07-14 · 🔗 南方都市报（腾讯新闻） · <a href="https://view.inews.qq.com/a/20260714A0AH4G00">链接</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>7 月 14 日，以"模力全开 粤领未来"为主题的第四期广东省备案大模型发布会在广州举行，32 家企业代表现场领取"生成式人工智能服务备案证明"；截至 6 月底广东省累计备案大模型 164 款，稳居全国前列；发布会同期举办 AI 拟人化新政宣讲，由广东省委网信办与粤港澳大湾区生成式人工智能安全发展联合实验室共同主办。</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>第四批 32 家领证；累计 164 款备案大模型（截至 2026 年 6 月底）；粤港澳大湾区生成式 AI 安全发展联合实验室是本次宣讲主推机制。</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>广东省 AI 产业生态、备案大模型行业分布、合规咨询与评测服务、跨港澳的合规标准互认机制。</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>预计粤港澳大湾区会形成"内地备案 + 港澳出海"的双轨合规体系；评测机构与第三方咨询将成为新基础设施。</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当周同步上线的"四部门智能体互联网络指导意见"提供国家层面框架，"广东备案 + 拟人化政策宣讲"提供省市落地抓手。中央定原则、地方出细则、企业拿证进入市场的"三级合规体系"在 2026 下半年渐成模板；广东 164 款的存量规模也意味着配套的模型评测、AI 安全咨询、司法鉴定等服务业态进入快速成长期。</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📡 数据来源：腾讯新闻（金融界/中国经营报/界面新闻/诗与星空/北京日报客户端/IT之家/CSDN/前哨王煜全/上观新闻/PConline太平洋科技/芯东西/腾讯科技/i 黑马/南方都市报/央视新闻）+ The Verge / blog.google / Anthropic.com</p>
+  <p>🕐 报告生成于 2026-07-15 09:15 (UTC+8) · 3 天内有效新闻</p>
+  <p>🔗 <a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-07-15.html">在线阅读</a></p>
+</div>
+
+</body>
+</html>
