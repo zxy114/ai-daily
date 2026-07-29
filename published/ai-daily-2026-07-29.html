@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年7月29日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+.summary-box li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-card .news-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-card h3 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 7 月 29 日</div>
+  <div class="subtitle">多源融合 · Web Search + 推特/X · 12 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>MCP 协议史上最大版本发布（2026-07-28），元数据与安全优先，10,000+ 服务器跑在统一标准</li>
+    <li>1,100+ 科技员工联署"Pacing the Frontier"，Anthropic / Meta / OpenAI / Google 罕见跨阵营呼吁政府主导 AI 节奏</li>
+    <li>Claude Mythos 攻破 HAWK 后量子签名与弱化 AES，AI 主导密码学研究的拐点出现</li>
+    <li>法国监管机构认定 OpenAI / Google / Anthropic 拿下 AI Agent 市场 84% 份额</li>
+    <li>Apple 发布 Siri AI 智能家居中枢，定价 350 美元，10 月开售</li>
+    <li>Anthropic 开源权重立场声明：拥抱开放、反对蒸馏、力推芯片管制</li>
+    <li>Fitch 把 AI 估值修正列为全球主要信用风险，三大科技巨头 2026 资本开支冲 1.4 万亿美元</li>
+    <li>Broadcom 单日披露 2,300 亿美元新订单，AI 半导体营收 FY27 锚定 1,000 亿</li>
+    <li>Elon Musk 公开预告 Grok 4.6 与 4.7，xAI 进入高频节奏</li>
+    <li>Perplexity 把"个人电脑 AI 代理"带到 Windows，Agent 体验对标 macOS</li>
+    <li>Sam Altman 公开宣称"我们已经身处奇点"，引发 X 平台广泛讨论</li>
+    <li>Lilian Weng 离开 Thinking Machines Lab，AI 安全人才流动再添案例</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>MCP 协议发布史上最大版本：元数据、安全与 10,000+ 服务器并轨</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">基础设施</span>
+    <span class="tag tag-industry">生态标准</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 VentureBeat / SiliconANGLE / Tech-Insider · <a href="https://venturebeat.com/infrastructure/mcp-just-got-its-biggest-update-ever-heres-what-changes-for-ai-agents">VentureBeat</a> · <a href="https://siliconangle.com/2026/07/28/biggest-ever-mcp-update-brings-metadata-cybersecurity-enhancements">SiliconANGLE</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>由 Anthropic 发起、现归属 Linux 基金会旗下 Agentic AI Foundation 维护的 Model Context Protocol（MCP）正式发布 2026-07-28 规范，被维护者称为"项目启动以来最大版本"；同步开启 12 个月的旧版本弃用窗口</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>运行时已有 10,000+ MCP 服务器在生产环境运行；Anthropic 移交时披露 Python 与 TypeScript 两个 SDK 月下载量合计 9,700 万；新版本补齐第一类元数据、PIN 加密、能力发现与跨服务鉴权</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>所有 AI Agent 平台、企业 IT 集成框架、AI 工具型 SaaS 厂商</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>维护者强调"已具备进入企业级生产的可用性"；Anthropic / OpenAI / Google / Microsoft 四家头部厂商同时承诺兼容；社区开放 Scope 讨论治理与安全细则</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当 MCP 把"工具连接"变成共享协议，竞争维度被迫从"集成数量"上移至"模型质量、Agent 可靠性、定价"——这正是 GitHub Copilot 引入开源 Kimi 模型、AI 代码质量争议升温的同一根因；MCP 从"开源协议"演化为"Agent 时代的事实底座"具备结构性条件</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>1,100+ 科技员工联署"Pacing the Frontier"，呼吁美政府主导 AI 节奏工具</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">AI 治理</span>
+    <span class="tag tag-industry">跨阵营声明</span>
+    <span class="source-badge">📅 2026-07-28 ~ 07-29 · 🔗 Reuters / Business Times · <a href="https://www.reuters.com/legal/litigation/tech-employees-call-us-backed-global-effort-manage-risks-advanced-ai-2026-07-28/">Reuters</a> · <a href="https://www.businesstimes.com.sg/companies-markets/telcos-media-tech/tech-employees-call-us-backed-global-effort-manage-risks-advanced-ai">Business Times</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>由 Guidelight AI Standards 与 Encode AI 联合发起的"Pacing the Frontier"声明获得 1,100+ 科技员工联署，公开要求美国政府支持国际工具以"有意放慢前沿 AI 自动化发展速度"；签署人来自 Anthropic、Meta、OpenAI、Google 等头部厂商，包括 Anthropic CEO Dario Amodei、Meta AI 研究 VP Dawn Song、OpenAI 首席科学家 Jakub Pachocki</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>1,100+ 签署人；声明引述自我改进研究为时点论据；OpenAI 在 X 上回应"未来某一时刻确实需要限制节奏"；Anthropic 强调"递归自改进需要放慢工具已成熟"；尚未给出明确监管方案</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美政府 AI 政策、全球 AI 协调框架、厂商内部分歧公开化</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>该声明与"Skynet Day"事件、Anthropic 公开权重立场声明形成同一波政策回响；白宫 AI 行动计划与商务部预发布评估机制将成下一博弈场</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>声明罕见"四家头部厂商员工同签"，意味着 AI 治理诉求已经突破公司边界进入"职业集体行动"阶段；它把"是否需要监管"从辩论题推升为"由谁来执行"的实操题，是政策窗口打开的关键信号</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>Claude Mythos 攻破 HAWK 后量子签名与弱化 AES，AI 主导密码学研究的拐点</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">AI × 安全</span>
+    <span class="tag tag-industry">科学研究</span>
+    <span class="source-badge">📅 2026-07-28 ~ 07-29 · 🔗 The Hacker News / Firstpost · <a href="https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html">The Hacker News</a> · <a href="https://www.firstpost.com/tech/anthropics-claude-mythos-cracks-weakened-aes-breaks-hawk-in-cryptography-milestone-14034541.html">Firstpost</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 公布 Mythos Preview 主导的两项密码学突破：实操攻破 NIST 后量子签名候选算法 HAWK-256，完整还原 96 字节密钥；并对弱化 AES 提出新的密码学分析；同步发布技术论文与可复现实验代码</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>本次研究 191 任务基准 CryptanalysisBench 由 ETH Zurich、Anthropic、海法大学、柏林工大与特拉维夫大学联合发布，五款主流模型在其中一层级破解率介于 65%~86%；Mythos Preview 充当"主导研究者"角色，人类仅负责方向、算力与验证</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球后量子密码标准（NIST PQC）、网络安全产业、密码学人才培养、AI 工具的科研使用边界</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>HAWK 团队确认配合验证；NIST 第三轮候选名单中仅 HAWK 仍属格密码体系；Anthropic 承诺持续披露</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AI 主导端到端密码学研究的"裸跑"示范——人类角色退到"方向 + 算力 + 验证"——本质上把"AI 加速科研"从愿景变为可量化产出；这也是 Anthropic 与 OpenAI 提出的"Recursive Self-Improvement"风险同步公开化的实证场景</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>法国反垄断认定 OpenAI / Google / Anthropic 拿下 AI Agent 市场 84% 份额</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">监管</span>
+    <span class="tag tag-market">市场结构</span>
+    <span class="source-badge">📅 2026-07-18 ~ 07-28 · 🔗 Tech-Insider · <a href="https://tech-insider.org/au/openai-google-anthropic-84-percent-ai-agents-2026">Tech-Insider</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>法国竞争管理局（Autorité de la concurrence）于 7 月 17-18 日发布 Opinion 26-A-05，基于 Sensor Tower 2026 年 5 月使用数据，认定 OpenAI、Google、Anthropic 三家在 AI Agent 市场份额合计 84%</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>84% 集中度覆盖客服、购物等任务场景；同期 OpenAI 推出 GPT-5.6 系列、ChatGPT Work 新产品；Google 把 Gemini 3.5 Flash 设为 AI Mode 默认；Anthropic 发布 Claude Opus 5 定价腰斩；DeepSeek V4 上下文扩至 1M；Moonshot Kimi K3 报 2.8T 参数；Mistral 估值近 230 亿美元</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>欧盟与美国 AI 反垄断节奏、企业级 AI Agent 采购、欧洲主权 AI 政策</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>意见书为后续 AC 调查与美国 FTC 提供数据样本；欧洲"AI Act"配套执行规则 8 月将进入下一阶段</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>84% 是 AI Agent 时代首次被监管机构量化的"头部垄断"信号——一旦被欧盟以滥用市场地位立典型，"Big Three" 在欧洲的 API 接入、捆绑销售、与云厂的伙伴关系都将进入合规审查清单</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>Apple Siri AI 智能家居中枢发布，定价 350 美元 10 月开售</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">消费硬件</span>
+    <span class="tag tag-industry">平台卡位</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-07-28/new-apple-tv-4k-box-homepod-mini-and-siri-ai-smart-home-hub-are-coming">Bloomberg</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Bloomberg 报道 Apple 计划 10 月同步推出新款 Apple TV 4K、HomePod mini 与一款以 Siri AI 为核心的智能家居中枢设备，硬件 SKU 横跨入门到中高端</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>中枢设备定价约 350 美元；同步更新 tvOS / iOS / HomePod 系统；Siri 全面接入设备端大模型与跨房间协作；10 月发售节点落在 Apple 财年 Q4</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球智能家居市场、Google Home / Amazon Alexa 生态、苹果"AI 复兴"叙事</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Apple 服务业务和可穿戴设备营收占比将与硬件销量同步放大；Apple Intelligence 应用商店将开设"智能家居"专区</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Apple 把"AI Agent + 家居中枢"作为错位反击 Google / Amazon 的关键卡位——硬件 + 隐私 + 端侧模型是 Apple 当前唯一可独立闭环的 AI 路径；中枢本身是平台，赢家通吃属性远高于单款音箱</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>Anthropic 公开权重立场声明：拥抱开放、反对蒸馏、力推芯片管制</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-policy">开源政策</span>
+    <span class="tag tag-industry">生态博弈</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 FourWeekMBA / Business Insider · <a href="https://fourweekmba.com/ai-anthropic-open-weight-position-compute-floor-distillation/">FourWeekMBA</a> · <a href="https://www.businessinsider.com/dario-amodei-blog-post-anthropic-banning-open-weight-ai-models-2026-7">Business Insider</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 7 月 28 日发布正式立场文件，公开表态"从未主张禁止开源权重"，承认不具危险能力的开源模型是"公共品"，但同时提出三项政策建议——芯片出口管制、蒸馏打击、强制安全测试</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>3 条政策建议、可保护的"开源公共品"边界被明确划出；Anthropic 未签署由 Open-Weight Alliance 发布的"全面捍卫开源"联署信；CEO Dario Amodei 连发博客以澄清"不是要禁止开源"被误读</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美国对华 AI 出口管制、芯片厂商与模型厂商的立场分化、强制性安全测试立法窗口</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Moonshot Kimi K3 完整开源后，关于"蒸馏来源"的争议（White House 公开指控 Anthropic Fable 蒸馏）继续搅动政策议程；OpenAI 与 Anthropic 同步与商务部预发布评估机制合作</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Anthropic 把"模型层"让出去，把"芯片 + 蒸馏 + 测试"三条护城河守起来——前者维持开源阵营认同，后者维持非对称竞争优势；这种"模型层让步 + 算力层卡位"策略，是头部闭源厂商对 Kimi K3 时代的现实回应</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>Fitch 把 AI 估值修正列为全球主要信用风险，三大科技巨头 2026 资本开支冲 1.4 万亿美元</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">宏观风险</span>
+    <span class="tag tag-chip">资本支出</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 Reuters / The Economist · <a href="https://www.reuters.com/world/china/fitch-warns-ai-market-correction-emerging-major-global-credit-risk-2026-07-28">Reuters</a> · <a href="https://www.economist.com/finance-and-economics/2026/07/28/ai-revenues-are-growing-fast-but-not-fast-enough">The Economist</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>评级机构 Fitch 7 月 28 日发布最新全球风险展望，AI 泡沫与 AI 估值修正被列为全球主要信用风险之一；The Economist 同日发长文《AI revenues are growing fast, but not fast enough》系统质疑当前投入回报率</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>2026 年美国头部 AI 厂商资本支出预计 9000 亿美元，2027 年将达 1.4 万亿美元；2026 年相关企业借款超 4000 亿美元；Alphabet 公布 1950-2050 亿美元全年 Capex 指引、Microsoft / Meta 7 月 29 日、Amazon / Apple 7 月 30 日财报将进一步揭示相关支出</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球信用市场、股市 AI 板块、各国主权信用评级</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>美伊关系与霍尔木兹海峡封锁同步被列为高风险；Fitch 预期 2026 全球增长降至 2.4%，美国通胀年末 3.7%</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当超大规模 AI 资本支出已超过大多数主权国家的财政支出量级，"AI 算力建设"事实上已成为一种新的"准主权级金融资产"——Fitch 的加入意味着这类资产正在被纳入主流信用评级视野，回调压力点同步前移</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>Broadcom 单日披露 2,300 亿美元新订单，AI 半导体营收 FY27 锚定 1,000 亿</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">半导体</span>
+    <span class="tag tag-market">订单可见度</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 Tech Times · <a href="https://www.techtimes.com/articles/321808/20260728/broadcom-lands-230-billion-new-deals-yet-trades-steep-discount.htm">Tech Times</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Broadcom 在公布 7 月 30 日财季前披露已累计获得 2,300 亿美元 AI 客户承诺，市场对 FY27 AI 营收 1,000 亿美元目标的可见度显著提升，叠加 OpenAI 等大客户长约</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>FY26 AI 半导体营收目标 560 亿美元（Mizuho 估算 Anthropic 单独贡献约 210 亿美元）；FY27 1,000 亿美元需在 4 个季度内将运行率翻倍；OpenAI 10GW 联合开发自 2026 末至 2029 部署；Google 长期供货协议延至 2031</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>AI ASIC 供应链、OpenAI / Anthropic / Google 自研芯片路线、Nvidia 在中高端 GPU 替代品上的竞争位次</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Broadcom 客户名单已扩至 6 家核心定制芯片客户；Microsoft / Meta 财季披露后将左右估值</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Broadcom 以"定制 ASIC + 长约"组合卡进 AI 算力非 Nvidia 路径——当头部 AI 厂商算力总需求突破 Nvidia 单家供应能力时，"自研芯片 + Broadcom 代工"成为规避供应链风险的标准动作；这进一步削弱 Nvidia "GPU + CUDA" 的绝对护城河</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>Elon Musk 公开预告 Grok 4.6 与 4.7，xAI 进入高频小步节奏</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">模型迭代</span>
+    <span class="tag tag-industry">竞争节奏</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 Economic Times · <a href="https://m.economictimes.com/tech/artificial-intelligence/elon-musk-teases-grok-4-6-and-4-7-doubling-down-on-xais-rapid-fire-releases/amp_articleshow/132693365.cms">Economic Times</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Elon Musk 在 X 上公开预告 Grok 4.6 与 4.7 即将发布，xAI 进入"小步快跑"节奏；模型通过 X 平台与 Grok 应用同步分发</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>4.6 / 4.7 联动发布；之前版本以"训练算力 + 数据"双扩张为基础；X 平台付费订阅与 API 是 xAI 当前主要商业化路径</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>vibe 编码 / 短上下文对话 / X 平台生态；与 OpenAI、Google 的旗舰模型节奏形成对比</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>具体功能边界与训练细节尚未公开；业内关注 xAI 数据/算力可持续性</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当头部厂商在"安全 + 评估 + 治理"上节奏放慢，xAI 通过"高频 + 灰色数据源"获得差异化曝光——这套节奏是"AI 内容场"驱动的变现模式，与纯技术领先路径正在分叉</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>Perplexity 把"个人电脑 AI 代理"带到 Windows，对标 macOS 智能体验</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">消费 Agent</span>
+    <span class="tag tag-industry">平台分发</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 SiliconANGLE · <a href="https://siliconangle.com/2026/07/28/biggest-ever-mcp-update-brings-metadata-cybersecurity-enhancements">SiliconANGLE</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Perplexity 推出面向 Windows 的 Personal Computer AI Agent，对标苹果 macOS 上的系统级 AI 体验，覆盖文件管理、应用调度、跨任务连续性</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Perplexity 个人电脑 AI 代理进入 Windows 桌面生态；同步 Apple Siri AI Hub/Bloomberg 报道形成"操作系统级 AI 体验"双线竞争</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>Windows 生态下的浏览器 / 搜索 / 桌面 Agent 体验、企业 PC 替换节奏</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Perplexity 加速与 Microsoft / 联想 / 戴尔等 Windows OEM 合作；MCP 2026-07-28 新版本为其代理能力提供工具对接通道</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Perplexity 抢在微软"Copilot Vision"全面落地前，把"个人电脑 Agent"做成独立产品；与 MCP 新版本发布共同标志"Agent 体验"正在从浏览器（ChatGPT）和操作系统（Apple）两条路径同时向桌面分散化</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 11 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">11</div>
+    <h3>Sam Altman 公开宣称"我们已经身处奇点"，X 平台引发广泛讨论</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">行业表态</span>
+    <span class="tag tag-policy">公共讨论</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 PC Gamer · <a href="https://www.pcgamer.com/software/ai/openai-ceo-thinks-the-ai-singularity-is-already-upon-us-and-that-cracking-down-on-it-wouldnt-be-good-for-humanity-because-of-course-he-does/">PC Gamer</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>OpenAI CEO Sam Altman 在公开场合宣称"我们已经身处奇点"，强调"AI 智能超越人类"阶段已经到来，监管会"对人类不利"，同时表示 OpenAI 愿意自我监管</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Altman 公开表态与"1,100+ 科技员工 Pacing the Frontier"声明同期出现；监管治理的"谁来执行"问题被同步前置；OpenAI 仍未公布完整自我监管方案</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>AI 公共舆论、美政府 AI 政策倾向、OpenAI 自律承诺的市场可信度</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>OpenAI 与 Anthropic 同步与美商务部预发布评估机制合作；Anthropic 员工签署"Pacing the Frontier"形成内部协同</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Altman 高调"奇点论"与苏茨克维 / 莱莫 / 哈萨比斯等人"渐进论"形成对照——行业头部对"AI 距 AGI 还有多远"出现公开分歧，意味着开源/闭源、安全/速度、监管/自律的三角博弈将在 2026 下半年持续放大</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 12 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">12</div>
+    <h3>Lilian Weng 离开 Thinking Machines Lab，AI 安全人才流动再添案例</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">人才流动</span>
+    <span class="tag tag-policy">AI 安全</span>
+    <span class="source-badge">📅 2026-07-28 · 🔗 Business Insider · <a href="https://www.businessinsider.com/lilian-weng-thinking-machines-lab-exit-burnout-smart-people-reactions-2026-7">Business Insider</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>前 OpenAI 安全负责人 Lilian Weng 宣布离开 Mira Murati 创办的 Thinking Machines Lab，公开原因涉及"职业倦怠"；消息在 X 平台与 AI 圈引发对前沿实验室工作强度的广泛讨论</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Weng 此前在 OpenAI 主导 Agent 安全研究；Thinking Machines Lab 创立以来核心成员变动频繁；业内人事变动正在成为 AI 叙事新型指标</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>前沿 AI 实验室组织健康、AI 安全团队稳定性、明星研究员的议价能力</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Weng 后续去向与"AI 创业二次潮"形成新的引子；Meta Superintelligence Labs、字节 Seed 等团队继续发力招募</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当 AI 安全"窗口期"被头部机构视为战略要塞，对应人才的工作强度与心理压力同步上升；这意味着 AI 安全行业自身正在经历"可持续性"瓶颈，制度化与团队结构优化将成为下一阶段的关键</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📅 报告日期：2026-07-29 · 数据窗口：2026-07-26 ~ 2026-07-29（北京时间）</p>
+  <p>📡 来源：Reuters / Bloomberg / CNBC / WSJ / TechCrunch / Axios / The Verge / Forbes / Ars Technica / VentureBeat / SiliconANGLE / The Hacker News / Firstpost / Business Times / Economic Times / Tech Times · 推特/X：<a href="https://x.com/claudeai">@claudeai</a> / <a href="https://x.com/AnthropicAI">@AnthropicAI</a> / <a href="https://x.com/sama">@sama</a></p>
+  <p>🤖 由 AI 新闻日报自动生成 · 质量优先于数量</p>
+</div>
+
+</body>
+</html>
