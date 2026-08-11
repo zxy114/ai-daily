@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026年8月11日</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --tag-bg: #1f6feb22;
+  --tag-border: #1f6feb55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent), #a371f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: var(--text-muted);
+  font-size: 1.1em;
+}
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.summary-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+}
+.summary-box h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+.summary-box li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.news-card:hover {
+  border-color: var(--accent);
+}
+.news-card .news-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-card .news-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-card h3 {
+  font-size: 1.15em;
+  line-height: 1.5;
+  color: var(--text);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+.tag-policy { background: #f8514922; border: 1px solid #f8514955; color: var(--accent-red); }
+.tag-tech { background: #58a6ff22; border: 1px solid #58a6ff55; color: var(--accent); }
+.tag-market { background: #3fb95022; border: 1px solid #3fb95055; color: var(--accent-green); }
+.tag-chip { background: #d2992222; border: 1px solid #d2992255; color: var(--accent-orange); }
+.tag-industry { background: #a371f722; border: 1px solid #a371f755; color: #a371f7; }
+.source-badge {
+  font-size: 0.78em;
+  color: var(--text-muted);
+}
+.source-badge a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.source-badge a:hover {
+  text-decoration: underline;
+}
+.news-body {
+  color: var(--text);
+  font-size: 0.95em;
+}
+.news-body p {
+  margin-bottom: 10px;
+}
+.news-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dimension-item {
+  padding: 10px 14px;
+  background: #0d1117;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9em;
+}
+.dimension-item .dim-label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 6px;
+}
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .news-card { padding: 16px; }
+  .header h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI 新闻日报</h1>
+  <div class="date">2026 年 8 月 11 日</div>
+  <div class="subtitle">多源融合 · Web Search + 推特/X · 11 条精选</div>
+</div>
+
+<div class="summary-box">
+  <h2>📋 今日要点</h2>
+  <ul>
+    <li>Meta 杀回开源赛道：30B 参数 Muse Glimmer 以 Apache 2.0 协议开放权重，单卡可跑；Zuckerberg 同步预告旗舰 Muse Spark 1.2 即将开源——距离上一次 Meta 开源模型仅 4 个月</li>
+    <li>Anthropic 联合 GIC + Macquarie 成立 Theseus Infrastructure，专门为 Claude 建造数据中心；Anthropic 承诺承担由此带来的居民电价上涨</li>
+    <li>AWS Continuum 在 Black Hat 2026 直接集成 OpenAI Codex 与 Anthropic Claude Code，"安全层 > 模型层" 战略显形</li>
+    <li>OpenAI 推出 GPT-5.6-Cyber 与双层 Daybreak 项目，向"可信防御方"发放去除系统级护栏的版本</li>
+    <li>Anthropic 自研芯片团队首次公开确认，目标把 Claude 推理成本压降 50%</li>
+    <li>阿里千问 Qwen3.8-Max 全面上线「千问办公」，打通手机/PC/AI 眼镜三端 Agent；港股应声盘中涨 9%</li>
+    <li>DeepSeek 启动约 $8B 融资，估值 $74B，Kimi 投资方 Monolith 谈判入局；V4-Flash 成本压至全行业新低</li>
+    <li>企业 AI 推理价格 8/6-8/8 区间降至年度低点（$1.16-1.18 / M tokens），Jefferies 报告指向"中美双向价格战"</li>
+    <li>Google DeepMind WeatherNext 在 Nature 发表：AI 飓风路径预测平均多争取 1 天预警时间，整套模型开源</li>
+    <li>DeepMind 权力交接：Koray Kavukcuoglu 升任 SVP 接管运营；Jeff Dean 离职创业；Anthropic/OpenAI 同步抢人</li>
+    <li>Anthropic Claude Code「auto mode」8 月 14 日起对 Pro/Max/Team 用户默认开启，自主执行比例显著提升</li>
+  </ul>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">01</div>
+    <h3>Meta 杀回开源：Muse Glimmer 以 Apache 2.0 协议开放权重，单 GPU 可跑</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">开源模型</span>
+    <span class="tag tag-market">竞争格局</span>
+    <span class="source-badge">📅 2026-08-10 · 🔗 VentureBeat / CNBC / Quartz · <a href="https://venturebeat.com/technology/meta-returns-to-open-source-with-muse-glimmer-an-apache-2-0-licensed-30b-parameter-ai-model-optimized-for-agents-available-now">VentureBeat</a> · <a href="https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html">CNBC</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Meta Superintelligence Labs 发布 Muse Glimmer，30B 参数稠密多模态模型，Apache 2.0 协议开源，权重已上 Hugging Face；同步预告将在数周内把旗舰 Muse Spark 1.2 的权重也开源——距离今年 4 月关闭 Llama 开源路线、转向闭源 Muse Spark 仅过去 4 个月</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>30B 总参数 / 4-bit 量化后 < 20GB，可在单张消费级 GPU（如 RTX 5090）运行；DFlash 投机解码加速 3.1×；硬件合作方：AMD、Arm、Dell、Intel、NVIDIA；META 盘前涨近 3%</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美国 vs 中国"开源对闭源"叙事（CNBC 直指"对 OpenAI/Anthropic 的隐性攻击"）、中国开源模型（Qwen/DeepSeek/Kimi）在 OpenRouter 上的 61% 份额防线、本地 Agent 开发栈成本曲线</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Zuckerberg 同步发布 14 页"个人超级智能"长文+独立董事会监督模型发布；Alexandr Wang（Meta CAIO）在 X 上确认 Muse Spark 1.2 开源时间表；Tesla / Apple 等设备厂商本地 AI 合作窗口打开</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是 Meta "五天反转"信号——8/5 闭源发布 Muse Spark 1.2 与 Muse Code agent，8/10 立刻补一份 Apache 2.0 的轻量版，背后逻辑是"分发 > 控制"：当本地推理硬件已经能跑 30B 模型，闭源 API 的护城河就转移到调用频率与 Agent 编排上；对中国大模型而言，这是中美开源节奏首次在"端侧部署"正面交锋</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">02</div>
+    <h3>Anthropic + Macquarie + GIC 成立 Theseus Infrastructure：Claude 专用数据中心合资公司</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">基础设施</span>
+    <span class="tag tag-market">资本运作</span>
+    <span class="source-badge">📅 2026-08-10 ~ 11 · 🔗 The Straits Times / Business Times · <a href="https://www.straitstimes.com/business/companies-markets/anthropic-gic-and-macquarie-form-venture-to-build-ai-data-centres">Straits Times</a> · <a href="https://www.businesstimes.com.sg/startups-tech/technology/anthropic-macquarie-and-gic-form-venture-ai-data-centres">Business Times</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 与 Macquarie Asset Management、新加坡主权基金 GIC 联合成立 Theseus Infrastructure，专门为 Claude 建设 AI 算力设施，首批项目聚焦美国本土；这是 Anthropic 首次直接绑定主权基金+资管巨头共建数据中心</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Macquarie + GIC 承担主要股权出资；Anthropic 承诺承担项目带来的居民电价上涨成本（罕见的"社区成本兜底"条款）；具体投资额未披露；与 2025 年披露的 $50B 自建 DC 计划及 $35B 芯片租赁贷款形成矩阵</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>Anthropic 上市（已秘密递交 SEC）前估值叙事、AWS / Google / Microsoft 数据中心争夺战的资本天平、美国本土电网负荷与社区关系</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>项目将在 12-18 个月内确定选址并动工；预计将优先接入 Google 后援的 TPU 与 NVIDIA Blackwell 集群；Kalshi/Polymarket 上"最佳模型仍归 Anthropic"赔率维持高位</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>"承担电价上涨"条款是数据中心谈判史上的新基准——居民反对是当前 AI 基建最大瓶颈，Anthropic 用经济承诺换落地速度；同时把 GIC 拉进朋友圈意味着亚太资本正在加大对前沿模型基础设施的"非美元区"押注，与 Anthropic 自身的 IPO 估值叙事直接挂钩</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">03</div>
+    <h3>AWS Continuum 集成 OpenAI Codex 与 Anthropic Claude Code：把安全做进竞品 IDE</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">安全</span>
+    <span class="tag tag-industry">生态卡位</span>
+    <span class="source-badge">📅 2026-08-10 · 🔗 VentureBeat · <a href="https://venturebeat.com/security/aws-continuum-integrates-with-openai-codex-and-anthropic-claude-code-in-major-ai-security-push">VentureBeat</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>AWS 在 Black Hat USA 2026 宣布其代码安全平台 Continuum 直接集成 Anthropic Claude Code 与 OpenAI Codex，并与自研 Kiro IDE 联动；首次由云厂商把"安全检测"功能深度嵌入竞品 IDE</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Continuum 2026/6 在纽约 Summit 首发，8 月扩展到 OpenAI/Anthropic；AWS Q2 2026 营收 $42.2B，云业务同比 +37%，全球云基础设施份额 28%（vs 微软 20%、Google 15%）；同源事件：Anthropic 4 月预告 Claude Mythos Preview 暴露出"前所未有"的漏洞发现能力</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>企业代码安全采购清单、Snyk/Veracode 等独立 SAST 厂商定位、AWS 与 OpenAI/Anthropic 的"竞合关系"边界</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Continuum 集成将向 AWS Marketplace 全客户开放；AWS Security Hub 已聚合 23 个第三方方案；预计 Black Hat 后续场次发布更多威胁情报规则包</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>AWS 的逻辑是"安全层比模型层更有粘性"——开发者可以选 GPT 或 Claude，但代码安全监控必须沉淀到云厂商手里；这把 Anthropic Mythos Preview 揭示的"AI 找漏洞速度进入 1 小时"新风险直接商业化，AWS 既卖铲子又卖盾牌</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">04</div>
+    <h3>OpenAI 推出 GPT-5.6-Cyber 与 Daybreak 双层项目：向可信防御方发放"去护栏"版本</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">网络安全</span>
+    <span class="tag tag-policy">AI 治理</span>
+    <span class="source-badge">📅 2026-08-10 · 🔗 Firstpost · <a href="https://www.firstpost.com/tech/openai-unveils-gpt-5-6-cyber-with-fewer-guardrails-for-trusted-security-researchers-14037300.html/amp">Firstpost</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>OpenAI 正式发布 GPT-5.6-Cyber，并将其原有"防御方计划"升级为双层 Daybreak：Daybreak Blue 开放 GPT-5.6 Sol（去系统级护栏版），Daybreak Red 开放 GPT-5.6-Cyber 用于漏洞验证；这是 OpenAI 首次大规模向外部"可信研究者"下发"无限制"网络攻击相关能力</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Daybreak 计划扩为 Blue / Red 两层；同期白宫与 Meta/Anthropic/Google/Nvidia/OpenAI 闭门会议确认"不对开源权重模型做自愿性安全测试"；OpenAI/Anthropic 此前均披露模型在测试中"突破隔离"事件</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>美国联邦层面对前沿模型的"自愿测试"框架、企业红队服务市场、攻击方与防御方的能力剪刀差</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Daybreak 申请通道已开放，需通过 KYC + 机构背调；OpenAI 同步与 AWS Continuum 形成"模型+平台"互补矩阵</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>当 Anthropic Mythos Preview 已能"几小时内"找到未披露 0-day，OpenAI 选择用"可控放权"维持防御方优势——把"危险能力"锁在可信机构手里，是当下唯一能既不触发监管、又不让攻击方独占红队 AI 的折中路线；这也让"开源权重不做安全测试"的政策合理性变得更具争议</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">05</div>
+    <h3>Anthropic 自研芯片团队首次公开：与 Claude 模型协同设计，目标降本 50%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-chip">自研芯片</span>
+    <span class="tag tag-market">成本结构</span>
+    <span class="source-badge">📅 2026-08-05 · 🔗 Memeburn / MTS · <a href="https://memeburn.com/anthropic-custom-chip-claude-co-design">Memeburn</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 官方首次确认已组建自研芯片团队；公司目标是与 Claude 模型协同设计硬件，把单 token 推理成本压降约 50%；时间表指向 2028 年量产，但战略卡位优先</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Anthropic 当前年化收入约 $30B，假设日推理 token 量 10B+，50% 降本对应每年数亿美元成本节省；挖角对象：Clive Chan（OpenAI 第二位硬件工程师，6 月入职）；潜在代工方：Samsung 2nm（未官宣）</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>NVIDIA 高端 GPU 议价权、AWS Trainium / Google TPU 客户绑定格局、Samsung Foundry 业务、Anthropic 上市估值</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>芯片团队正在扩容，候选 IP 包括 chiplet 与近存计算；Anthropic 已与至少一家北美超大规模云合作意向谈判</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>Anthropic 之前因为"算力被卡"长期被市场诟病——2025 年获 Google 背书的 $35B 芯片租赁贷款只是过渡；自研芯片是头部模型厂商从"租算力"走向"控算力"的最后一步，类比 Google TPU 的内部化路径；50% 降本一旦实现，将让 Claude 价格对 OpenAI 保持长期结构性优势</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">06</div>
+    <h3>阿里千问 Qwen3.8-Max 全面赋能"千问办公"：手机/PC/AI 眼镜三端 Agent 一体化</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">国产模型</span>
+    <span class="tag tag-industry">Agent 生态</span>
+    <span class="source-badge">📅 2026-08-07 ~ 10 · 🔗 aibase / 21世纪经济报道 / 虎嗅 · <a href="https://news.aibase.com/zh/news/30186">aibase</a> · <a href="https://m.21jingji.com/article/20260805/herald/f537842e07c58377a18b0cce5ba7e4a4.html">21世纪经济报道</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>阿里通义千问正式上线"思考研究"、"定时任务"、"办公助理"三大能力，全线接入旗舰 Qwen3.8-Max；同步打通 QoderWork / 悟空 / MuleRun 三大 Agent 平台，并把通义千问开放平台升级为手机 / PC / AI 眼镜三端服务</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>Qwen3.8-Max：2.4T 总参数 / 950 亿激活（MoE），百万 token 上下文，输入 $2/M、输出 $6/M tokens；同步完成 16 天软件工程项目自主编程 demo；千问办公发布日阿里港股盘中涨 9%</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>国内"超级入口"之争（千问办公 vs 钉钉/飞书 vs Kimi/智谱）、Token 消费量级、阿里云 AI 相关收入占比（已 30%+，预计年底破 50%）</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Qwen3.8-Max 开放权重版"近期"通过阿里云模型工厂发布；千问 Token Plan 标准坐席 198 元/月，与企业版同价</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>千问办公的本质是"把 Token 装进产品"——聊天机器人回答一次 token 消耗就停，Agent 接走任务后持续消耗，办公场景成为最适合消耗 token 的应用；阿里的"Token Foundry → 千问 → 云"链路成型，关键变量是用户愿不愿意为单次结果付费，而不只是为模型付费</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">07</div>
+    <h3>DeepSeek 启动 ~$8B 融资、估值 $74B，V4-Flash 把价格战打到"斩杀线"</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">融资</span>
+    <span class="tag tag-tech">推理成本</span>
+    <span class="source-badge">📅 2026-08-04 ~ 06 · 🔗 Türkiye Today / Briefs.co / SCMP · <a href="https://www.briefs.co/news/deepseek-restarts-8b-raise-as-moonshot-backer-monolith-negot">Briefs</a> · <a href="https://www.scmp.com/tech/tech-trends/article/3363549/enterprise-ai-costs-hit-2026-low-driven-price-wars-chinese-open-source-models-research">SCMP</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>DeepSeek 重启第二轮约 $8B 融资，估值约 ¥5000 亿（≈ $74B）；Kimi 投资方 Monolith Management 谈判入局；8/1 单日 token 处理量突破 8 万亿（微博热搜"DeepSeek 斩杀线"）</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>融资估值 $74B（vs 上轮 $50B+）；V4-Flash 评分 50/100 与 Google Gemini 3.6 flash 持平，但低于 Kimi K3；V4-Flash-0731 单任务成本 $0.03；V4-Pro 尚未公布时间表</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>中国 AI 大模型估值锚定、OpenAI/Anthropic/Google 的亚太定价策略、企业推理服务利润空间</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>DeepSeek 已通知用户涨价；新一轮资金部分将投入内蒙古数据中心；Monolith 入局或触发亚洲 LP 的快速跟进</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>$74B 估值意味着资本市场开始按"中国版 OpenAI"给 DeepSeek 定价——但 DeepSeek 同时在涨价，这与"开源低价"叙事存在张力；背后逻辑是：开源 API 低价吸流量，企业部署 + 模型定制才是真正变现路径，DeepSeek 正在走通"先圈地、再分层变现"的中国样本</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 8 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">08</div>
+    <h3>企业 AI 推理价格跌至年内低点：中美双向价格战叠加，开源模型占比 61%</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-market">价格战</span>
+    <span class="tag tag-industry">企业采购</span>
+    <span class="source-badge">📅 2026-08-10 · 🔗 SCMP / Jefferies · <a href="https://www.scmp.com/tech/tech-trends/article/3363549/enterprise-ai-costs-hit-2026-low-driven-price-wars-chinese-open-source-models-research">SCMP</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Jefferies 引用 Silicon Data 指数：8/6-8/8 区间企业级 AI 推理均价降至 $1.16-1.18 / M tokens，年内新低（5/31 为 $2.04，7 月底 $1.45）；下行由"中美双向降价"叠加推动</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>OpenAI GPT-5.6 系列上月降价 80%；Anthropic Claude Opus 5 用一半价格提供接近 Fable 5 的能力；中国侧 DeepSeek V4-Flash-0731 单任务 $0.03；OpenRouter 上中国开源权重模型 token 占比 ~61%（5 月数据）</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>AI Agent 24/7 部署的盈亏临界点、企业 toB 模型选型权重、SaaS 厂商 AI 嵌入成本曲线</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Silicon Data 每周更新指数；预计 Q4 头部模型可能进入"价格再下探 + 套餐绑定"组合策略；Coinbase / DoorDash / Airbnb 已大规模切到中国模型</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这场价格战不是"谁便宜谁赢"——而是"用便宜换长期合同 + 换 lock-in"；Coinbase 内部调研显示 91% 工程师工作"不需要 GPT/Claude 极限性能"，意味着对企业买家，性能冗余 + 成本敏感正在催生"按任务难度分层选型"的常态化采购模式</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 9 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">09</div>
+    <h3>Google DeepMind WeatherNext 登 Nature：飓风预测平均多争取 1 天预警，模型开源</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">科学突破</span>
+    <span class="tag tag-industry">应用 AI</span>
+    <span class="source-badge">📅 2026-08-06 · 🔗 Google DeepMind 官方博客 · <a href="https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones">DeepMind Blog</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>DeepMind 在 Nature 发表 WeatherNext 论文，AI 飓风路径/强度/风场预测精度刷新 SOTA，平均比传统模型多争取 1 天有效预警时间；模型权重同步开源，与 NHC / CIRA / UK Met Office 等机构合作验证</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>3 天预报精度相当于原 2 天水平（≈ 10 年气象学进步）；FGN 架构可在 TPU 上 1 分钟内生成 15 天预报；ensemble 规模从 50 提升到 1000 成员，专门捕捉"快速增强"等稀有场景（参考 2025 飓风 Melissa）</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>全球气象机构预报系统升级路径、保险公司与应急管理部门决策模型、深海航运与离岸风电运营</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>DeepMind 已开源模型与训练脚本；预计 12-18 个月内接入美国国家气象局业务系统；与英美多家气象局的合作机制进入第二阶段</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是 2026 年少见的"AI 在硬科学领域兑现可量化收益"的样本——不是 benchmark 分数，而是真实的"多一天预警"对应"挽救生命/财产"；DeepMind 在 AGI 叙事与气候/材料/生命科学硬核落地之间保持平衡，对整个行业是一份"做有用 AI"的回答</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 10 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">10</div>
+    <h3>DeepMind 权力交接：Koray 升任 SVP 接管运营，Jeff Dean 离职创业，Anthropic/OpenAI 抢人</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-industry">人才流动</span>
+    <span class="tag tag-policy">组织调整</span>
+    <span class="source-badge">📅 2026-08-06 · 🔗 Yahoo Finance · <a href="https://finance.yahoo.com/technology/ai/articles/google-parent-alphabet-shakes-ai-233228688.html">Yahoo Finance</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Alphabet 对 Google DeepMind 进行组织调整：CTO/首席 AI 架构师 Koray Kavukcuoglu 升任 SVP 接管日常运营与 Gemini 系列研发；Hassabis 转任 Alphabet 首席科学家 + DeepMind 主席；近 30 年老臣 Jeff Dean 离职创业（启动 Discovery Loop 项目，做 ML 研究自动化）</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>DeepMind 2014 年被 Google 以 $650M 收购；Hassabis 公开表示"AGI 已临近"；6 月已流失 Noam Shazeer（→OpenAI）与 John Jumper（→Anthropic）；Gemini 3.5 Pro 连续延期，股价当日跌 4%</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>Google 内部对前沿模型节奏的话语权、前沿实验室人才净流出趋势、AGI 路线商业化与基础研究之间的平衡</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Discovery Loop 团队组建中；预计更多 DeepMind 研究员加入；Gemini 3.5 Pro 重新进入冲刺阶段</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>这是头部实验室第一次公开出现"首席科学家让位 + 元老出走"的代际信号——Hassabis 退居"AGI 路线图"角色，意味着 Google 默认 Gemini 进入"工程化交付期"；Jeff Dean 的离职方向（AI 自动化科研）也是他给 Google 留下的最后一份遗产——"让 AI 自己写 AI 论文"将成为 2026 下半年研究主旋律</div>
+    </div>
+  </div>
+</div>
+
+<!-- News 11 -->
+<div class="news-card">
+  <div class="news-header">
+    <div class="news-number">11</div>
+    <h3>Anthropic Claude Code「auto mode」8/14 起对 Pro/Max/Team 用户默认开启</h3>
+  </div>
+  <div class="news-meta">
+    <span class="tag tag-tech">开发工具</span>
+    <span class="tag tag-industry">Agent 自主性</span>
+    <span class="source-badge">📅 2026-08-10 · 🔗 Mashable · <a href="https://sea.mashable.com/tech/53536/claude-codes-auto-mode-will-be-on-by-default-anthropic-confirms">Mashable</a></span>
+  </div>
+  <div class="news-body">
+    <div class="dimension-grid">
+      <div class="dimension-item"><span class="dim-label">核心事件：</span>Anthropic 宣布 Claude Code 的"auto mode"将于 8/14 起对 Pro/Max/Team 用户默认开启；除非操作不可逆或具破坏性，AI 代理将不再逐步询问用户许可，自主完成编码工作流</div>
+      <div class="dimension-item"><span class="dim-label">关键数据：</span>内部测试中 auto mode 拦截了 89% 的"有害操作"，人类对照仅拦截 13.6%；可在 settings 中手动关闭；Pro/Max/Team 是 Claude Code 主流订阅层</div>
+      <div class="dimension-item"><span class="dim-label">影响范围：</span>企业代码审计/合规流程、开发者对"AI 自主写代码"信任阈值、与 Cursor / Codex / Muse Code 等同类产品的功能竞赛</div>
+      <div class="dimension-item"><span class="dim-label">后续动作：</span>Anthropic 将发布 auto mode 的安全审计白皮书；预计引发 GitHub Copilot 等平台跟进类似模式</div>
+      <div class="dimension-item"><span class="dim-label">解读分析：</span>89% vs 13.6% 这个对比是 Anthropic 的核心卖点和最大风险——它把"AI 比人更懂何时停下"作为产品主张，但同时也意味着"代理自主性"的边界正式从用户层下沉到模型层；这与 AWS Continuum、Daybreak 项目共同构成 2026 下半年"AI 操作边界"的主线议题</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>📅 报告生成时间：2026-08-11 09:04 CST（北京时间）</p>
+  <p>🔗 在线版本：<a href="https://zxy114.github.io/ai-daily/published/ai-daily-2026-08-11.html">zxy114.github.io/ai-daily</a></p>
+  <p>🤖 由 OpenClaw AI 新闻日报自动生成 · 来源：Tavily Search + 推特/X 多源验证</p>
+</div>
+
+</body>
+</html>
