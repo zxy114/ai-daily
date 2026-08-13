@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-08-13</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#0f1117;color:#e4e4e7;line-height:1.7;padding:20px}
+.container{max-width:800px;margin:0 auto}
+header{text-align:center;padding:40px 0 30px;border-bottom:2px solid #27272a;margin-bottom:30px}
+header h1{font-size:2em;color:#a78bfa;letter-spacing:2px}
+header .date{color:#71717a;font-size:1.1em;margin-top:8px}
+.section-title{font-size:1.2em;color:#c084fc;margin:30px 0 15px;padding-bottom:8px;border-bottom:1px solid #27272a}
+.card{background:#18181b;border:1px solid #27272a;border-radius:12px;padding:20px 24px;margin-bottom:18px}
+.card:hover{border-color:#581c87}
+.card h3{font-size:1.05em;color:#e9d5ff;margin-bottom:10px}
+.card .meta{font-size:.8em;color:#52525b;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:10px}
+.card .impact{background:#2e1065;color:#c4b5fd;padding:2px 8px;border-radius:4px;font-size:.75em}
+.card p{color:#a1a1aa;font-size:.95em;margin-bottom:6px}
+.card .sources{font-size:.8em;color:#52525b;margin-top:8px}
+.card .sources a{color:#818cf8;text-decoration:none}
+.card .sources a:hover{text-decoration:underline}
+.highlight{color:#c084fc;font-weight:500}
+.data-tag{display:inline-block;background:#1e1b4b;color:#818cf8;padding:1px 6px;border-radius:3px;font-size:.85em;font-weight:500}
+footer{text-align:center;padding:30px 0;color:#3f3f46;font-size:.85em;border-top:1px solid #27272a;margin-top:40px}
+.summary-box{background:linear-gradient(135deg,#1e1b4b,#2e1065);border:1px solid #581c87;border-radius:12px;padding:24px;margin-bottom:30px}
+.summary-box h3{color:#e9d5ff;margin-bottom:12px;font-size:1.1em}
+.summary-box ul{list-style:none}
+.summary-box li{padding:4px 0;color:#c4b5fd;font-size:.95em}
+.summary-box li::before{content:"◆ ";color:#a78bfa}
+.tag-source{color:#71717a;font-size:.78em}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>AI 日报</h1>
+<div class="date">2026 年 8 月 13 日 · 星期四 · 北京时间</div>
+</header>
+
+<div class="summary-box">
+<h3>今日精选摘要</h3>
+<ul>
+<li>DeepSeek V4-Pro 0813 结束近四个月预览正式 GA，1M 上下文，价格"先涨再说"</li>
+<li>xAI 发布 Grok 4.6，Artificial Analysis 智能指数 61 与 GPT-5.6 Sol 打平，输出价仅为后者 1/5</li>
+<li>欧盟 AI 法案第 50 条透明度义务生效，Anthropic 全球范围默认开启 Claude 隐形水印</li>
+<li>面壁智能向北京证监局提交 IPO 辅导备案，端侧大模型独角兽正式启动上市流程</li>
+<li>林俊旸卸任阿里 5 个月后创立语用科技，天使轮 2.2 亿美元、估值 20 亿美元，腾讯跟投</li>
+</ul>
+</div>
+
+<!-- NEWS SECTION -->
+<h2 class="section-title">热点新闻</h2>
+
+<!-- 1. DeepSeek V4 Pro 0813 -->
+<div class="card">
+<h3>1. DeepSeek V4-Pro 0813 结束预览正式 GA，价格将"大幅上调"</h3>
+<div class="meta">
+<span class="impact">影响范围：全球开源/闭源大模型竞争</span>
+<span class="data-tag">基础模型</span>
+<span class="tag-source">2026-08-12/13</span>
+</div>
+<p><span class="highlight">核心事件：</span>DeepSeek 在官方 API 文档与价格页将旗舰模型版本号悄然替换为 DeepSeek-V4-Pro-0813，OpenRouter 模型页面同步显示该 build 为 GA 版；V4-Pro 自 4 月发布后近四个月的预览状态结束。API 端名称 `deepseek-v4-pro` 不变，老用户无需改动集成。</p>
+<p><span class="highlight">关键数据：</span>支持 1M tokens 上下文窗口与最高 384K 输出；现行价格仍为输入 $0.435/输出 $0.87 per 1M tokens（缓存命中 $0.0036）；DeepSeek 在 API 定价页显著位置提示"整体 API 价格预计将有较大幅度上涨"。据传官方群评测，0813 在 Terminal-Bench 2.1、Cybergym、DeepSWE、AutomationBench 等智能体基准上已超过 Claude Opus 4.8。</p>
+<p><span class="highlight">影响范围：</span>中国大陆开源/闭源大模型竞争的"价格锚"再次上移；OpenRouter、Hacker News 等英文社区热度同步飙升。</p>
+<p><span class="highlight">后续动作：</span>DeepSeek 尚未发布正式 changelog 与新权重；0813 权重是否会同步推送 Hugging Face、是否配套论文尚待官方表态。V4-Flash 已于 7/31 先于 Pro 毕业为 GA。</p>
+<p><span class="highlight">解读：</span>这是一次典型的"先涨价格、先做模型"的渐进式商业化节奏：在 ChatGPT/Claude/SpaceXAI 等海外对手普遍上调 API 价格的环境下，DeepSeek 选择以预览 GA + 价格预警的方式向市场传递"接下来会更贵"的信号，同时保留现价窗口为开发者迁移锁定期。</p>
+<div class="sources">
+来源：<a href="https://deepseekv4pro.com/news/deepseek-v4-pro-0813-price-increase-grok-4-6">DeepSeekV4Pro 跟踪站</a> · <a href="https://www.unite.ai/deepseek-ships-v4-pro-as-its-flagship-model-leaves-preview">Unite.AI</a> · <a href="https://www.digitalapplied.com/blog/deepseek-v4-pro-0813-price-list-before-announcement-2026">Digital Applied</a> · <a href="https://www.gmicloud.ai/en/blog/deepseek-v4-pro-steps-out-of-preview-the-0813-build-is-live">GMI Cloud</a> · <a href="https://www.nbd.com.cn/articles/2026-08-13/4540360.html">每日经济新闻</a>
+</div>
+</div>
+
+<!-- 2. Grok 4.6 -->
+<div class="card">
+<h3>2. xAI 发布 Grok 4.6：智能指数 61 与 GPT-5.6 Sol 持平，输出价仅 1/5</h3>
+<div class="meta">
+<span class="impact">影响范围：前沿模型竞争 + 企业/开发者 API 选型</span>
+<span class="data-tag">前沿模型</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>xAI 正式上线 Grok 4.6，定位"长任务智能体 + 更复杂的编程/知识工作"，官方称在多项 agentic coding 与知识工作基准上达到前沿水平。已在 Grok Build、Cursor、xAI API 上线，并通过 OpenRouter、Vercel、Cloudflare 等渠道分发。</p>
+<p><span class="highlight">关键数据：</span>Artificial Analysis Intelligence Index 得分 61，与 GPT-5.6 Sol 打平，仅次于 Claude Opus 5 与 Claude Fable 5；上下文窗口维持 500K tokens（两代未涨）；价格维持 Grok 4.5 水平——$2/1M 输入、$6/1M 输出，仅为 GPT-5.6 Sol（$5/$30）的约 1/5。Long-horizon AA-Briefcase Elo 1577（"Fable 5 级"）。</p>
+<p><span class="highlight">后续动作：</span>Elon Musk 已透露 4.7 路线图（2.1 万亿参数），并已上线 "Grok Bot" 智能体队友产品对标 ChatGPT Work；Cursor 首周双倍用量补贴开发者迁移。</p>
+<p><span class="highlight">解读：</span>Grok 4.6 的"杀手锏"不是单项跑分第一，而是"前沿级能力 + 五分之一价格"组合拳；SpaceXAI 以低价正面冲击 GPT-5.6 Sol、Claude Opus 5 的企业 API 预算，标志着前沿模型层从"性能竞赛"转入"性能 × 价格"的二维竞赛。对国内厂商的启示是：智能体代码场景下的"低 Token 单价"已经成为海外大模型营销标配。</p>
+<div class="sources">
+来源：<a href="https://x.ai/news/grok-4-6">xAI 官方</a> · <a href="https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis">Artificial Analysis</a> · <a href="https://openrouter.ai/x-ai/grok-4.6">OpenRouter</a> · <a href="https://roo.beehiiv.com/p/grok-4-6-benchmarks-vs-gpt-5-6-sol">Roo's Newsletter</a> · <a href="https://www.nbd.com.cn/articles/2026-08-13/4540360.html">每日经济新闻</a>
+</div>
+</div>
+
+<!-- 3. Anthropic Watermark + EU AI Act -->
+<div class="card">
+<h3>3. Anthropic 启用 Claude 隐形水印，欧盟透明度义务触发"布鲁塞尔效应"</h3>
+<div class="meta">
+<span class="impact">影响范围：全球生成式 AI 合规与内容溯源</span>
+<span class="data-tag">合规 / 内容溯源</span>
+<span class="tag-source">2026-08-11/12</span>
+</div>
+<p><span class="highlight">核心事件：</span>Anthropic 在帮助中心公布：自 8 月 2 日起发布的 Claude 新模型默认对生成文本嵌入"机器可识别、人眼不可见"的水印，对图片等文件附数字签名来源元数据，范围覆盖全球用户（不限于欧盟）。这一时间节点恰好对齐 8 月 2 日生效的欧盟 AI 法案第 50 条透明度义务。</p>
+<p><span class="highlight">关键数据：</span>法案要求"生成式 AI 系统输出内容以机器可读格式标记为人工生成/操纵"，技术方案须满足"有效、可互操作、稳健、可靠"四项标准；签署《AI 生成内容透明度行为准则》的提供方需在 2027-02-02 前实现水印检测机制的互操作，并向媒体/监管/事实核查机构免费开放检测工具。</p>
+<p><span class="highlight">影响范围：</span>中国《标识办法》对文本水印仅为"鼓励"而非"强制"，境内输出到欧盟可能直接违反强制水印义务；中国 AI 企业检测工具对外可获取性和互操作方面目前几乎"没有声音"。</p>
+<p><span class="highlight">后续动作：</span>Anthropic 尚未公开水印检测工具；预计在下一次技术文档更新中说明检测机制。欧盟委员会已于 7/20 发布第 50 条最终指南，明确"仅有标记、无检测手段"不足以构成合规。</p>
+<p><span class="highlight">解读：</span>这是继 GDPR 后又一个"布鲁塞尔效应"案例——一家美国公司按欧盟规则对全球生效。法条第 50(2) 条同时要求"标记 + 检测互操作"，前者易、后者极难；这意味着全球 AI 内容溯源标准的制定权短期内事实上仍掌握在 Anthropic/OpenAI 这类先动玩家手中。</p>
+<div class="sources">
+来源：<a href="https://www.chinanews.com.cn/cj/2026/08-12/10676320.shtml">中国新闻网/扬子晚报</a> · <a href="https://molihua.org/mh-175926">茉莉花新闻网（转载虎嗅）</a> · <a href="https://www.anthropic.com">Anthropic 帮助中心</a>
+</div>
+</div>
+
+<!-- 4. 面壁智能 IPO -->
+<div class="card">
+<h3>4. 端侧大模型独角兽面壁智能启动 IPO，中信证券辅导</h3>
+<div class="meta">
+<span class="impact">影响范围：中国大模型独角兽资本化路径</span>
+<span class="data-tag">IPO / 端侧 AI</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>证监会公开发行辅导公示平台显示，北京面壁智能科技股份有限公司于 8 月 11 日向北京证监局提交 IPO 上市辅导备案，辅导机构为中信证券。这意味着"国内最早 All in 端侧大模型"的独角兽正式进入上市流程。</p>
+<p><span class="highlight">关键数据：</span>面壁智能脱胎于清华大学自然语言处理实验室成果转化；MiniCPM 系列端侧模型全球下载量超 4300 万次；2026 上半年累计融资超 50 亿元，估值突破 200 亿元；股东结构包含华为哈勃、智谱、中国电信、北京市人工智能产业投资基金、茅台基金等。公司无控股股东，第一大股东为北京清语启航（16.45%）。</p>
+<p><span class="highlight">影响范围：</span>2026-07-15 国家网信办首批手机端侧大模型备案 7 家中，面壁智能是唯一以端侧模型能力备案的企业；端侧 AI 进入"合规运营"阶段后，公司有望进一步抢占手机/汽车/具身智能的端侧入口。</p>
+<p><span class="highlight">后续动作：</span>辅导期通常 3-12 个月；后续需提交招股书申报并经交易所审核。2026 年下半年中国 AI 独角兽 IPO 队列进一步拥挤。</p>
+<p><span class="highlight">解读：</span>面壁智能的"密度定律（DensingLaw）"——"达到特定智能水平所需参数量每 3.5 个月下降一半"——是端侧 AI 商业逻辑的核心理论支撑，与传统云端 Scaling Law 形成互补叙事。这是国内"小参数、强工程"路线最具代表性的资本化样本。</p>
+<div class="sources">
+来源：<a href="https://stnn.cc/detail/6a7c0aa458a9220107f3f665.html">星岛环球网</a> · 21 世纪经济报道 · <a href="https://www.nbd.com.cn/articles/2026-08-12/4539563.html">每日经济新闻</a>
+</div>
+</div>
+
+<!-- 5. 林俊旸 Pragmatik Labs -->
+<div class="card">
+<h3>5. 前阿里千问负责人林俊旸创立语用科技，天使轮 $2.2 亿、估值 $20 亿</h3>
+<div class="meta">
+<span class="impact">影响范围：中国 AI 创业格局 / 智能体方向</span>
+<span class="data-tag">AI 创业</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>阿里千问大模型原技术负责人林俊旸在 X 平台发文宣布，已在上海创立"语用科技"（Pragmatik Labs），定位为研究"面向数字世界和物理世界的下一代智能体"。</p>
+<p><span class="highlight">关键数据：</span>本轮为天使轮，融资金额 2.2 亿美元（约 2.8 亿新元），估值 20 亿美元；高榕创投与红杉中国共同领投，腾讯、上海未来产业基金等参投；境内主体"语用（上海）科技有限公司"成立于 2026-05-13，注册资本 125 万人民币。</p>
+<p><span class="highlight">影响范围：</span>林俊旸今年 3 月卸任后曾引发"千问核心团队集体离职"传闻，阿里官方辟谣；但此次独立创业与巨额估值，进一步强化"国内大厂核心人才外溢"叙事。其"数字+物理"智能体方向直接对标当下最热的 embodied agent 赛道。</p>
+<p><span class="highlight">后续动作：</span>公司官网已上线；产品形态、首批发布场景待披露。</p>
+<p><span class="highlight">解读：</span>"前大厂研究院核心人物 + 双 VC 共同领投 + 腾讯跟投 + 政府基金参与"已成为 2026 年中国 AI 顶级轮次的"标配阵容"。语用科技的"下一代智能体"叙事聚焦"数字 + 物理"，与近期行业从纯软件 agent 向 embodied agent 的迁移方向一致。</p>
+<div class="sources">
+来源：<a href="https://www.zaobao.com.sg/news/china/story20260812-9506044">联合早报</a> · <a href="https://stnn.cc/detail/6a7c0aa458a9220107f3f665.html">星岛环球网</a>
+</div>
+</div>
+
+<!-- 6. Nebius Q2 -->
+<div class="card">
+<h3>6. Nebius Q2 营收同比 +454%，AI 云收入暴涨 6 倍，盘前涨超 23%</h3>
+<div class="meta">
+<span class="impact">影响范围：AI 云基础设施供需定价</span>
+<span class="data-tag">AI 云 / 财报</span><span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>AI 云基础设施公司 Nebius 公布 2026 年第二季度业绩，营收同比增长 454% 至 5.823 亿美元，远超市场预期；盘中股价一度涨超 23%。</p>
+<p><span class="highlight">关键数据：</span>AI 云业务销售额同比增长 514% 至 5.75 亿美元，占总营收约 98%；调整后 EBITDA 达 2.362 亿美元（去年同期亏损 2100 万美元），AI 云业务 EBITDA 利润率 50%；本季度签署四笔平均价值超过 10 亿美元的 AI 云合同；短期算力合同价格升至每兆瓦每年 4000 万–5000 万美元。</p>
+<p><span class="highlight">影响范围：</span>Nebius 将 2026 年底签约容量目标由 4GW 上调至 5GW，重申全年 30 亿–34 亿美元营收指引；剩余履约义务达 254 亿美元。</p>
+<p><span class="highlight">后续动作：</span>管理层将持续扩签兆瓦级 AI 云合同；与 CoreWeave 业绩形成"AI 算力仍处供不应求"的双向交叉验证。</p>
+<p><span class="highlight">解读：</span>Nebius 是 AI 算力产业链最具说服力的"涨价 + 利润率扩张"样本——算力供需缺口已经从"订单增长"显化为"价格上调 + 利润率扩张"。对国内算力链的启示是，兆瓦级合同和高利用率才是 AI 云厂商真正的护城河。</p>
+<div class="sources">
+来源：<a href="https://www.nbd.com.cn/articles/2026-08-13/4540360.html">每日经济新闻</a> · TradingView · 公司公告
+</div>
+</div>
+
+<!-- 7. Cerebras Q2 -->
+<div class="card">
+<h3>7. Cerebras Q2 营收 +74%，但硬件收入 -23% 致盘后跌 17%</h3>
+<div class="meta">
+<span class="impact">影响范围：AI 芯片商业模式</span>
+<span class="data-tag">AI 芯片 / 财报</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>AI 芯片公司 Cerebras 公布 2026 年第二季度财报：GAAP 营收 1.80 亿美元、同比 +74%，核心口径营收 2.10 亿美元、同比 +103%。云计算及其他服务收入同比 +281% 至 1.26 亿美元，首次明显超过硬件业务；但硬件收入同比 -23% 至 5410 万美元，导致盘后股价一度跌 17%。</p>
+<p><span class="highlight">关键数据：</span>公司上调全年核心营收指引至 8.80 亿–8.90 亿美元（前值 8.55 亿–8.65 亿美元）；预计 Q3 核心营收 2.14 亿–2.16 亿美元；截至 Q2 末剩余履约义务达 254 亿美元。</p>
+<p><span class="highlight">影响范围：</span>标志 AI 芯片厂商从"卖芯片挑战英伟达"叙事，开始向"卖 AI 推理算力"商业模式过渡；其他 AI ASIC 厂商（Groq、Tenstorrent、SambaNova）的估值逻辑或被重估。</p>
+<p><span class="highlight">后续动作：</span>Cerebras 将继续扩大云服务收入比重，逐步降低对一次性硬件销售的依赖。</p>
+<p><span class="highlight">解读：</span>硬件收入的 -23% 不代表 AI 需求萎缩，而是客户偏好从"自购芯片自建"转向"租用 AI 推理云"——这与 Nebius 财报揭示的算力定价趋势完全一致。AI 芯片公司估值锚正在从"出货量 × ASP"切换为"算力容量 × 单价 × 利润率"。</p>
+<div class="sources">
+来源：<a href="https://www.nbd.com.cn/articles/2026-08-13/4540360.html">每日经济新闻</a> · TradingView · 公司财报
+</div>
+</div>
+
+<!-- 8. Intel $20B -->
+<div class="card">
+<h3>8. 英特尔增发 200 亿美元豪赌 AI，创 55 年来最大单次股权融资</h3>
+<div class="meta">
+<span class="impact">影响范围：传统芯片大厂转型节奏</span>
+<span class="data-tag">芯片 / 资本运作</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>英特尔宣布增发约 200 亿美元股票，为公司 55 年来最大单次股权融资，资金重点投入 AI 芯片研发与产能扩张。</p>
+<p><span class="highlight">关键数据：</span>融资金额 200 亿美元；用途覆盖 AI GPU/ASIC 研发、晶圆厂扩建、客户生态补贴；将显著稀释现有股东权益。</p>
+<p><span class="highlight">影响范围：</span>传统 x86 龙头正式以股权融资方式加大 AI 投入；与 NVIDIA、AMD 在 AI 算力市场的格局之争进入资本密集阶段；A 股/港股芯片板块情绪或受提振。</p>
+<p><span class="highlight">后续动作：</span>英特尔管理层将在 Q3 财报中进一步说明 AI 产品路线图与晶圆厂投资节奏。</p>
+<p><span class="highlight">解读：</span>这是"老牌芯片巨头"对 AI 时代算力供需失衡的最激烈回应——以大规模股权融资换取 AI 产品迭代窗口。短期内估值压力难免，但若 AI 算力需求持续强劲，英特尔的"产能护城河"将成为长线核心资产。</p>
+<div class="sources">
+来源：<a href="https://stnn.cc/detail/6a7c0aa458a9220107f3f665.html">星岛环球网（综合 21 世纪经济报道）</a>
+</div>
+</div>
+
+<!-- 9. CodeRabbit -->
+<div class="card">
+<h3>9. CodeRabbit 完成 1.43 亿美元融资、估值 15 亿美元，AI 代码审查赛道再升温</h3>
+<div class="meta">
+<span class="impact">影响范围：AI 编程 / 企业开发者工具</span>
+<span class="data-tag">AI 编程 / 融资</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>AI 代码审查平台 CodeRabbit 敲定新一轮 1.43 亿美元融资，估值 15 亿美元；本轮融资节奏与 Cognition AI（Devin，新一轮估值或达 400 亿美元）、River AI（种子+A 轮共 11 亿美元，隐身模式 2 个月）同期发生，均属"AI 编程/Agent 赛道"密集交易。</p>
+<p><span class="highlight">关键数据：</span>本轮投资方未完全披露；估值 15 亿美元，相对种子阶段实现 20 倍以上跃升。PitchBook Q2 数据显示，美国创投资金 87.5% 流向 AI 相关公司，其中大量集中在 AI 编程 / Agent 方向。</p>
+<p><span class="highlight">影响范围：</span>直接受益方包括底层 LLM 提供商（Claude、GPT-5、Grok、DeepSeek）、代码智能体平台（Cognition、Cursor、Codeium）；间接影响开源编程社区的 AI 化进程。</p>
+<p><span class="highlight">后续动作：</span>Cognition AI 正在与投资方商议新一轮融资，估值或推高至 400 亿美元；同赛道其他创业公司融资窗口期收窄。</p>
+<p><span class="highlight">解读：</span>AI 代码审查赛道的估值锚正在从"开发者工具"快速迁移至"AI Agent 平台"——这意味着工具型公司的天花板将被重新评估。CodeRabbit 这类"垂直代码 Agent"公司与 Cursor、Cognition 这类"代码智能体平台"的边界正在模糊，最终胜负手是数据飞轮和企业级渗透深度。</p>
+<div class="sources">
+来源：<a href="https://yellow.com/zh/news/%E6%95%B0%E6%8D%AE%E6%98%BE%E7%A4%BA%EF%BC%9A2026%E5%B9%B4%E4%BA%8C%E5%AD%A3%E5%BA%A6%E7%BE%8E%E5%9B%BD%E5%88%9B%E6%8A%95%E8%B5%84%E9%87%91%E5%85%AB%E6%88%90%E4%BB%A5%E4%B8%8A%E6%B5%81%E5%90%91ai">Yellow.com</a> · <a href="https://siliconangle.com/2026/08/12/agentic-ai-infrastructure-shifts-enterprise-focus-model-choice-platform-control-cubeconversations">SiliconANGLE</a> · 路透社
+</div>
+</div>
+
+<!-- 10. Spotify AI 标识 -->
+<div class="card">
+<h3>10. Spotify 9 月起为 AI 生成艺人主页加专属标识，AI 内容溯源扩展至音乐流媒体</h3>
+<div class="meta">
+<span class="impact">影响范围：内容平台 / 创作者经济</span>
+<span class="data-tag">内容溯源</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>Spotify 宣布 9 月中旬起，部分 AI 生成的艺人主页将显示"AI 人物"专属标识，帮助听众识别 AI 艺人。除非用户已关注相关艺人等特殊情况，AI 生成艺人的音乐将不会进入编辑推荐或算法推荐范围。</p>
+<p><span class="highlight">关键数据：</span>Spotify 全球用户 7.61 亿；曲库超 1 亿首；高级订阅 2.93 亿，覆盖 184 个市场。</p>
+<p><span class="highlight">影响范围：</span>继 Anthropic Claude 隐形水印、欧盟 AI 法案第 50 条之后，内容平台首次将"AI 内容溯源"机制大规模落地音乐流媒体场景；TikTok、YouTube 等平台后续动作可预期。</p>
+<p><span class="highlight">后续动作：</span>Spotify 未披露具体技术方案（标签类型、检测机制、与监管对接方式）；9 月上线后实际执行细则有待观察。</p>
+<p><span class="highlight">解读：</span>Spotify 的"标识 + 算法降权"双轨方案是当前内容平台对 AI 生成内容的主流应对——既不彻底封禁、也不放任滥用，而是通过"透明度 + 流量再分配"平衡创作者生态。这一范式大概率会被社交媒体、视频平台快速复制。</p>
+<div class="sources">
+来源：<a href="https://atvnewsonline.com/entertainment/spotify%E5%B0%86%E6%8E%A8ai%E4%BA%BA%E7%89%A9%E6%A0%87%E8%AF%86-%E5%8A%A9%E5%90%AC%E4%BC%97%E8%AF%86%E5%88%ABai%E8%89%BA%E4%BA%BA">亚视新闻</a> · Spotify 官方声明
+</div>
+</div>
+
+<!-- 11. MIT Sloan AI Climate -->
+<div class="card">
+<h3>11. MIT Sloan：AI 数据中心电力需求或将拖累全球 2°C 气候目标</h3>
+<div class="meta">
+<span class="impact">影响范围：AI 能源 / 气候政策</span>
+<span class="data-tag">AI 能源</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>MIT Sloan 教授 John D. Sterman 在学院官网发文指出，AI 数据中心的电力需求高速增长可能在不进行强有力气候政策的前提下，推迟全球升温控制在 2°C 以下的窗口期；技术承诺无法单独解决问题。</p>
+<p><span class="highlight">关键数据：</span>文章提出需以"有意义的碳定价 + 效率/可再生能源激励 + AI 完整影响披露"三项政策组合拳应对；电力供需缺口是 AI 时代气候治理的核心瓶颈之一。</p>
+<p><span class="highlight">影响范围：</span>与 AI 算力厂商近期披露的"兆瓦级算力合同价格上调"现象形成共振——能源价格与算力成本将共同进入"AI 时代通胀双因子"序列。</p>
+<p><span class="highlight">后续动作：</span>各国监管机构可能加速出台数据中心能效与碳披露标准；超大规模云厂商或将加快自建核电/地热/光伏 PPA。</p>
+<p><span class="highlight">解读：</span>AI 不再只是"被监管的对象"，而开始反向成为"被监管推力"的来源。能源成本正在成为下一代 AI 竞争的核心变量——谁能拿到稳定、低碳、廉价的电力，谁就拥有下一代模型的边际成本优势。</p>
+<div class="sources">
+来源：<a href="https://mitsloan.mit.edu/press/will-ai-derail-global-climate-goals">MIT Sloan 官网</a>
+</div>
+</div>
+
+<!-- 12. Aurkea Bio -->
+<div class="card">
+<h3>12. 寻明生科完成 1 亿美元 B 轮，单细胞筛选把"干湿闭环"提到 100 万–1000 万分子/次</h3>
+<div class="meta">
+<span class="impact">影响范围：AI 制药 / 高通量实验</span>
+<span class="data-tag">AI for Science</span>
+<span class="tag-source">2026-08-12</span>
+</div>
+<p><span class="highlight">核心事件：</span>AI 原生 TechBio 公司寻明生科（Aureka Biotechnologies）宣布完成总额 1 亿美元的 B 轮融资。Granite Asia 独家投资首轮，后续轮由知名产业投资人领投、弘晖基金跟投，启明创投、经纬创投、纽尔利资本等老股东持续加注。</p>
+<p><span class="highlight">关键数据：</span>公司单细胞功能筛选平台一次实验可表征 100 万到 1000 万个分子，比传统 96 孔板方式提高 5–6 个数量级；7 月已开源 OpenDDE；平安证券数据，AI 驱动新药临床管线数量已从 2017 年的 4 个增长至 2026 年 6 月的 179 个（其中 9 个处在临床三期）；AI 发现药物分子整体成功率从 5%–10% 提升至 9%–18%，一期临床成功率达 80%–90%。</p>
+<p><span class="highlight">影响范围：</span>主攻欧美顶尖药厂 BD 变现路径：AI 设计临床前分子 → 数千万美元首付款 + 数亿美元里程碑付款 → 1–1.5 年完成前端发现 → 加快资本回报周期。</p>
+<p><span class="highlight">后续动作：</span>公司将持续开放 OpenDDE 等工具；预计 10–15 年内大多数获批新药将由 AI 设计或参与设计（公司创始人预判）。</p>
+<p><span class="highlight">解读：</span>AI 制药赛道的真正护城河不在"AI 设计分子"，而在"高通量湿实验闭环"——能够以毫秒级实验通量为大模型提供持续数据反馈的公司，将在长期占据 AI 制药价值链的"数据工厂"位置。这与传统软件 AI 公司"数据获取即瓶颈"的逻辑相反，是 AI for Science 的典型范式。</p>
+<div class="sources">
+来源：<a href="https://www.nbd.com.cn/articles/2026-08-12/4539563.html">每日经济新闻</a> · 平安证券《AI 制药行业报告》
+</div>
+</div>
+
+<footer>
+<p>AI 日报 · 由 OpenClaw 自动生成 · 2026-08-13</p>
+<p>覆盖时间窗口：2026-08-10 ~ 2026-08-13（北京时间）</p>
+<p>每条新闻均标注原始发布日期 · 5 维度结构化梳理</p>
+</footer>
+
+</div>
+</body>
+</html>
