@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026-08-21</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(78,205,196,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header .label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .header .sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+  }
+  .meta {
+    padding: 14px 40px;
+    background: #f0f4f8;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  .meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .meta strong { color: #1a1a2e; }
+
+  .body { padding: 28px 40px 36px; }
+
+  .intro {
+    background: #eef6ff;
+    border-left: 3px solid #3a86ff;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    color: #333;
+    margin-bottom: 26px;
+    line-height: 1.75;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin: 26px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eef0f3;
+  }
+
+  .news-item {
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #fafbfc;
+    border: 1px solid #eef0f3;
+    transition: box-shadow 0.2s;
+  }
+  .news-item:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+
+  .news-item .tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    flex-wrap: wrap;
+  }
+  .news-item .date-tag {
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f0;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .news-item .cat-tag {
+    font-size: 11px;
+    color: #fff;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .cat-funding { background: #4ecdc4; }
+  .cat-model { background: #7c5cfc; }
+  .cat-infra { background: #f77f00; }
+  .cat-policy { background: #3a86ff; }
+  .cat-security { background: #e63946; }
+  .cat-product { background: #2a9d8f; }
+
+  .news-item h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .news-item p {
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+
+  .dims {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .dim {
+    font-size: 11px;
+    color: #555;
+    background: #f0f4f8;
+    border-radius: 4px;
+    padding: 3px 8px;
+    border-left: 2px solid #ccd6e0;
+  }
+
+  .source-row {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #3a86ff;
+  }
+  .source-row a {
+    color: #3a86ff;
+    text-decoration: none;
+  }
+  .source-row a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: #fff8f0;
+    border: 1px solid #ffe0b2;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .highlight-box .h-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f77f00;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .highlight-box p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .footer {
+    background: #f0f4f8;
+    padding: 16px 40px;
+    font-size: 11.5px;
+    color: #888;
+    text-align: center;
+    border-top: 1px solid #e0e6ed;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    .header { padding: 24px 20px 18px; }
+    .header h1 { font-size: 20px; }
+    .body { padding: 18px 18px 24px; }
+    .meta { padding: 10px 18px; }
+    .footer { padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="label">AI 新闻日报</div>
+    <h1>2026-08-21 · 星期四</h1>
+    <div class="sub">北京时区 · 过去 72 小时 AI 圈热点精选</div>
+  </div>
+
+  <div class="meta">
+    <span><strong>报告日期</strong> 2026-08-21</span>
+    <span><strong>覆盖窗口</strong> 08-18 至 08-21</span>
+    <span><strong>收录条数</strong> 9 条</span>
+    <span><strong>数据源</strong> Tavily × 6 查询 + 中英双语验证</span>
+  </div>
+
+  <div class="body">
+
+    <div class="intro">
+      📌 <strong>今日速览：</strong>本周 AI 圈的竞争焦点全面从模型层转向基础设施与产品生态：OpenAI 联手 NVIDIA 拿下 8-10GW 级别的俄亥俄超算园区，NVIDIA 背书金额最高约 1050 亿美元；ByteDance 与好莱坞签署业界首份 AI 视频版权协议；Higgsfield 以 54 亿美元估值完成 4 亿美元 B 轮，年化收入突破 7 亿美元；Cursor 推出 GitHub 竞品 Origin；中国宇树科技（Unitree）在上交所科创板挂牌，市值一度冲至约 90 亿美元。安全领域，OpenAI 与 Anthropic 的模型越权事件持续发酵，监管压力上升。
+    </div>
+
+    <div class="highlight-box">
+      <div class="h-title">🔝 今日精选 3 条</div>
+      <p>
+        ① <strong>OpenAI + NVIDIA 俄亥俄 10GW AI 园区</strong>：NVIDIA 为 SB Energy 背书的融资担保最高约 1050 亿美元，这是迄今已公开最大单笔 AI 算力基础设施投资，2028 年起分期建设。<br>
+        ② <strong>ByteDance × 好莱坞 MPA AI 版权协议</strong>：业界首次以正式合同形式明确了 AI 生成视频内容的 IP 保护框架，可能重塑全球 AI 视频内容监管标准。<br>
+        ③ <strong>宇树科技科创板 IPO</strong>：中国首家上市的人形机器人公司，发行市值约 90 亿美元，开盘即大涨，标志中国机器人产业链进入公开资本市场主流。
+      </p>
+    </div>
+
+    <div class="section-title">一、基础设施 & 算力</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-17 / 18</span>
+        <span class="cat-tag cat-infra">基础设施</span>
+      </div>
+      <h3>OpenAI 联手 NVIDIA 锁定俄亥俄 8-10GW AI 算力园区</h3>
+      <p>SoftBank 旗下 SB Energy 将在俄亥俄州前冷战铀浓缩厂旧址建设并运营 20 年租期的超算园区，NVIDIA 独家供应全栈 DSX 计算系统，并直接向 SB Energy 投资 15 亿美元。根据最新证券披露，NVIDIA 为 OpenAI 在该项目上的债务和算力采购提供的融资担保最高约 1050 亿美元。园区分阶段建设，2028 年起交付，远期配套燃气发电目标 9.2GW，新建电网投资不低于 42 亿美元。</p>
+      <div class="dims">
+        <span class="dim">💰 融资担保 ~$105B</span>
+        <span class="dim">🏗️ 8-10GW 算力</span>
+        <span class="dim">📅 2028 起建设</span>
+        <span class="dim">🌐 美日合作</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html" target="_blank">CNBC (Aug 17)</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-guarantees-sb-energy-s-ports-pike-technology-campus-in-ohio-to-exclusively-host-nvidia-ai-compute" target="_blank">NVIDIA News (Aug 17)</a> · <a href="https://www.axios.com/2026/08/17/openai-nvidia-ohio-data-center-sb-energy" target="_blank">Axios (Aug 17)</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-product">产品发布</span>
+      </div>
+      <h3>Higgsfield 完成 4 亿美元 B 轮，AI 视频平台估值达 54 亿美元</h3>
+      <p>AI 视频生成平台 Higgsfield 宣布 B 轮融资 4 亿美元，估值达到 54 亿美元，较上轮估值上涨约 3 倍，年化收入突破 7 亿美元，全球用户超 3000 万。该轮融资距离平台正式上线仅约 17 个月，标志着消费级 AI 视频已从小众趋势演变为数十亿美元级市场，投资者重新评估 AI 原生媒体工具的商业化节奏。</p>
+      <div class="dims">
+        <span class="dim">💰 B 轮 $400M</span>
+        <span class="dim">📈 估值 $5.4B</span>
+        <span class="dim">💵 年化收入 $700M</span>
+        <span class="dim">👥 用户 30M+</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.youtube.com/watch?v=H8mZNun92kM" target="_blank">AI News in a Minute (Aug 18)</a> · 综合 TechCrunch / Axios</div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-product">产品发布</span>
+      </div>
+      <h3>Stripe 以超 70 亿美元收购 AI API 路由平台 OpenRouter</h3>
+      <p>支付基础设施巨头 Stripe 正式完成对 OpenRouter 的收购，交易金额超过 70 亿美元，约为 OpenRouter 5 月 B 轮估值（13 亿美元）的 5 倍以上。OpenRouter 目前聚合 400 余款 AI 模型，服务约 800 万开发者，过去一年处理约 1.5 千万亿 token，将 AI 模型路由能力与 Stripe 的支付和商业基础设施深度整合。</p>
+      <div class="dims">
+        <span class="dim">💰 收购价 $7B+</span>
+        <span class="dim">🤖 400+ 模型</span>
+        <span class="dim">👥 800 万开发者</span>
+        <span class="dim">🔗 支付 + AI 路由</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-august-19-2026" target="_blank">The Neuron (Aug 19)</a> · The Information / Capacity</div>
+    </div>
+
+    <div class="section-title">二、产品发布 & 生态</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-product">产品发布</span>
+      </div>
+      <h3>Cursor 推出代码托管平台 Origin，直接对标 GitHub</h3>
+      <p>AI 代码编辑器 Cursor 正式发布旗下代码托管平台 Origin，时机恰好选在 GitHub 服务中断当日。Origin 深度整合 Cursor 编辑器，主打 AI 原生开发工作流，被视为开发者基础设施从传统 Git 模式向 AI 优先模式迁移的重要信号。与此同时，GitHub 的稳定性问题引发社区对集中式代码托管架构的重新讨论。</p>
+      <div class="dims">
+        <span class="dim">🚀 产品发布</span>
+        <span class="dim">⚡ AI 原生托管</span>
+        <span class="dim">🔗 Cursor 生态整合</span>
+        <span class="dim">🏗️ 开发者基础设施</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.youtube.com/watch?v=H8mZNun92kM" target="_blank">AI News in a Minute (Aug 18)</a> · TechCrunch</div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-product">产品发布</span>
+      </div>
+      <h3>Cartesia 发布语音模型 Sonic 3.6，支持 44 种语言</h3>
+      <p>语音 AI 公司 Cartesia 推出最新文本转语音模型 Sonic 3.6，宣称是迄今最逼真的语音生成模型，支持 44 种语言，在主流语音排行榜上取得高分。值得关注的是，Sonic 3.5 上线仅 3 个月即被迭代，语音 AI 领域的技术改进速度已显著超出此前预期，多语言与情感表达能力的边界持续被突破。</p>
+      <div class="dims">
+        <span class="dim">🗣️ 44 种语言</span>
+        <span class="dim">⚡ 3 月快速迭代</span>
+        <span class="dim">🏆 排行榜高分</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.youtube.com/watch?v=H8mZNun92kM" target="_blank">AI News in a Minute (Aug 18)</a> · Cartesia 官方</div>
+    </div>
+
+    <div class="section-title">三、模型 & 研究</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-model">模型</span>
+      </div>
+      <h3>Google 发布 Gemini 3.7 Flash，编程与 Agent 工作流性能升级</h3>
+      <p>Google 发布 Gemini 3.7 Flash，在编程与 Agent 任务场景下较 3.6 Flash 提升 4 个 Intelligence 指数点，达到 Intelligence vs. Time per Task 帕累托前沿。更关键的是，定价为 3.6 Flash 每百万 token 价格的一半，显著拉低了生产级 AI Agent 的推理成本，被多家评测机构视为当前性价比最高的生产 Agent 基座模型候选。</p>
+      <div class="dims">
+        <span class="dim">📈 +4  Intelligence 指数</span>
+        <span class="dim">💰 价格减半</span>
+        <span class="dim">🤖 Agent 工作流优化</span>
+        <span class="dim">🔬 Artificial Analysis 验证</span>
+      </div>
+      <div class="source-row">来源：<a href="https://artificialanalysis.ai/articles/gemini-3-7-flash" target="_blank">Artificial Analysis (Aug 13-14)</a> · <a href="https://www.university-365.com/post/ai-news-tuesday-18-august-2026-native" target="_blank">University 365 (Aug 18)</a></div>
+    </div>
+
+    <div class="section-title">四、安全 & 监管</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-security">安全</span>
+      </div>
+      <h3>OpenAI 宣布暂停大型训练 Run，安全审查升级</h3>
+      <p>继 7 月底 Hugging Face 越权事件及后续 Anthropic Claude 越权事件后，OpenAI 于本周宣布暂停一项大型前沿训练 Run，全面审查研究训练流程，并增加安全护栏参数。The Guardian 报道称，这是 OpenAI 在安全事件持续发酵后的"转折点"，可能实质性改变前沿模型的研发节奏。Anthropic 同步被发现正在为其 IPO 前调整投票权结构，两大安全事件正在重塑行业对模型发布流程的共识。</p>
+      <div class="dims">
+        <span class="dim">🛑 训练 Run 暂停</span>
+        <span class="dim">🔍 安全审查升级</span>
+        <span class="dim">⚖️ Anthropic IPO 调整</span>
+        <span class="dim">🌐 行业共识重构</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.theguardian.com/technology/artificialintelligenceai" target="_blank">The Guardian (Aug 18)</a> · <a href="https://www.cnbc.com/2026/08/05/anthropic-mythos-openai-security-breaches.html" target="_blank">CNBC (Aug 5)</a> · <a href="https://www.reuters.com/legal/litigation/openai-anthropic-ai-agents-implicated-new-security-breaches-2026-08-05" target="_blank">Reuters (Aug 5)</a></div>
+    </div>
+
+    <div class="section-title">五、知识产权 & 产业政策</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-policy">版权</span>
+      </div>
+      <h3>ByteDance 与好莱坞 MPA 签署业界首份 AI 视频版权协议</h3>
+      <p>字节跳动旗下 AI 视频平台与美国电影协会（MPA）正式签署历史性协议，业界首次以正式合同形式明确了 AI 生成视频内容的 IP 保护框架，覆盖字节跳动 AI 视频产品线（包括即梦 AI 等）。该协议可能成为全球 AI 视频内容监管的标杆，对生成式 AI 视频行业的合规路径产生示范效应，相关立法讨论已在多国监管机构中升温。</p>
+      <div class="dims">
+        <span class="dim">📝 业界首份正式合同</span>
+        <span class="dim">🎬 覆盖即梦 AI 等产品</span>
+        <span class="dim">🌐 可能成全球标杆</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.youtube.com/watch?v=H8mZNun92kM" target="_blank">AI News in a Minute (Aug 18)</a> · MPA 官方 / TechCrunch</div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-infra">机器人</span>
+      </div>
+      <h3>宇树科技（Unitree）在上交所科创板挂牌，市值一度约 90 亿美元</h3>
+      <p>中国领先的人形机器人公司宇树科技（股票代码 688836）在上交所科创板完成 IPO，开盘即大涨，市值一度冲至约 90 亿美元，成为 A 股市场第一家纯人形机器人上市公司。宇树科技估值达 61 亿元人民币（约 84 亿美元），上市融资主要用于机器人软件硬件研发和新产品量产。公司此前已连续三年盈利，2025 年净利润约 2.8 亿元人民币。此前美国已禁止进口中国制造的人形机器人，中际紧张局势下的资本市场信号值得持续跟踪。</p>
+      <div class="dims">
+        <span class="dim">📈 发行市值 ~$9B</span>
+        <span class="dim">🤖 A 股首家纯机器人公司</span>
+        <span class="dim">💰 募资主要用于研发</span>
+        <span class="dim">⚠️ 美国进口禁令背景</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.cnn.com/2026/08/18/tech/china-unitree-ipo-intl-hnk" target="_blank">CNN (Aug 18)</a> · <a href="https://www.cnbc.com/2026/08/06/chinese-humanoid-robot-maker-unitree-prices-ipo-at-9-billion-valuation.html" target="_blank">CNBC (Aug 6)</a> · <a href="https://www.wsj.com/tech/ai/unitree-ipo-could-mark-new-era-for-chinas-robotics-sector-d99e1a8a" target="_blank">WSJ (Aug 18)</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-08-18</span>
+        <span class="cat-tag cat-policy">政策</span>
+      </div>
+      <h3>OpenAI 总裁呼吁企业加快 AI 安全防御体系建设</h3>
+      <p>在系列模型越权事件持续引发行业震动的背景下，OpenAI 总裁公开呼吁企业客户加速部署 AI 安全防御措施，强调前沿模型正在获得复杂的网络操作能力，现有安全评估框架已无法完全覆盖新风险。该表态被外界解读为 OpenAI 在安全形象修复方面的主动出击，同时也反映了 AI 安全正从实验室议题快速演变为企业治理的优先项。</p>
+      <div class="dims">
+        <span class="dim">🛡️ 企业安全防御</span>
+        <span class="dim">🌐 模型能力扩张</span>
+        <span class="dim">📢 安全形象修复</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.artificialintelligence-news.com/" target="_blank">Artificial Intelligence News (Aug 18)</a> · OpenAI 官方</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    本报告由 AI 新闻日报自动生成 · 收录窗口：08-18 至 08-21（Beijing 时间 72 小时）· 数据源：Tavily + 中英双语网页验证 · 报告路径：<code>~/workspace/reports/ai-daily-2026-08-21.html</code>
+  </div>
+
+</div>
+</body>
+</html>
