@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 · 2026-09-01</title>
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#121a33;
+  --panel-2:#0f1730;
+  --accent:#5b8cff;
+  --accent-2:#7af0c7;
+  --text:#e8ecf8;
+  --muted:#9aa6c4;
+  --border:#243056;
+  --warn:#ffb86b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(180deg,#0a0f24 0%,#0b1020 100%);
+  color:var(--text);
+  line-height:1.65;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 80px}
+header{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px 26px;
+  background:radial-gradient(1200px 400px at 10% -10%,rgba(91,140,255,.18),transparent 60%),var(--panel);
+  margin-bottom:24px;
+}
+header h1{margin:0 0 6px;font-size:26px;letter-spacing:.5px}
+header .meta{color:var(--muted);font-size:13px}
+header .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:3px 9px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+.kpi{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.kpi .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+.kpi .v{font-size:20px;font-weight:600;margin-top:4px;color:var(--accent-2)}
+.toc{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 20px;
+  margin-bottom:20px;
+}
+.toc h3{margin:0 0 8px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:4px 0}
+.toc a{color:var(--accent);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.news{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px 24px;
+  margin-bottom:18px;
+}
+.news h2{margin:0 0 6px;font-size:19px;color:var(--text)}
+.news .src{font-size:12px;color:var(--muted);margin-bottom:12px}
+.news .src a{color:var(--accent);text-decoration:none}
+.news .src a:hover{text-decoration:underline}
+.dim h4{
+  margin:14px 0 4px;
+  font-size:13px;
+  color:var(--accent-2);
+  text-transform:uppercase;
+  letter-spacing:.6px;
+}
+.dim p{margin:0 0 4px;font-size:14.5px;color:var(--text)}
+.dim p.note{color:var(--muted);font-size:13px}
+.pill{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:11px;
+  margin-right:6px;
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+.pill.hot{color:var(--warn);border-color:rgba(255,184,107,.4)}
+.pill.cn{color:#ff8fb3;border-color:rgba(255,143,179,.4)}
+.pill.intl{color:var(--accent-2);border-color:rgba(122,240,199,.4)}
+hr.sep{border:none;border-top:1px dashed var(--border);margin:14px 0}
+footer{
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+  margin-top:30px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 新闻日报 · 2026-09-01</h1>
+  <div class="meta">北京时间 2026-09-01 09:03 CST · 覆盖窗口 2026-08-29 ~ 2026-09-01 · 严格 3 天过滤</div>
+  <div class="tags">
+    <span class="tag">商业化</span>
+    <span class="tag">资本与基建</span>
+    <span class="tag">算力 / 芯片</span>
+    <span class="tag">监管与合规</span>
+    <span class="tag">安全事件</span>
+    <span class="tag">开发者生态</span>
+  </div>
+  <div class="summary-grid">
+    <div class="kpi"><div class="k">收录</div><div class="v">10 条</div></div>
+    <div class="kpi"><div class="k">国际 / 中国</div><div class="v">9 / 1</div></div>
+    <div class="kpi"><div class="k">窗口</div><div class="v">3 天</div></div>
+    <div class="kpi"><div class="k">源语言</div><div class="v">中 / 英 双源</div></div>
+  </div>
+</header>
+
+<section class="toc">
+  <h3>目录</h3>
+  <ol>
+    <li><a href="#n1">OpenAI 确认终止 Cursor 模型 API 接入，11 月生效</a></li>
+    <li><a href="#n2">ChatGPT 广告业务跑出 10 亿美元年化营收，200 天内达成</a></li>
+    <li><a href="#n3">欧盟 DSA 名单扩容：ChatGPT、Reddit、Roblox 进入"超大型平台"监管</a></li>
+    <li><a href="#n4">Anthropic 调整 Claude Sonnet 5 定价与分词器，开发者成本上升</a></li>
+    <li><a href="#n5">Together AI 与沙特 Humain 签订数十亿美元算力合作</a></li>
+    <li><a href="#n6">Nvidia 投资 MediaTek 35 亿美元，共推 NVLink Fusion</a></li>
+    <li><a href="#n7">Adobe 与沙特达成约 40 亿美元 AI 合作，2700 万人免费用 Firefly</a></li>
+    <li><a href="#n8">EuroHPC 与法国 Bull 签订 3.878 亿欧元 LUMI-AI 超算合同</a></li>
+    <li><a href="#n9">Anthropic 警告信息窃取型恶意软件劫持 Claude 活跃会话</a></li>
+    <li><a href="#n10">ChatGPT 企业版（Work）出现部分服务中断</a></li>
+  </ol>
+</section>
+
+<article class="news" id="n1">
+  <h2>1. OpenAI 确认终止 Cursor 模型 API 接入，11 月生效</h2>
+  <div class="src">
+    <span class="pill hot">热度高</span>
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-28 ~ 2026-08-31 ·
+    <a href="https://www.siliconvalley.com/tag/artificial-intelligence/" target="_blank">SVBJ</a> ·
+    <a href="https://www.ainformed.dev/" target="_blank">Ainformed</a> ·
+    <a href="https://unrot.co/blogs/today-top-ai-news-august-31-2026" target="_blank">Unrot</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>OpenAI 正式确认将在 11 月 12 日前后切断 AI 编程工具 Cursor 的模型 API 接入，背景涉及 Cursor 被 SpaceX 收购以及与 Musk 系公司过往的合规争议。</p>
+    <h4>关键数据</h4>
+    <p>距离实际断供还有约 2.5 个月过渡期；OpenAI 援引服务条款中的下游分发限制作为依据。</p>
+    <h4>影响范围</h4>
+    <p>Cursor 终端开发者的模型选择面收窄；编程 Agent 平台对单一供应商的依赖风险被再次放大。</p>
+    <h4>后续动作</h4>
+    <p>Cursor 切换到 Anthropic、Google 或自研模型的迁移方案；行业关注头部模型供应商对"被并购客户"的合同重审趋势。</p>
+    <h4>解读分析</h4>
+    <p>这是模型供应方对下游分发渠道控制力上升的标志性事件；编程 Agent 正进入"模型自研 / 多源切换"的拐点期，单一供应商绑定的护城河被进一步削弱。</p>
+  </div>
+</article>
+
+<article class="news" id="n2">
+  <h2>2. ChatGPT 广告业务跑出 10 亿美元年化营收，200 天内达成</h2>
+  <div class="src">
+    <span class="pill hot">热度高</span>
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://www.unite.ai/series/artificial-intelligence/" target="_blank">Unite.AI</a> ·
+    <a href="https://www.tipranks.com/news/openais-ad-business-smashes-1-billion-revenue-run-rate-in-under-seven-months" target="_blank">TipRanks</a> ·
+    <a href="https://m.economictimes.com/tech/artificial-intelligence" target="_blank">Economic Times</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>OpenAI 披露 ChatGPT 内嵌广告业务已达成约 10 亿美元年化营收（ARR），自产品上线以来用时不到 200 天；广告主自助投放工具已扩展至印度、欧洲、中东与北非市场。</p>
+    <h4>关键数据</h4>
+    <p>覆盖国家数累计超过 40 个；新增直接面向中小广告主与初创公司的自助入口。</p>
+    <h4>影响范围</h4>
+    <p>为 ChatGPT 免费/低价层提供新的资金来源；广告与对话内容的边界、用户体验管理将持续成为讨论焦点。</p>
+    <h4>后续动作</h4>
+    <p>扩大自助投放区域与广告位形态；可能开放更多与电商、本地服务整合的广告产品形态。</p>
+    <h4>解读分析</h4>
+    <p>200 天跑出 10 亿美元 ARR，刷新消费级 AI 商业化速度纪录；说明"对话流量×AI 推荐"具备广告变现潜力，但也意味着 OpenAI 在订阅之外的第二曲线初步跑通，对其估值与算力投入均形成正反馈。</p>
+  </div>
+</article>
+
+<article class="news" id="n3">
+  <h2>3. 欧盟 DSA 名单扩容：ChatGPT、Reddit、Roblox 进入"超大型平台"监管</h2>
+  <div class="src">
+    <span class="pill hot">热度高</span>
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://aiweekly.co/ai-news-today" target="_blank">AI Weekly</a> ·
+    <a href="https://letsdatascience.com/news/topic/chatgpt" target="_blank">LetsDataScience</a> ·
+    <a href="https://m.economictimes.com/tech/artificial-intelligence" target="_blank">Economic Times</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>欧盟委员会将 ChatGPT 列为"超大型在线搜索引擎"（VLOSE），将 Reddit、Roblox 列为"超大型在线平台"（VLOP），因其欧盟月活均突破 4500 万门槛。四个月后将触发更严格的透明度、风险评估与内容审核义务。</p>
+    <h4>关键数据</h4>
+    <p>ChatGPT 报告的欧盟月活约 1.59 亿；Reddit、Roblox 在欧盟用户量同步跨过门槛。</p>
+    <h4>影响范围</h4>
+    <p>头部 AI 产品在欧洲须承担额外的合规与披露义务；隐私、内容审核与未成年人保护成为重点领域。</p>
+    <h4>后续动作</h4>
+    <p>平台须在过渡期内完成风险评估与监管接口对接；可能衍生独立的对话/搜索类监管细则。</p>
+    <h4>解读分析</h4>
+    <p>DSA 的"用户数阈值"机制持续将 AI 头部产品纳入更严监管框架；这意味着欧盟正在把"对话式 AI"视作与社交、搜索同等量级的系统性平台，下游开发者与合规服务商也将衍生新需求。</p>
+  </div>
+</article>
+
+<article class="news" id="n4">
+  <h2>4. Anthropic 调整 Claude Sonnet 5 定价与分词器，开发者成本上升</h2>
+  <div class="src">
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://unrot.co/blogs/today-top-ai-news-august-31-2026" target="_blank">Unrot</a> ·
+    <a href="https://aitoolsrecap.com/Blog/ai-news-august-31-2026" target="_blank">AIToolsRecap</a> ·
+    <a href="https://www.anthropic.com/news" target="_blank">Anthropic 官方</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>Claude Sonnet 5 限时优惠定价（输入 2 / 输出 10 美元每百万 tokens）于 8 月 31 日结束，恢复标准定价（3 / 15 美元）；同时上线新一代分词器。</p>
+    <h4>关键数据</h4>
+    <p>新分词器在代码类文本上 token 数预计增加 10%–35%，对长上下文/代码工作流的实际账单影响显著。</p>
+    <h4>影响范围</h4>
+    <p>调用量大的代码 Agent、RAG 与长文档处理链路首当其冲；需重新评估单位 token 成本与缓存策略。</p>
+    <h4>后续动作</h4>
+    <p>关注 Anthropic 是否为代码/长上下文场景推出专项缓存价或子型号；其他厂商可能跟进调价或上线新分词器。</p>
+    <h4>解读分析</h4>
+    <p>头部模型进入"按场景定价"阶段：通用价上行 + 专项缓存/批量优惠并行的趋势明显；开发者应把 token 预算管理、prompt 压缩与缓存命中纳入日常工程优化。</p>
+  </div>
+</article>
+
+<article class="news" id="n5">
+  <h2>5. Together AI 与沙特 Humain 签订数十亿美元算力合作</h2>
+  <div class="src">
+    <span class="pill hot">热度高</span>
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://aiweekly.co/" target="_blank">AI Weekly</a> ·
+    <a href="https://m.economictimes.com/tech/artificial-intelligence" target="_blank">Economic Times</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>Together AI 与沙特 Humain 达成多年期、多年度合同（业内测算约 50 亿美元/年量级），共建 250MW 级别的 AI 算力集群。</p>
+    <h4>关键数据</h4>
+    <p>首期规模 250MW；定位为绕开部分美国本土数据中心约束的中东大集群。</p>
+    <h4>影响范围</h4>
+    <p>为推理侧需求与主权云提供新地理选项；推动中东在 AI 算力版图上的承接角色。</p>
+    <h4>后续动作</h4>
+    <p>关注首批集群上线时间、客户结构（模型厂商 / 企业 / 政府）以及与美国出口管制口径的衔接。</p>
+    <h4>解读分析</h4>
+    <p>中东主权基金 + 美国 AI 基础设施厂商的组合持续放量；其结果将影响"算力全球化部署 vs. 地缘风险溢价"的平衡，国产替代与跨国算力布局都需重新评估成本曲线。</p>
+  </div>
+</article>
+
+<article class="news" id="n6">
+  <h2>6. Nvidia 投资 MediaTek 35 亿美元，共推 NVLink Fusion</h2>
+  <div class="src">
+    <span class="pill hot">热度高</span>
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://aiweekly.co/" target="_blank">AI Weekly</a> ·
+    <a href="https://www.reuters.com/" target="_blank">Reuters</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>Nvidia 计划向 MediaTek 投资约 35 亿美元，并围绕 NVLink Fusion 展开合作，把 GPU 与定制加速器/SoC 的高速互联扩展到更广泛的设备生态。</p>
+    <h4>关键数据</h4>
+    <p>NVLink Fusion 把 NVLink 协议下沉到第三方芯片；MediaTek 在边缘 SoC、车载与网络芯片上有现成客户基础。</p>
+    <h4>影响范围</h4>
+    <p>加速异构计算在边缘 / 车规 / 终端的落地；为定制芯片厂商提供"GPU 兼容互联"的高速通路。</p>
+    <h4>后续动作</h4>
+    <p>关注首批 NVLink Fusion 接入厂商、汽车与机器人 SoC 路线图，以及对应的软件栈兼容进展。</p>
+    <h4>解读分析</h4>
+    <p>Nvidia 从"卖 GPU"走向"定义互联标准"：通过 NVLink 把生态绑定从数据中心扩展到边缘与终端，与 ARM、CXL 阵营的竞争维度进一步升级，长期对自研芯片厂商构成新的"协议税"。</p>
+  </div>
+</article>
+
+<article class="news" id="n7">
+  <h2>7. Adobe 与沙特达成约 40 亿美元 AI 合作，2700 万人免费用 Firefly</h2>
+  <div class="src">
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://m.economictimes.com/tech/artificial-intelligence" target="_blank">Economic Times</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>Adobe 与沙特政府/产业方达成约 40 亿美元的合作，向约 2700 万合格沙特居民/公民免费开放 Firefly（标准版）及 Express 高级功能，并上线一款"文化适配"模型。</p>
+    <h4>关键数据</h4>
+    <p>免费对象覆盖近 2700 万人；包含一款针对本地文化/语言做了调优的 Firefly 衍生模型。</p>
+    <h4>影响范围</h4>
+    <p>把生成式 AI 工具直接嵌入国家数字身份与教育/创意基础设施；为本地创意生态提供"零成本入门通道"。</p>
+    <h4>后续动作</h4>
+    <p>关注沙特方在文化、本地化与合规上的进一步要求；类似"国家版 AI 套件"是否会扩展到阿联酋、印尼等市场。</p>
+    <h4>解读分析</h4>
+    <p>AI 商业化进入"国家订阅"模式：以国家为单位打包基础模型 + 应用 + 培训；这把传统 B2B 软件的"主权云/国家协议"路径压缩到生成式 AI 时代，是 Adobe 在 OpenAI、Anthropic 之外尝试的新增长极。</p>
+  </div>
+</article>
+
+<article class="news" id="n8">
+  <h2>8. EuroHPC 与法国 Bull 签订 3.878 亿欧元 LUMI-AI 超算合同</h2>
+  <div class="src">
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://m.economictimes.com/tech/artificial-intelligence" target="_blank">Economic Times</a> ·
+    <a href="https://eurohpc-ju.europa.eu/" target="_blank">EuroHPC JU</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>欧洲高性能计算联合体（EuroHPC）与法国 Bull 签订 3.878 亿欧元合同，建设 LUMI-AI 超算，将与芬兰现有的 LUMI 系统并址部署。</p>
+    <h4>关键数据</h4>
+    <p>硬件基于 AMD Instinct GPU + EPYC CPU；项目预算 3.878 亿欧元。</p>
+    <h4>影响范围</h4>
+    <p>为欧洲科研机构与初创提供非英伟达主导的大规模 AI 算力底座，降低对美国芯片与云厂商的依赖。</p>
+    <h4>后续动作</h4>
+    <p>关注 LUMI-AI 上线时间、首批分配机制与对欧洲前沿模型训练的实质性支撑。</p>
+    <h4>解读分析</h4>
+    <p>欧洲在"算力主权"路径上加速投资非英伟达硬件；AMD Instinct 在 AI 训练侧的能效/互联能力将首次以国家级超算规模被验证，是其打入主流训练市场的关键参照点。</p>
+  </div>
+</article>
+
+<article class="news" id="n9">
+  <h2>9. Anthropic 警告信息窃取型恶意软件劫持 Claude 活跃会话</h2>
+  <div class="src">
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://aiweekly.co/ai-news-today" target="_blank">AI Weekly</a> ·
+    <a href="https://www.helpnetsecurity.com/tag/anthropic/" target="_blank">Help Net Security</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>Anthropic 公开披露一起针对 Claude 订阅账号的安全事件：用户终端上的信息窃取型恶意软件劫持活跃登录会话，持续消耗订阅额度与配额；Anthropic 已强制注销受影响账号、清除支付方式并退款。</p>
+    <h4>关键数据</h4>
+    <p>受影响账号覆盖多个地区；事件类型与"凭证窃取 + 会话劫持"路径高度相关。</p>
+    <h4>影响范围</h4>
+    <p>企业 / 个人订阅账号均可能受到影响；提示所有 AI 订阅服务都需引入设备绑定、异常会话告警等机制。</p>
+    <h4>后续动作</h4>
+    <p>关注 Anthropic 是否推出更强设备指纹 / 强制重新登录 / 反僵尸检测；同类风险也可能蔓延到其他模型厂商的订阅服务。</p>
+    <h4>解读分析</h4>
+    <p>AI 订阅"被黑产薅羊毛"是新的攻击面：相比传统 SaaS，会话型 AI 还涉及 prompt 上下文泄露、API key 暴露与算力盗用，需要在产品层引入更细粒度的身份与会话生命周期管理。</p>
+  </div>
+</article>
+
+<article class="news" id="n10">
+  <h2>10. ChatGPT 企业版（Work）出现部分服务中断</h2>
+  <div class="src">
+    <span class="pill intl">国际</span>
+    来源发布日期：2026-08-31 ·
+    <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-confirms-chatgpt-outage-as-users-report-errors/" target="_blank">BleepingComputer</a> ·
+    <a href="https://www.ainformed.dev/" target="_blank">Ainformed</a>
+  </div>
+  <div class="dim">
+    <h4>核心事件</h4>
+    <p>OpenAI 确认 ChatGPT Work（企业版）在美东时间上午约 11 点出现部分故障，Plus 用户与企业账号出现错误率与延迟上升。</p>
+    <h4>关键数据</h4>
+    <p>影响范围以企业/付费订阅账号为主；故障窗口较以往偏长，引发对"AI 关键业务依赖"的二次讨论。</p>
+    <h4>影响范围</h4>
+    <p>已嵌入 ChatGPT 到生产/客服/研发流程的企业需要重新评估可用性 SLA、回退路径与多供应商策略。</p>
+    <h4>后续动作</h4>
+    <p>OpenAI 预计会发布正式事后分析；企业侧将引入更明确的多模型/多供应商容灾。</p>
+    <h4>解读分析</h4>
+    <p>头部模型的可用性风险已成企业级 AI 落地的"显性成本"；接下来"多模型 + 本地/边缘兜底"会成为大型企业 AI 架构的标配，单一供应商模式将逐步退场。</p>
+  </div>
+</article>
+
+<hr class="sep">
+
+<section class="toc">
+  <h3>选读要点（5 条精选）</h3>
+  <ol>
+    <li>商业化拐点：ChatGPT 广告业务 200 天跑出 10 亿美元 ARR，"对话流量×AI 推荐"的变现模型被初步验证。</li>
+    <li>渠道之争：OpenAI 切断 Cursor API，模型供应方对下游分发渠道的控制力显著上升，编程 Agent 平台走向"模型自研/多源切换"。</li>
+    <li>监管扩张：欧盟 DSA 将 ChatGPT 列为 VLOSE、Reddit/Roblox 列为 VLOP，对话式 AI 进入与社交/搜索同量级的合规框架。</li>
+    <li>算力新版图：Together AI×Humain、Nvidia×MediaTek、EuroHPC×Bull 三条主线并行，中东主权云、边缘互联与非英伟达超算同时加速。</li>
+    <li>开发者成本与安全：Claude Sonnet 5 恢复标准定价并启用新分词器，叠加会话劫持与 ChatGPT 故障，提示"订阅即关键基础设施"的运维新阶段。</li>
+  </ol>
+</section>
+
+<footer>
+  本报告由自动化工作流生成 · 内容来自公开信息汇总，不构成投资建议<br>
+  Generated: 2026-09-01 09:03 CST · 数据窗口: 2026-08-29 ~ 2026-09-01
+</footer>
+
+</div>
+</body>
+</html>
