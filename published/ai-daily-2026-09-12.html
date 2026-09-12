@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻日报 — 2026-09-12</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(78,205,196,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header .label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .header .sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+  }
+  .meta {
+    padding: 14px 40px;
+    background: #f0f4f8;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  .meta span { display: flex; align-items: center; gap: 5px; }
+  .meta strong { color: #1a1a2e; }
+
+  .body { padding: 28px 40px 36px; }
+
+  .intro {
+    background: #eef6ff;
+    border-left: 3px solid #3a86ff;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    color: #333;
+    margin-bottom: 26px;
+    line-height: 1.75;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin: 26px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eef0f3;
+  }
+
+  .news-item {
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #fafbfc;
+    border: 1px solid #eef0f3;
+    transition: box-shadow 0.2s;
+  }
+  .news-item:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+
+  .news-item .tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    flex-wrap: wrap;
+  }
+  .news-item .date-tag {
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f0;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .news-item .cat-tag {
+    font-size: 11px;
+    color: #fff;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .cat-funding { background: #4ecdc4; }
+  .cat-model { background: #7c5cfc; }
+  .cat-infra { background: #f77f00; }
+  .cat-policy { background: #3a86ff; }
+  .cat-security { background: #e63946; }
+  .cat-product { background: #2a9d8f; }
+
+  .news-item h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .news-item p {
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+
+  .dims {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .dim {
+    font-size: 11px;
+    color: #555;
+    background: #f0f4f8;
+    border-radius: 4px;
+    padding: 3px 8px;
+    border-left: 2px solid #ccd6e0;
+  }
+
+  .source-row {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #3a86ff;
+  }
+  .source-row a {
+    color: #3a86ff;
+    text-decoration: none;
+  }
+  .source-row a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: #fff8f0;
+    border: 1px solid #ffe0b2;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .highlight-box .h-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f77f00;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .highlight-box p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .footer {
+    background: #f0f4f8;
+    padding: 16px 40px;
+    font-size: 11.5px;
+    color: #888;
+    text-align: center;
+    border-top: 1px solid #e0e6ed;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    .header { padding: 24px 20px 18px; }
+    .header h1 { font-size: 20px; }
+    .body { padding: 18px 18px 24px; }
+    .meta { padding: 10px 18px; }
+    .footer { padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="label">AI 新闻日报</div>
+    <h1>2026-09-12 · 星期六</h1>
+    <div class="sub">北京时区 · 过去 72 小时 AI 圈热点精选</div>
+  </div>
+
+  <div class="meta">
+    <span><strong>报告日期</strong> 2026-09-12</span>
+    <span><strong>覆盖窗口</strong> 09-09 至 09-12</span>
+    <span><strong>收录条数</strong> 10 条</span>
+    <span><strong>数据源</strong> Web Search × 4 查询 + 中英双语 + 多源交叉验证</span>
+  </div>
+
+  <div class="body">
+
+    <div class="intro">
+      📌 <strong>今日速览：</strong>Anthropic 公布 2025.12–2026.08 Claude 滥用威胁报告，多名前沿研究人员同日离职引发"AI 灭绝风险"公开讨论；OpenAI 在 9 月 10 日一天连发 Agents SDK 公开测试、GPT-Live-1 全双工语音 API 与 ChatGPT 金融工作区，并因算力紧张暂停 ChatGPT Pro 新订阅；DeepSeek 发布 552B 参数 V4.1 Flash（MIT 开源、1M 上下文）；Sakana AI 同日放出 Fugu Ultra v2.0 与 Fugu Max；企业侧 Cognition 以 $48B 估值完成 $2B E 轮（Devin + SWE-2）、Harvey $550M 估值 $15.5B、Clay $115M 估值 $7.1B；Google 发布 Gemini Windows 桌面端；Infra 侧 Positron $875M C 轮估值 $5B，NVIDIA 宣布对芬兰追加至少 $15B AI 数据中心投资。
+    </div>
+
+    <div class="highlight-box">
+      <div class="h-title">🔝 今日精选 5 条</div>
+      <p>
+        ① <strong>Anthropic 威胁报告 + 研究人员离职潮</strong>：揭露 Claude 被用于国家级网络攻击、生物武器研究与蒸馏攻击；Jacob Coxon、Evan Hubinger 等点名"十年内 AI 灭绝人类"概率 > 10%，推动美国议员再提 AI 监管草案。<br>
+        ② <strong>OpenAI 三连发 + ChatGPT Pro 暂停新订阅</strong>：Agents SDK 公开测试、GPT-Live-1 全双工语音 API、金融工作区上线；GPT-6 Astra 算力告急，$200/月 Pro 档临时停售。<br>
+        ③ <strong>DeepSeek V4.1 Flash 与 Sakana Fugu 系列同日开源</strong>：552B MoE（1M 上下文，MIT）、日本 Sakana 双 Fugu 模型跟进；中国/日本阵营继续押注开放权重。<br>
+        ④ <strong>AI 编程 / 代理赛道估值集体重估</strong>：Cognition $2B E 轮 @ $48B、Harvey $550M @ $15.5B、Clay $115M @ $7.1B，Devin 系编程 Agent 商业化跑通至接近 $900M 营收跑率。<br>
+        ⑤ <strong>Infra 巨额资本动作</strong>：Positron AI $875M C 轮估值 $5B（推理芯片）、NVIDIA 至少 $15B 投建芬兰 AI 数据中心、Anthropic 参投的离网电力 TAR $120M A 轮。
+      </p>
+    </div>
+
+    <div class="section-title">一、安全 / 治理动态</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-security">滥用报告</span>
+      </div>
+      <h3>Anthropic 发布 Claude 滥用威胁报告：网络攻击 / 生物武器 / 国家行为者多线浮现</h3>
+      <p>Anthropic 于 9 月 10 日发布最新威胁情报报告，披露 2025 年 12 月至 2026 年 8 月期间，Claude（Haiku、Sonnet、Opus 全系列）被检测到用于多类高危活动：定向网络入侵、影响行动、国家级监控、以及与生物武器相关的查询 / 蒸馏尝试。报告点名了一起针对 Anthropic 模型的蒸馏攻击，被归因于一家中国 AI 实验室，Anthropic 表示已识别并阻断。报告同步披露其对生物武器相关查询的拦截案例（包括涉及 chikungunya 与禽流感的功能获得性研究咨询）。Anthropic 强调这是行业性问题而非单一厂商问题，呼吁更广泛的安全对齐合作与披露标准。</p>
+      <div class="dims">
+        <span class="dim">🛡️ 网络 / 生物 / 监控滥用</span>
+        <span class="dim">🇨🇳 蒸馏攻击归因</span>
+        <span class="dim">📊 9 个月观测窗口</span>
+        <span class="dim">🤝 呼吁行业标准</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.cnn.com/2026/09/10/health/anthropic-bioweapons-report" target="_blank">CNN (Sep 10)</a> · <a href="https://aibriefing.dev/" target="_blank">AI Briefing</a> · <a href="https://www.barrons.com/articles/ai-warning-anthropic-openai-b3c3aa5f" target="_blank">Barron's</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-11</span>
+        <span class="cat-tag cat-policy">研究人员离职</span>
+      </div>
+      <h3>Anthropic / DeepMind 安全研究人员离职潮，公开表达对失控风险的担忧</h3>
+      <p>前 Anthropic 安全研究员 Jacob Coxon 于本周公开辞职，表态"构建 AI 的人们相信它可能在本十年末消灭我们所有人"；对齐研究员 Evan Hubinger 公开给出 > 10% 概率的 AI 灭绝人类十年内情景预测，主因递归自我改进速度超出预期。同期 Joe Benton（原 Anthropic 安全研究负责人）与 Josh Engels（Google DeepMind）也相继离职，理由涉及透明度不足与对不可控 AI 的担忧。事件直接推动多名美国议员再次呼吁新的 AI 监管框架。X / Reddit 趋势标签 #AIExtinction 与 #AIRegulationNow 在科技圈短时冲入热门。</p>
+      <div class="dims">
+        <span class="dim">👥 4+ 研究人员离职</span>
+        <span class="dim">⚠️ 10 年灭绝概率 >10%</span>
+        <span class="dim">🏛️ 推动新监管草案</span>
+        <span class="dim">📢 X 趋势标签升温</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.cnbc.com/2026/09/11/anthropic-openai-ai-existential-concerns.html" target="_blank">CNBC (Sep 11)</a> · <a href="https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086" target="_blank">NBC News</a> · <a href="https://www.informationweek.com/responsible-ai/the-week-of-sept-7-11-what-happened-what-matters-what-s-next" target="_blank">InformationWeek</a></div>
+    </div>
+
+    <div class="section-title">二、头部厂商产品与发布</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-product">OpenAI 三连发</span>
+      </div>
+      <h3>OpenAI 同日发布 Agents SDK、GPT-Live-1 语音 API、ChatGPT 金融工作区</h3>
+      <p>9 月 10 日 OpenAI 一日内连推三项重大产品：（1）<strong>Agents SDK</strong> 进入公开测试，基于 Codex harness 提供沙盒 + 长会话托管编排，支持子 Agent、工具调用与持久执行；（2）<strong>GPT-Live-1</strong> 全双工语音 API，支持自然打断、并行生成与情感化响应；（3）<strong>ChatGPT 金融工作区</strong> 集成 PitchBook、FactSet 等数据源，面向投研 / 尽调场景。三项更新与月初 GPT-6 Astra（百万 token 上下文、FrontierMath Tier 4 98%、ARC-AGI-3 99.9%）的高需求叠加，导致 OpenAI 暂停 ChatGPT Pro（$200/月）新订阅以缓解算力压力。X 上 #GPT6Astra 与 #OpenAIAgents 双标签进入开发者热门。</p>
+      <div class="dims">
+        <span class="dim">🤖 Agents SDK 公测</span>
+        <span class="dim">🎙️ 全双工语音 API</span>
+        <span class="dim">💼 金融数据集成</span>
+        <span class="dim">⏸️ Pro 订阅暂停</span>
+      </div>
+      <div class="source-row">来源：<a href="https://openai.com/products/release-notes/" target="_blank">OpenAI Release Notes</a> · <a href="https://aiweekly.co/ai-news-today/edition/2026-09-11" target="_blank">AI Weekly (Sep 11)</a> · <a href="https://www.businessinsider.com/astra-model-launch-agi-milestone-openai-greg-brockman-2026-9" target="_blank">Business Insider</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-product">Google 桌面端</span>
+      </div>
+      <h3>Google 发布 Gemini Windows 桌面应用，主打 Alt+Space 全局调用</h3>
+      <p>Google 于 9 月 10 日上线 Gemini Windows 桌面应用，核心特性包括 Alt+Space 全局快捷键直接呼出、原生支持写作 / 摘要 / 媒体生成等任务、无需打开浏览器即可调用 Gemini 3.8 Flash 系列模型。这是继 macOS 端之后的第二个桌面平台落地，与 Microsoft Copilot 形成正面对位。Gemini 3.8 Flash 在软件工程与代理任务基准上的提升，是本次桌面端"开箱即用"体验的能力基础。X 上 #GeminiWindows 与 Google 官方账号互动量明显放大。注：Gemini 3.5 Pro 仍处于延期状态，Google 尚未给出新发布日期。</p>
+      <div class="dims">
+        <span class="dim">🪟 Windows 桌面应用</span>
+        <span class="dim">⌨️ Alt+Space 全局调用</span>
+        <span class="dim">🆚 对位 Microsoft Copilot</span>
+        <span class="dim">⏳ 3.5 Pro 仍延期</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.thurrott.com/a-i/google-gemini-a-i/341486/google-releases-gemini-app-for-windows" target="_blank">Thurrott (Sep 10)</a> · <a href="https://9to5google.com/2026/09/02/gemini-3-8-flash-launch/" target="_blank">9to5Google</a> · <a href="https://mashable.com/tech/google-gemini-3-5-pro-delay-updates" target="_blank">Mashable</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-11</span>
+        <span class="cat-tag cat-model">日本 / 开放权重</span>
+      </div>
+      <h3>Sakana AI 同日发布 Fugu Ultra v2.0 与 Fugu Max，日本持续押注小型化模型</h3>
+      <p>东京 Sakana AI 于 9 月 11 日发布两款 Fugu 系列新模型：<strong>Fugu Ultra v2.0</strong> 与更激进的 <strong>Fugu Max</strong>，主打高性价比与企业级日语 / 英文任务。延续 Sakana 一贯的"小型化、可本地部署"路线，目标是为日本本土企业、金融与政府客户提供不依赖海外大厂的部署选项。本月稍早 Anthropic 的 Claude Fable 5.1 与受限访问的 Mythos 5.1 也已于 9 月 1 日发布，Claude Code 工具链在 9 月 10–11 日连发 v2.1.268 / v2.1.269（插件评估、统一计价、权限控制）。X 上日英双语开发者社区对 Fugu Max 的推理 / 工具调用能力展开实测对比。</p>
+      <div class="dims">
+        <span class="dim">🇯🇵 日本本土厂商</span>
+        <span class="dim">📦 Ultra v2.0 + Max 双版本</span>
+        <span class="dim">🛠️ Claude Code v2.1.269</span>
+        <span class="dim">🌏 区域算力自主</span>
+      </div>
+      <div class="source-row">来源：<a href="https://llmgateway.io/timeline" target="_blank">LLM Gateway Timeline</a> · <a href="https://thursdai.news/releases/2026-09" target="_blank">ThursdAI Releases</a> · <a href="https://releasebot.io/updates/anthropic/claude" target="_blank">Releasebot (Anthropic)</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-model">中国 / 开源</span>
+      </div>
+      <h3>DeepSeek V4.1 Flash 开源：552B MoE、1M 上下文、MIT 协议</h3>
+      <p>DeepSeek 于 9 月 10 日通过 HuggingFace / GitHub 发布 V4.1 Flash：552B 参数多模态 Mixture-of-Experts，原生 1M token 上下文窗口，权重以 MIT 协议完全开源，社区已可在消费级 GPU 集群完成推理 / 微调。官方强调同等激活参数下推理效率领先同尺寸开源模型。V4.1 Flash 与月初 IFM（Institute of Foundation Models）发布的 K2 Horizon 全开放模型族（0.9B–375B 共 6 款）形成"中–美之外的第三条开放权重路径"。X 标签 #DeepSeekV4 在中文 AI 圈 24 小时内累计讨论量破万。</p>
+      <div class="dims">
+        <span class="dim">🧠 552B MoE</span>
+        <span class="dim">📜 MIT 协议</span>
+        <span class="dim">📏 1M 上下文</span>
+        <span class="dim">🌐 多模态</span>
+      </div>
+      <div class="source-row">来源：<a href="https://hasbeenreleased.com/models" target="_blank">HasBeenReleased</a> · <a href="https://ifm.ai/k2/press-release/" target="_blank">IFM K2 Press Release</a> · <a href="https://llmgateway.io/timeline/2026" target="_blank">LLM Gateway</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-model">科研开源</span>
+      </div>
+      <h3>IBM × NASA 开源月球地理 AI 模型，目标支持未来载人登月选址</h3>
+      <p>IBM 与 NASA 于 9 月 10 日联合开源一款面向月球地形的 AI 模型，用于从轨道影像自动识别陨石坑、永久阴影区与潜在水冰沉积，与 NASA Artemis 计划载人登月选址直接挂钩。模型与训练数据在 HuggingFace 与 IBM 开放许可协议下释出，可被科研机构与商业航天初创直接二次开发。在 NVIDIA 宣布以约 $129.3 亿收购 Hugging Face（Sep 3）的大背景下，这类"国家级科研 + 开源平台"的合作被视作开放生态在闭源前沿模型之外的另一种护城河。</p>
+      <div class="dims">
+        <span class="dim">🌕 月球地形识别</span>
+        <span class="dim">🚀 Artemis 登月选址</span>
+        <span class="dim">🔓 IBM + 开源协议</span>
+        <span class="dim">🤝 国家科研合作</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.reuters.com/science/ibm-nasa-launch-ai-model-help-map-ice-craters-moon-2026-09-10/" target="_blank">Reuters (Sep 10)</a> · <a href="https://www.wired.com/story/nvidias-hugging-face-acquisition-is-a-dollar129-billion-bet-on-open-source-ai/" target="_blank">Wired</a></div>
+    </div>
+
+    <div class="section-title">三、资本与商业化</div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-08</span>
+        <span class="cat-tag cat-funding">编程 Agent</span>
+      </div>
+      <h3>Cognition 完成 $2B E 轮，估值 $48B，Devin + SWE-2 商业化加速</h3>
+      <p>Devin 母公司 Cognition 于 9 月 8 日官宣完成 $2B Series E，投后估值 $48B（5 月份 D 轮时为 $26B），a16z 与 Accel 共同领投，Founders Fund、General Catalyst 等老股东跟投。官方披露的 ARR 跑率已逼近 $900M。同日 Cognition 发布新一代编程模型 SWE-2，强调长程任务、多仓库协同与测试驱动修复。本轮融资 + SWE-2 组合拳再次印证了"AI 编程 Agent = 当前最确定的 SaaS 替代赛道"的判断，X 上 #Devin 与 #SWE2 在开发者圈登顶。</p>
+      <div class="dims">
+        <span class="dim">💰 $2B E 轮 / $48B 估值</span>
+        <span class="dim">📈 ARR 跑率 ~$900M</span>
+        <span class="dim">🛠️ SWE-2 模型</span>
+        <span class="dim">🧑‍💻 编程 Agent 龙头</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.reuters.com/technology/cognition-ai-raises-2-billion-48-billion-valuation-2026-09-08/" target="_blank">Reuters (Sep 8)</a> · <a href="https://aibusiness.com/generative-ai/ai-coding-startup-cognition-valued-at-48b" target="_blank">AI Business</a> · <a href="https://www.unite.ai/series/funding/" target="_blank">Unite.AI</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-09</span>
+        <span class="cat-tag cat-funding">法律 / 销售 Agent</span>
+      </div>
+      <h3>Harvey 估值 $15.5B、Clay 估值 $7.1B：垂直 Agent 持续被重估</h3>
+      <p>9 月 9 日两大垂直 Agent 公司同日披露融资：<strong>Harvey</strong>（法律 AI，合同审查 / 尽调 Agent）$550M 新轮，估值 $15.5B（3 月时为 $11B），Diffusion Partners 与 Lightspeed 共同领投，红杉、a16z 等老股东加注，并宣布收购 Agent 安全公司 Guardrails AI；<strong>Clay</strong>（销售 / 营销 Agent）$115M 新轮，估值 $7.1B（约一年前为 $3.1B），Wellington 领投，红杉、a16z 跟投。垂直 Agent 商业模式跑通，正在快速吞食 SaaS 在法律、销售等场景的预算份额。</p>
+      <div class="dims">
+        <span class="dim">⚖️ Harvey $15.5B</span>
+        <span class="dim">📈 Clay $7.1B</span>
+        <span class="dim">🛡️ 收购 Guardrails AI</span>
+        <span class="dim">🎯 垂直 Agent 重估</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.reuters.com/legal/government/legal-ai-startup-harvey-reaches-155-billion-valuation-new-funding-round-2026-09-09/" target="_blank">Reuters (Harvey)</a> · <a href="https://www.reuters.com/legal/transactional/clay-valued-71-billion-latest-funding-round-ai-agent-startups-run-hot-2026-09-09/" target="_blank">Reuters (Clay)</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="tag-row">
+        <span class="date-tag">📅 2026-09-10</span>
+        <span class="cat-tag cat-infra">推理芯片 / 数据中心</span>
+      </div>
+      <h3>Positron AI $875M C 轮估值 $5B；NVIDIA 至少 $15B 投建芬兰 AI 数据中心</h3>
+      <p>9 月 10 日基础设施侧两笔大额动作：（1）AI 推理芯片公司 <strong>Positron AI</strong> 公布 $875M Series C，分阶段交割，估值 $5B，NEA、Jim Clark、Liberty Global 等参与；（2）<strong>NVIDIA</strong> 宣布对芬兰追加至少 $15B AI 数据中心投资，重点支持欧洲云区域与当地主权算力需求。同日 Anthropic 参投的离网电力初创 <strong>TAR</strong> 完成 $120M Series A（Spark Capital 领投），专攻 AI 数据中心离网供电。X 上 #AIInfra 与 #GPUshortage 标签连续 48 小时占据开发者首页。</p>
+      <div class="dims">
+        <span class="dim">🧮 Positron $5B</span>
+        <span class="dim">🇫🇮 NVIDIA 芬兰 $15B</span>
+        <span class="dim">⚡ TAR 离网电力</span>
+        <span class="dim">🌍 欧洲主权算力</span>
+      </div>
+      <div class="source-row">来源：<a href="https://www.reuters.com/business/ai-chip-startup-positrons-valuation-skyrockets-latest-funding-round-2026-09-10/" target="_blank">Reuters (Positron)</a> · <a href="https://m.economictimes.com/tech/funding/ai-chip-startup-positrons-valuation-skyrockets-in-latest-funding-round/articleshow/134022562.cms" target="_blank">Economic Times</a> · <a href="https://www.bloomberg.com/news/articles/2026-09-10/anthropic-investor-leads-funding-for-off-grid-ai-power-startup" target="_blank">Bloomberg (TAR)</a></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    AI 新闻日报 · 由 OpenClaw 自动整理 · 仅收录过去 72 小时内有学习价值的内容 · 2026-09-12 CST
+  </div>
+
+</div>
+</body>
+</html>
